@@ -1,0 +1,13 @@
+{
+  "name": "btmcode-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BTMCode multilingual software engineering portfolio",
+  "scripts": {
+    "check": "node --check assets/site.js && node --check assets/i18n.js && node --check api/contact.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
