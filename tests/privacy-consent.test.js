@@ -11,7 +11,7 @@ test("GA4 is opt-in and no measurement ID is shipped by default", () => {
   const consent = read("assets/consent.js");
   assert.match(config, /gaMeasurementId:\s*""/);
   assert.match(consent, /if \(!measurementId \|\| !current \|\| !current\.analytics/);
-  assert.match(consent, /analytics_storage:"denied"/);
+  assert.match(consent, /analytics_storage:"denied"/);\n  assert.match(consent, /if\(!current\) open\(false\)/);
 });
 
 test("consent manager exposes reject, accept and granular choices", () => {
