@@ -2,7 +2,7 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const vm = require("node:vm");
 const PUBLIC = path.join(process.cwd(), "public");
-const SOURCE = await fs.readFile(path.join(PUBLIC, "assets/i18n.js"), "utf8");
+const SOURCE = require("node:fs").readFileSync(path.join(PUBLIC, "assets/i18n.js"), "utf8");
 const LOCALES = ["en","de","fr","ru"];
 const LOCALE_TAGS = {en:"en_US",de:"de_DE",fr:"fr_FR",ru:"ru_RU"};
 
