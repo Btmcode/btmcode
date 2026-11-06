@@ -27,6 +27,7 @@
   function save(analytics, marketing) {
     current = {version:VERSION,necessary:true,analytics:!!analytics,marketing:!!marketing,updatedAt:new Date().toISOString()};
     try { localStorage.setItem(KEY, JSON.stringify(current)); } catch (_) {}
+    expanded = false;
     apply();
     render();
   }
