@@ -1,15 +1,483 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://btmcode.vercel.app/</loc></url>
-<url><loc>https://btmcode.vercel.app/about/</loc></url>
-<url><loc>https://btmcode.vercel.app/services/</loc></url>
-<url><loc>https://btmcode.vercel.app/projects/</loc></url>
-<url><loc>https://btmcode.vercel.app/journal/</loc></url>
-<url><loc>https://btmcode.vercel.app/contact/</loc></url>
-<url><loc>https://btmcode.vercel.app/privacy/</loc></url>
-<url><loc>https://btmcode.vercel.app/projects/imagehub/</loc></url>
-<url><loc>https://btmcode.vercel.app/projects/zirve/</loc></url>
-<url><loc>https://btmcode.vercel.app/projects/aquaterra/</loc></url>
-<url><loc>https://btmcode.vercel.app/projects/demos-pizza/</loc></url>
-<url><loc>https://btmcode.vercel.app/projects/aya/</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://btmcode.vercel.app/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/en/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/de/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/fr/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/ru/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/about/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/about/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/about/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/about/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/about/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/en/about/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/about/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/about/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/about/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/about/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/de/about/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/about/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/about/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/about/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/about/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/fr/about/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/about/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/about/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/about/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/about/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/ru/about/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/about/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/about/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/about/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/about/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/services/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/services/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/services/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/services/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/en/services/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/services/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/services/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/services/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/de/services/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/services/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/services/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/services/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/fr/services/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/services/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/services/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/services/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/ru/services/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/services/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/services/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/services/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/projects/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/en/projects/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/de/projects/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/fr/projects/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/ru/projects/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/journal/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/journal/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/journal/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/journal/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/journal/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/journal/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/journal/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/en/journal/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/journal/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/journal/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/journal/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/journal/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/journal/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/journal/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/de/journal/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/journal/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/journal/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/journal/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/journal/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/journal/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/journal/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/fr/journal/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/journal/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/journal/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/journal/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/journal/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/journal/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/journal/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/ru/journal/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/journal/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/journal/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/journal/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/journal/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/journal/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/journal/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/contact/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/contact/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/contact/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/contact/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/contact/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/en/contact/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/contact/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/contact/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/contact/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/contact/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/de/contact/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/contact/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/contact/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/contact/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/contact/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/fr/contact/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/contact/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/contact/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/contact/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/contact/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/ru/contact/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/contact/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/contact/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/contact/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/contact/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/privacy/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/privacy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/privacy/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/privacy/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/en/privacy/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/privacy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/privacy/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/privacy/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/de/privacy/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/privacy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/privacy/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/privacy/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/fr/privacy/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/privacy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/privacy/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/privacy/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/ru/privacy/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/privacy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/privacy/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/privacy/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/projects/imagehub/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/imagehub/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/en/projects/imagehub/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/imagehub/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/de/projects/imagehub/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/imagehub/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/fr/projects/imagehub/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/imagehub/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/ru/projects/imagehub/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/imagehub/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/imagehub/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/projects/zirve/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/zirve/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/en/projects/zirve/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/zirve/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/de/projects/zirve/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/zirve/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/fr/projects/zirve/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/zirve/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/ru/projects/zirve/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/zirve/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/zirve/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/projects/aquaterra/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/aquaterra/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/en/projects/aquaterra/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/aquaterra/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/de/projects/aquaterra/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/aquaterra/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/fr/projects/aquaterra/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/aquaterra/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/ru/projects/aquaterra/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/aquaterra/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/aquaterra/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/projects/demos-pizza/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/demos-pizza/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/en/projects/demos-pizza/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/demos-pizza/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/de/projects/demos-pizza/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/demos-pizza/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/fr/projects/demos-pizza/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/demos-pizza/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/ru/projects/demos-pizza/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/demos-pizza/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/demos-pizza/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/projects/aya/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/aya/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/en/projects/aya/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/aya/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/de/projects/aya/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/aya/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/fr/projects/aya/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/aya/" />
+  </url>
+  <url><loc>https://btmcode.vercel.app/ru/projects/aya/</loc><lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/projects/aya/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/projects/aya/" />
+  </url>
 </urlset>
