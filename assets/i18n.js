@@ -358,7 +358,7 @@
     languageSelect.addEventListener("change", () => {
       const next = languageSelect.value;
       try { localStorage.setItem("btm-locale", next); } catch (e) {}
-      const targetPath = next === "tr" ? path : "/" + next + (path === "/" ? "/" : path);
+      const targetPath = next === "tr" ? path : "/" + next + (path === "/" ? "" : path.replace(/\/$/, ""));
       location.assign(targetPath + location.search + location.hash);
     });
   }
@@ -368,17 +368,17 @@
     const href = link.getAttribute("href");
     if (!href || href.startsWith("//") || href.startsWith("/api/") || href.startsWith("/favicon") || href.startsWith("/manifest")) return;
     if (/^\/(en|de|fr|ru)(\/|$)/.test(href)) return;
-    if (locale !== "tr") link.setAttribute("href", "/" + locale + (href === "/" ? "/" : href));
+    if (locale !== "tr") link.setAttribute("href", "/" + locale + (href === "/" ? "" : href.replace(/\/$/, "")));
   });
 
-  const canonicalPath = locale === "tr" ? path : "/" + locale + (path === "/" ? "/" : path);
+  const canonicalPath = locale === "tr" ? path : "/" + locale + (path === "/" ? "" : path.replace(/\/$/, ""));
   const canonicalUrl = "https://btmcode.vercel.app" + canonicalPath;
   const canonical = document.querySelector('link[rel="canonical"]');
   if (canonical) canonical.href = canonicalUrl;
   const ogUrl = document.querySelector('meta[property="og:url"]');
   if (ogUrl) ogUrl.content = canonicalUrl;
   localeCodes.forEach(code => {
-    const href = "https://btmcode.vercel.app" + (code === "tr" ? path : "/" + code + (path === "/" ? "/" : path));
+    const href = "https://btmcode.vercel.app" + (code === "tr" ? path : "/" + code + (path === "/" ? "" : path.replace(/\/$/, "")));
     let link = document.head.querySelector('link[rel="alternate"][hreflang="' + code + '"]');
     if (!link) {
       link = document.createElement("link");
