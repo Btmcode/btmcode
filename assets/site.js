@@ -43,6 +43,8 @@
     const next = theme === "light" ? "light" : "dark";
     root.dataset.theme = next;
     root.style.colorScheme = next;
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeMeta) themeMeta.content = next === "light" ? "#f4f6f1" : "#0a0f0e";
     try { localStorage.setItem("btm-theme", next); } catch (error) {}
     if (themeToggle) {
       const isLight = next === "light";
