@@ -8,7 +8,6 @@ const publicEntries = [
   "about",
   "admin",
   "assets",
-  "docs",
   "contact",
   "favicon.svg",
   "journal",
@@ -41,7 +40,8 @@ const publicEntries = [
       }
     }
   }
-\nasync function main() {
+
+async function main() {
   await fs.rm(output, {recursive:true, force:true});
   await fs.mkdir(output, {recursive:true});
 
