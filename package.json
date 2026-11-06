@@ -6,7 +6,7 @@
   "scripts": {
     "check": "node --check assets/site.js && node --check assets/i18n.js && node --check api/contact.js",
     "test": "node --test",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js && node scripts/build-locales.js"
   },
   "engines": {
     "node": ">=20"
