@@ -23,7 +23,7 @@
       const bottom=footer.querySelector(".footer-bottom");
       if(bottom) bottom.before(trust);
       const settings=trust.querySelector("[data-consent-open]");
-      if(settings) settings.addEventListener("click",()=>{if(window.BTMConsent)window.BTMConsent.open();});
+      if(settings) settings.addEventListener("click",()=>{if(window.BTMConsent)window.BTMConsent.open(true);});
     }
     const details=document.querySelector(".contact-details");
     if(details&&!details.querySelector("[data-whatsapp-contact]")){
