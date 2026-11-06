@@ -10,17 +10,17 @@
     if (!menu || !nav) return;
     nav.classList.remove("open");
     menu.setAttribute("aria-expanded", "false");
-    menu.setAttribute("aria-label", "Open menu");
+    menu.setAttribute("aria-label", (window.BTM_UI_TEXT || {}).openMenu || "Open menu");
     if (menuIcon) menuIcon.textContent = "☰";
-    if (menuSrText) menuSrText.textContent = "Open menu";
+    if (menuSrText) menuSrText.textContent = (window.BTM_UI_TEXT || {}).openMenu || "Open menu";
   }
   if (menu && nav) {
     menu.addEventListener("click", () => {
       const open = nav.classList.toggle("open");
       menu.setAttribute("aria-expanded", String(open));
-      menu.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      menu.setAttribute("aria-label", open ? ((window.BTM_UI_TEXT || {}).closeMenu || "Close menu") : ((window.BTM_UI_TEXT || {}).openMenu || "Open menu"));
       if (menuIcon) menuIcon.textContent = open ? "×" : "☰";
-      if (menuSrText) menuSrText.textContent = open ? "Close menu" : "Open menu";
+      if (menuSrText) menuSrText.textContent = open ? ((window.BTM_UI_TEXT || {}).closeMenu || "Close menu") : ((window.BTM_UI_TEXT || {}).openMenu || "Open menu");
     });
     nav.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
     document.addEventListener("keydown", event => {
@@ -47,7 +47,8 @@
     if (themeToggle) {
       const isLight = next === "light";
       themeToggle.setAttribute("aria-pressed", String(isLight));
-      themeToggle.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
+      const labels = window.BTM_UI_TEXT || {};
+      themeToggle.setAttribute("aria-label", isLight ? (labels.darkTheme || "Switch to dark theme") : (labels.lightTheme || "Switch to light theme"));
       const icon = themeToggle.querySelector("[data-theme-icon]");
       if (icon) icon.textContent = isLight ? "☀" : "☾";
     }
