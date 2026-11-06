@@ -1,0 +1,28 @@
+# BTMCode
+
+BTMCode is the personal software engineering portfolio of Ahmet.
+
+## Focus areas
+- Frontend engineering and responsive web applications
+- Backend systems, REST APIs and database-backed SaaS
+- UI/UX engineering and interactive digital experiences
+- AI integrations, workflow automation and prompt engineering
+- Secure software development practices
+
+## Selected projects
+- [ImageHub / imghost](https://btmcode.vercel.app/projects/imagehub/): E-ticaret ve geliştiriciler için görsel yükleme, dönüştürme ve CDN dağıtım akışını tek bir API-first üründe birleştiren platform.
+- [Zirve Elektrik](https://btmcode.vercel.app/projects/zirve/): İstanbul genelinde hizmet aramalarını karşılayan; içerik, bölge sayfaları ve talepleri tek yönetim yapısında birleştiren Next.js web platformu.
+- [AQUATERRA Atelier](https://btmcode.vercel.app/projects/aquaterra/): Özel akvaryum, aquascaping ve peyzaj tasarımını sinematik anlatı, etkileşimli hesaplama ve keşif akışlarıyla sunan premium dijital deneyim.
+- [Demos Pizza](https://btmcode.vercel.app/projects/demos-pizza/): Menü keşfinden sepete, sipariş takibinden yönetim ekranlarına uzanan restoran odaklı sipariş ve operasyon platformu demosu.
+- [Aya Elektrik](https://btmcode.vercel.app/projects/aya/): Yerel servis işletmeleri için ilçe ve hizmet odaklı içerik yapısı, talep yönetimi ve yapay zekâ destekli içerik üretim araçları.
+
+## Pages
+- [About](https://btmcode.vercel.app/about/)
+- [Capabilities](https://btmcode.vercel.app/services/)
+- [Projects](https://btmcode.vercel.app/projects/)
+- [Contact](https://btmcode.vercel.app/contact/)
+
+## Source profile
+- GitHub: https://github.com/Btmcode
+
+Project descriptions are limited to verified or repository-supported functionality. No unverified traffic, revenue, ranking or customer-performance metrics are claimed.
