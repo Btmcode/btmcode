@@ -248,6 +248,89 @@ const moreTranslations = {
 };
 for (const locale of LOCALES) Object.assign(dictionaries[locale], moreTranslations[locale]);
 
+const caseTranslations = {
+  de: {
+    "Klasik kurumsal site yerine; sinematik scroll hikâyesi, su-kara geçiş etkileşimi, biyotop hesaplayıcısı, proje keşfi ve önceden doldurulabilen teklif akışından oluşan etkileşimli stüdyo deneyimi.":"Ein interaktives Studioerlebnis statt einer klassischen Unternehmenswebsite – mit filmischer Scroll-Story, Wasser-Land-Übergang, Biotop-Rechner, Projekterkundung und vorausgefüllter Angebotsanfrage.",
+    "Su ve peyzaj arasında geçiş yapan interaktif slider":"Interaktiver Slider zwischen Wasser- und Landschaftsszenen",
+    "Hacim, filtrasyon, aydınlatma ve bitki önerileri sunan biyotop hesaplayıcısı":"Biotop-Rechner mit Empfehlungen zu Volumen, Filterung, Beleuchtung und Pflanzen",
+    "Türkçe/İngilizce dil değişimi ve tema tercihi":"Sprachumschaltung Türkisch/Englisch und Designauswahl",
+    "Hesaplama özetiyle önceden doldurulan proje talep akışı":"Projektanfrage mit vorausgefüllter Berechnungszusammenfassung",
+    "Elektrik servis işletmesi için geliştirilen yerel arama ve müşteri operasyon platformu. Bölgesel hizmet sayfaları, AI destekli içerik üretimi ve CRM ekranları aynı uygulamada buluşuyor.":"Eine Plattform für lokale Suche und Kundenprozesse eines Elektroservicebetriebs. Regionale Serviceseiten, KI-gestützte Inhaltserstellung und CRM-Oberflächen sind in einer Anwendung vereint.",
+    "İlçe ve hizmet niyetine göre ayrıştırılmış içerik sayfaları":"Inhaltsseiten nach Bezirk und Service-Suchintention",
+    "Gemini ve Imagen entegrasyonlu AI içerik/görsel taslak akışları":"KI-gestützte Entwürfe für Texte und Bilder mit Gemini- und Imagen-Integration",
+    "Talep ve müşteri yönetimi için admin ekranları":"Admin-Oberflächen für Anfrage- und Kundenverwaltung",
+    "Restoranın dijital vitrinini sipariş akışı ve operasyon yönetimiyle birleştiren full-stack demo. Menü, kampanya, sepet, sipariş ve takip ekranları; yönetim API'leriyle destekleniyor.":"Eine Full-Stack-Demo, die den digitalen Auftritt eines Restaurants mit Bestellabläufen und Betriebsverwaltung verbindet. Menü, Aktionen, Warenkorb, Bestellungen und Tracking werden durch Admin-APIs unterstützt.",
+    "Kategori bazlı menü ve kampanya alanları":"Kategorieorientiertes Menü und Aktionsbereiche",
+    "Sepet, teslimat adresi ve sipariş oluşturma akışı":"Warenkorb, Lieferadresse und Bestellprozess",
+    "Sipariş durumu ve takip sayfaları":"Bestellstatus und Tracking-Seiten",
+    "Admin tarafında menü, kampanya, mesaj ve sipariş yönetimi":"Admin-Verwaltung von Menüs, Aktionen, Nachrichten und Bestellungen",
+    "AI destekli arama ve öneri bileşenleri":"KI-gestützte Suche und Empfehlungskomponenten",
+    "API-first image hosting ürünü; çoklu boyut varyantları, otomatik WebP dönüşümü, kullanıcı API anahtarları, görsel yönetimi, API dokümantasyonu ve ödeme/billing ekranlarını bir araya getiriyor.":"Ein API-first-Produkt für Bildhosting mit mehreren Größenvarianten, automatischer WebP-Konvertierung, Benutzer-API-Schlüsseln, Bildverwaltung, API-Dokumentation sowie Zahlungs- und Abrechnungsoberflächen.",
+    "WebP dönüşümü ve görsel sıkıştırma iş akışı":"WebP-Konvertierung und Bildkomprimierungs-Workflow",
+    "Thumbnail, medium ve large boyut varyantları":"Bildvarianten in Thumbnail-, Medium- und Large-Größe",
+    "Korumalı kullanıcı paneli, upload ve görsel kütüphanesi":"Geschütztes Benutzer-Dashboard, Upload und Bildbibliothek",
+    "Billing, ödeme, kullanıcı ve güvenlik yönetimi için admin modülleri":"Admin-Module für Abrechnung, Zahlungen, Benutzer und Sicherheitsverwaltung",
+    "Sunucu tarafında render edilen kurumsal hizmet sitesi. Hizmet, ilçe, blog ve SSS sayfaları; LocalBusiness yapılandırılmış veri; talep formları ve yönetim paneli aynı ürün mimarisinde birleştiriliyor.":"Eine serverseitig gerenderte Unternehmenswebsite für Dienstleistungen. Service-, Bezirks-, Blog- und FAQ-Seiten, LocalBusiness-Strukturdaten, Anfrageformulare und Admin-Panel sind in einer Produktarchitektur vereint.",
+    "Next.js App Router ile sunucu tarafı sayfa üretimi":"Serverseitige Seitenerstellung mit dem Next.js App Router",
+    "Hizmet, bölge, blog ve SSS için ayrı indekslenebilir sayfalar":"Separate indexierbare Seiten für Services, Regionen, Blog und FAQs",
+    "Electrician, WebSite ve FAQPage JSON-LD yapılandırılmış verileri":"JSON-LD-Strukturdaten für Electrician, WebSite und FAQPage"
+  },
+  fr: {
+    "Klasik kurumsal site yerine; sinematik scroll hikâyesi, su-kara geçiş etkileşimi, biyotop hesaplayıcısı, proje keşfi ve önceden doldurulabilen teklif akışından oluşan etkileşimli stüdyo deneyimi.":"Une expérience de studio interactive plutôt qu’un site institutionnel classique : récit cinématique au défilement, transition eau-paysage, calculateur de biotope, exploration des projets et demande de devis préremplie.",
+    "Su ve peyzaj arasında geçiş yapan interaktif slider":"Curseur interactif entre scènes aquatiques et paysagères",
+    "Hacim, filtrasyon, aydınlatma ve bitki önerileri sunan biyotop hesaplayıcısı":"Calculateur de biotope avec recommandations de volume, filtration, éclairage et plantes",
+    "Türkçe/İngilizce dil değişimi ve tema tercihi":"Changement de langue turc/anglais et préférence de thème",
+    "Hesaplama özetiyle önceden doldurulan proje talep akışı":"Parcours de demande de projet prérempli avec le résumé du calcul",
+    "Elektrik servis işletmesi için geliştirilen yerel arama ve müşteri operasyon platformu. Bölgesel hizmet sayfaları, AI destekli içerik üretimi ve CRM ekranları aynı uygulamada buluşuyor.":"Une plateforme de référencement local et d’opérations client pour une entreprise de services électriques, réunissant pages régionales, création de contenu assistée par l’IA et écrans CRM.",
+    "İlçe ve hizmet niyetine göre ayrıştırılmış içerik sayfaları":"Pages de contenu organisées par quartier et intention de recherche de service",
+    "Gemini ve Imagen entegrasyonlu AI içerik/görsel taslak akışları":"Flux de brouillons de contenu et d’images IA intégrant Gemini et Imagen",
+    "Talep ve müşteri yönetimi için admin ekranları":"Écrans d’administration pour la gestion des demandes et des clients",
+    "Restoranın dijital vitrinini sipariş akışı ve operasyon yönetimiyle birleştiren full-stack demo. Menü, kampanya, sepet, sipariş ve takip ekranları; yönetim API'leriyle destekleniyor.":"Une démo full-stack qui associe la vitrine numérique d’un restaurant aux commandes et à la gestion opérationnelle. Menu, promotions, panier, commandes et suivi sont pris en charge par des API d’administration.",
+    "Kategori bazlı menü ve kampanya alanları":"Menu par catégorie et espaces promotionnels",
+    "Sepet, teslimat adresi ve sipariş oluşturma akışı":"Parcours de panier, adresse de livraison et création de commande",
+    "Sipariş durumu ve takip sayfaları":"Pages d’état et de suivi des commandes",
+    "Admin tarafında menü, kampanya, mesaj ve sipariş yönetimi":"Gestion des menus, promotions, messages et commandes dans l’administration",
+    "AI destekli arama ve öneri bileşenleri":"Composants de recherche et de recommandation assistés par l’IA",
+    "API-first image hosting ürünü; çoklu boyut varyantları, otomatik WebP dönüşümü, kullanıcı API anahtarları, görsel yönetimi, API dokümantasyonu ve ödeme/billing ekranlarını bir araya getiriyor.":"Un produit API-first d’hébergement d’images réunissant plusieurs tailles, conversion WebP automatique, clés API utilisateur, gestion des images, documentation API et interfaces de paiement et de facturation.",
+    "WebP dönüşümü ve görsel sıkıştırma iş akışı":"Flux de conversion WebP et de compression d’images",
+    "Thumbnail, medium ve large boyut varyantları":"Variantes d’image miniature, moyenne et grande",
+    "Korumalı kullanıcı paneli, upload ve görsel kütüphanesi":"Espace utilisateur protégé, téléversement et bibliothèque d’images",
+    "Billing, ödeme, kullanıcı ve güvenlik yönetimi için admin modülleri":"Modules d’administration pour la facturation, les paiements, les utilisateurs et la sécurité",
+    "Sunucu tarafında render edilen kurumsal hizmet sitesi. Hizmet, ilçe, blog ve SSS sayfaları; LocalBusiness yapılandırılmış veri; talep formları ve yönetim paneli aynı ürün mimarisinde birleştiriliyor.":"Un site de services professionnel rendu côté serveur. Pages de services, quartiers, blog et FAQ, données structurées LocalBusiness, formulaires de demande et panneau d’administration sont réunis dans une même architecture produit.",
+    "Next.js App Router ile sunucu tarafı sayfa üretimi":"Génération des pages côté serveur avec Next.js App Router",
+    "Hizmet, bölge, blog ve SSS için ayrı indekslenebilir sayfalar":"Pages indexables distinctes pour les services, régions, articles et FAQ",
+    "Electrician, WebSite ve FAQPage JSON-LD yapılandırılmış verileri":"Données structurées JSON-LD Electrician, WebSite et FAQPage"
+  },
+  ru: {
+    "Klasik kurumsal site yerine; sinematik scroll hikâyesi, su-kara geçiş etkileşimi, biyotop hesaplayıcısı, proje keşfi ve önceden doldurulabilen teklif akışından oluşan etkileşimli stüdyo deneyimi.":"Интерактивный студийный опыт вместо обычного корпоративного сайта: кинематографичная история при прокрутке, переход между водой и ландшафтом, калькулятор биотопа, обзор проектов и предварительно заполненная заявка на расчёт.",
+    "Su ve peyzaj arasında geçiş yapan interaktif slider":"Интерактивный слайдер перехода между водной средой и ландшафтом",
+    "Hacim, filtrasyon, aydınlatma ve bitki önerileri sunan biyotop hesaplayıcısı":"Калькулятор биотопа с рекомендациями по объёму, фильтрации, освещению и растениям",
+    "Türkçe/İngilizce dil değişimi ve tema tercihi":"Переключение турецкого/английского языка и выбор темы оформления",
+    "Hesaplama özetiyle önceden doldurulan proje talep akışı":"Форма проектной заявки с предварительно заполненным результатом расчёта",
+    "Elektrik servis işletmesi için geliştirilen yerel arama ve müşteri operasyon platformu. Bölgesel hizmet sayfaları, AI destekli içerik üretimi ve CRM ekranları aynı uygulamada buluşuyor.":"Платформа локального поиска и клиентских операций для электротехнической компании. Региональные страницы услуг, создание контента с помощью ИИ и CRM-интерфейсы объединены в одном приложении.",
+    "İlçe ve hizmet niyetine göre ayrıştırılmış içerik sayfaları":"Страницы контента, разделённые по районам и поисковому намерению услуги",
+    "Gemini ve Imagen entegrasyonlu AI içerik/görsel taslak akışları":"Рабочие процессы подготовки текста и изображений с ИИ-интеграцией Gemini и Imagen",
+    "Talep ve müşteri yönetimi için admin ekranları":"Административные экраны для управления заявками и клиентами",
+    "Restoranın dijital vitrinini sipariş akışı ve operasyon yönetimiyle birleştiren full-stack demo. Menü, kampanya, sepet, sipariş ve takip ekranları; yönetim API'leriyle destekleniyor.":"Full-stack демо, объединяющее цифровую витрину ресторана с оформлением заказов и управлением операциями. Меню, акции, корзина, заказы и отслеживание поддерживаются административными API.",
+    "Kategori bazlı menü ve kampanya alanları":"Меню по категориям и разделы акций",
+    "Sepet, teslimat adresi ve sipariş oluşturma akışı":"Корзина, адрес доставки и оформление заказа",
+    "Sipariş durumu ve takip sayfaları":"Статус заказа и страницы отслеживания",
+    "Admin tarafında menü, kampanya, mesaj ve sipariş yönetimi":"Управление меню, акциями, сообщениями и заказами в админ-панели",
+    "AI destekli arama ve öneri bileşenleri":"Компоненты поиска и рекомендаций на базе ИИ",
+    "API-first image hosting ürünü; çoklu boyut varyantları, otomatik WebP dönüşümü, kullanıcı API anahtarları, görsel yönetimi, API dokümantasyonu ve ödeme/billing ekranlarını bir araya getiriyor.":"API-first продукт для хостинга изображений объединяет несколько вариантов размеров, автоматическое преобразование WebP, пользовательские API-ключи, управление изображениями, документацию API и интерфейсы оплаты и биллинга.",
+    "WebP dönüşümü ve görsel sıkıştırma iş akışı":"Процесс преобразования WebP и сжатия изображений",
+    "Thumbnail, medium ve large boyut varyantları":"Варианты размеров thumbnail, medium и large",
+    "Korumalı kullanıcı paneli, upload ve görsel kütüphanesi":"Защищённый кабинет пользователя, загрузка и библиотека изображений",
+    "Billing, ödeme, kullanıcı ve güvenlik yönetimi için admin modülleri":"Административные модули для биллинга, платежей, пользователей и управления безопасностью",
+    "Sunucu tarafında render edilen kurumsal hizmet sitesi. Hizmet, ilçe, blog ve SSS sayfaları; LocalBusiness yapılandırılmış veri; talep formları ve yönetim paneli aynı ürün mimarisinde birleştiriliyor.":"Корпоративный сайт услуг с серверным рендерингом. Страницы услуг, районов, блога и FAQ, структурированные данные LocalBusiness, формы заявок и панель управления объединены в единую архитектуру продукта.",
+    "Next.js App Router ile sunucu tarafı sayfa üretimi":"Серверная генерация страниц с помощью Next.js App Router",
+    "Hizmet, bölge, blog ve SSS için ayrı indekslenebilir sayfalar":"Отдельные индексируемые страницы услуг, регионов, блога и FAQ",
+    "Electrician, WebSite ve FAQPage JSON-LD yapılandırılmış verileri":"Структурированные данные JSON-LD Electrician, WebSite и FAQPage"
+  }
+};
+for (const locale of ["de","fr","ru"]) Object.assign(dictionaries[locale], caseTranslations[locale]);
+
+
 
 function escapeHtml(value) {
   return String(value).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
