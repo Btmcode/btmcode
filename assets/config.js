@@ -1,0 +1,1 @@
+window.BTM_CONFIG = { supabaseUrl: "", supabaseAnonKey: "" };
