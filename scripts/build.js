@@ -20,6 +20,27 @@ const publicEntries = [
   "sitemap.xml"
 ];
 
+
+  // Inject shared privacy and trust UI into every public HTML page.
+  async function injectSharedUi(dir) {
+    for (const entry of await fs.readdir(dir, {withFileTypes:true})) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        if (["admin","api"].includes(entry.name)) continue;
+        await injectSharedUi(full);
+      } else if (entry.isFile() && entry.name === "index.html") {
+        let html = await fs.readFile(full, "utf8");
+        if (!html.includes("/assets/consent.css")) html = html.replace("</head>", '<link rel="stylesheet" href="/assets/consent.css"></head>');
+        if (!html.includes("/assets/consent.js")) html = html.replace("</head>", '<script defer src="/assets/consent.js"></script></head>');
+        if (!html.includes("/assets/commerce.js")) html = html.replace("</head>", '<script defer src="/assets/commerce.js"></script></head>');
+        if (html.includes('<div class="footer-bottom">') && !html.includes('data-footer-trust')) {
+          html = html.replace('<div class="footer-bottom">', '<div class="footer-trust" data-footer-trust></div><div class="footer-bottom">');
+        }
+        await fs.writeFile(full, html, "utf8");
+      }
+    }
+  }
+
 async function main() {
   await fs.rm(output, {recursive:true, force:true});
   await fs.mkdir(output, {recursive:true});
@@ -53,6 +74,7 @@ async function main() {
     await fs.access(path.join(output, relative));
   }
 
+  await injectSharedUi(output);
   console.log("Static site built into public/ (" + publicEntries.length + " source entries).");
 }
 
