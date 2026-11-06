@@ -61,5 +61,6 @@
       "source": "/ru/:path*",
       "destination": "/:path*"
     }
-  ]
+  ],
+  "outputDirectory": "public"
 }
