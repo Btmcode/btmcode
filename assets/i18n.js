@@ -236,6 +236,71 @@
     }
   };
 
+  const localizedUi = {
+    tr:{openMenu:"Menüyü aç",closeMenu:"Menüyü kapat",lightTheme:"Açık temaya geç",darkTheme:"Koyu temaya geç"},
+    en:{openMenu:"Open menu",closeMenu:"Close menu",lightTheme:"Switch to light theme",darkTheme:"Switch to dark theme"},
+    de:{openMenu:"Menü öffnen",closeMenu:"Menü schließen",lightTheme:"Helles Design aktivieren",darkTheme:"Dunkles Design aktivieren"},
+    fr:{openMenu:"Ouvrir le menu",closeMenu:"Fermer le menu",lightTheme:"Activer le thème clair",darkTheme:"Activer le thème sombre"},
+    ru:{openMenu:"Открыть меню",closeMenu:"Закрыть меню",lightTheme:"Включить светлую тему",darkTheme:"Включить тёмную тему"}
+  };
+  window.BTM_UI_TEXT = localizedUi[locale] || localizedUi.tr;
+  const uiMenu = document.querySelector("[data-menu-toggle]");
+  if (uiMenu) {
+    uiMenu.setAttribute("aria-label", window.BTM_UI_TEXT.openMenu);
+    const sr = uiMenu.querySelector(".sr-only");
+    if (sr) sr.textContent = window.BTM_UI_TEXT.openMenu;
+  }
+  const uiTheme = document.querySelector("[data-theme-toggle]");
+  if (uiTheme) {
+    const isLight = document.documentElement.dataset.theme === "light";
+    uiTheme.setAttribute("aria-label", isLight ? window.BTM_UI_TEXT.darkTheme : window.BTM_UI_TEXT.lightTheme);
+  }
+
+  const privacyTranslations = {
+    en:{
+      "İletişim formu aracılığıyla gönderilen bilgiler, talebinizi yanıtlamak amacıyla Resend e-posta altyapısı üzerinden BTMCode e-posta adresine iletilir. Form verileri BTMCode web sitesinde bir veritabanında saklanmaz.":"Information submitted through the contact form is delivered to the BTMCode inbox through Resend so the enquiry can be answered. BTMCode does not store form submissions in a website database.",
+      "Form; ad, e-posta adresi, isteğe bağlı şirket bilgisi, konu ve mesaj alanlarını işler. E-posta sağlayıcısı Resend, mesajın iletilmesi için verileri işler. Hassas bilgi veya parola göndermeyin. Veriler, talebi yanıtlamak ve gerekli yazışmayı sürdürmek için e-posta hesabında tutulabilir; silinmesini istemek için BTMCode ile iletişime geçebilirsiniz.":"The form processes your name, email address, optional company information, subject and message. Resend processes the data to deliver the email. Do not submit sensitive information or passwords. The message may remain in the inbox for handling the enquiry and related correspondence; contact BTMCode to request deletion.",
+      "Reklam veya davranışsal izleme çerezleri kullanılmaz. Görünüm tercihi (açık/koyu tema) ve seçilen dil, tarayıcının yerel depolama alanında saklanır.":"Advertising and behavioural tracking cookies are not used. The selected appearance (light/dark theme) and language are stored in the browser’s local storage."
+    },
+    de:{
+      "İletişim formu aracılığıyla gönderilen bilgiler, talebinizi yanıtlamak amacıyla Resend e-posta altyapısı üzerinden BTMCode e-posta adresine iletilir. Form verileri BTMCode web sitesinde bir veritabanında saklanmaz.":"Über das Kontaktformular übermittelte Angaben werden über Resend an das BTMCode-Postfach weitergeleitet, damit die Anfrage beantwortet werden kann. BTMCode speichert Formulareingaben nicht in einer Website-Datenbank.",
+      "Form; ad, e-posta adresi, isteğe bağlı şirket bilgisi, konu ve mesaj alanlarını işler. E-posta sağlayıcısı Resend, mesajın iletilmesi için verileri işler. Hassas bilgi veya parola göndermeyin. Veriler, talebi yanıtlamak ve gerekli yazışmayı sürdürmek için e-posta hesabında tutulabilir; silinmesini istemek için BTMCode ile iletişime geçebilirsiniz.":"Das Formular verarbeitet Name, E-Mail-Adresse, optionale Unternehmensangaben, Betreff und Nachricht. Resend verarbeitet die Daten zur E-Mail-Zustellung. Bitte senden Sie keine sensiblen Informationen oder Passwörter. Die Nachricht kann zur Bearbeitung der Anfrage und weiterer Korrespondenz im Postfach verbleiben; wenden Sie sich für eine Löschanfrage an BTMCode.",
+      "Reklam veya davranışsal izleme çerezleri kullanılmaz. Görünüm tercihi (açık/koyu tema) ve seçilen dil, tarayıcının yerel depolama alanında saklanır.":"Es werden keine Werbe- oder Tracking-Cookies verwendet. Die gewählte Darstellung (hell/dunkel) und Sprache werden im lokalen Speicher des Browsers abgelegt."
+    },
+    fr:{
+      "İletişim formu aracılığıyla gönderilen bilgiler, talebinizi yanıtlamak amacıyla Resend e-posta altyapısı üzerinden BTMCode e-posta adresine iletilir. Form verileri BTMCode web sitesinde bir veritabanında saklanmaz.":"Les informations envoyées via le formulaire sont transmises à la boîte e-mail BTMCode par Resend afin de répondre à la demande. BTMCode ne stocke pas les formulaires dans une base de données du site.",
+      "Form; ad, e-posta adresi, isteğe bağlı şirket bilgisi, konu ve mesaj alanlarını işler. E-posta sağlayıcısı Resend, mesajın iletilmesi için verileri işler. Hassas bilgi veya parola göndermeyin. Veriler, talebi yanıtlamak ve gerekli yazışmayı sürdürmek için e-posta hesabında tutulabilir; silinmesini istemek için BTMCode ile iletişime geçebilirsiniz.":"Le formulaire traite le nom, l’adresse e-mail, les informations facultatives sur l’entreprise, le sujet et le message. Resend traite ces données pour acheminer l’e-mail. N’envoyez pas d’informations sensibles ni de mots de passe. Le message peut être conservé dans la boîte de réception pour traiter la demande et les échanges associés ; contactez BTMCode pour demander sa suppression.",
+      "Reklam veya davranışsal izleme çerezleri kullanılmaz. Görünüm tercihi (açık/koyu tema) ve seçilen dil, tarayıcının yerel depolama alanında saklanır.":"Aucun cookie publicitaire ou de suivi comportemental n’est utilisé. Le thème choisi (clair/sombre) et la langue sont enregistrés dans le stockage local du navigateur."
+    },
+    ru:{
+      "İletişim formu aracılığıyla gönderilen bilgiler, talebinizi yanıtlamak amacıyla Resend e-posta altyapısı üzerinden BTMCode e-posta adresine iletilir. Form verileri BTMCode web sitesinde bir veritabanında saklanmaz.":"Данные контактной формы передаются в почтовый ящик BTMCode через Resend для ответа на обращение. BTMCode не сохраняет отправленные формы в базе данных сайта.",
+      "Form; ad, e-posta adresi, isteğe bağlı şirket bilgisi, konu ve mesaj alanlarını işler. E-posta sağlayıcısı Resend, mesajın iletilmesi için verileri işler. Hassas bilgi veya parola göndermeyin. Veriler, talebi yanıtlamak ve gerekli yazışmayı sürdürmek için e-posta hesabında tutulabilir; silinmesini istemek için BTMCode ile iletişime geçebilirsiniz.":"Форма обрабатывает имя, адрес электронной почты, необязательные сведения о компании, тему и сообщение. Resend обрабатывает данные для доставки письма. Не отправляйте конфиденциальные сведения или пароли. Сообщение может храниться в почтовом ящике для ответа и дальнейшей переписки; для запроса на удаление свяжитесь с BTMCode.",
+      "Reklam veya davranışsal izleme çerezleri kullanılmaz. Görünüm tercihi (açık/koyu tema) ve seçilen dil, tarayıcının yerel depolama alanında saklanır.":"Рекламные файлы cookie и отслеживание поведения не используются. Выбранная тема (светлая/тёмная) и язык сохраняются в локальном хранилище браузера."
+    }
+  };
+  if (locale !== "tr" && dictionaries[locale]) {
+    Object.assign(dictionaries[locale], privacyTranslations[locale] || {});
+    dictionaries[locale]["Mesajınız Resend üzerinden güvenli e-posta kanalıyla iletilir."] = ({
+      en:"Your message is delivered securely by email through Resend.",
+      de:"Ihre Nachricht wird sicher per E-Mail über Resend zugestellt.",
+      fr:"Votre message est transmis de manière sécurisée par e-mail via Resend.",
+      ru:"Ваше сообщение безопасно отправляется по электронной почте через Resend."
+    })[locale];
+    dictionaries[locale]["Form verileri BTMCode tarafından bir veritabanında saklanmaz."] = ({
+      en:"BTMCode does not store form submissions in a database.",
+      de:"BTMCode speichert Formulareingaben nicht in einer Datenbank.",
+      fr:"BTMCode ne stocke pas les formulaires dans une base de données.",
+      ru:"BTMCode не сохраняет данные формы в базе данных."
+    })[locale];
+  }
+  const caseTitles = {
+    en:{"/projects/aquaterra/":"AQUATERRA Atelier — Project Case Study | BTMCode","/projects/aya/":"Aya Elektrik — Project Case Study | BTMCode","/projects/demos-pizza/":"Demos Pizza — Project Case Study | BTMCode","/projects/imagehub/":"ImageHub / imghost — Project Case Study | BTMCode","/projects/zirve/":"Zirve Elektrik — Project Case Study | BTMCode"},
+    de:{"/projects/aquaterra/":"AQUATERRA Atelier — Projektfallstudie | BTMCode","/projects/aya/":"Aya Elektrik — Projektfallstudie | BTMCode","/projects/demos-pizza/":"Demos Pizza — Projektfallstudie | BTMCode","/projects/imagehub/":"ImageHub / imghost — Projektfallstudie | BTMCode","/projects/zirve/":"Zirve Elektrik — Projektfallstudie | BTMCode"},
+    fr:{"/projects/aquaterra/":"AQUATERRA Atelier — Étude de projet | BTMCode","/projects/aya/":"Aya Elektrik — Étude de projet | BTMCode","/projects/demos-pizza/":"Demos Pizza — Étude de projet | BTMCode","/projects/imagehub/":"ImageHub / imghost — Étude de projet | BTMCode","/projects/zirve/":"Zirve Elektrik — Étude de projet | BTMCode"},
+    ru:{"/projects/aquaterra/":"AQUATERRA Atelier — Обзор проекта | BTMCode","/projects/aya/":"Aya Elektrik — Обзор проекта | BTMCode","/projects/demos-pizza/":"Demos Pizza — Обзор проекта | BTMCode","/projects/imagehub/":"ImageHub / imghost — Обзор проекта | BTMCode","/projects/zirve/":"Zirve Elektrik — Обзор проекта | BTMCode"}
+  };
+  if (meta[locale] && caseTitles[locale]) Object.assign(meta[locale], caseTitles[locale]);
+
   document.documentElement.lang = locale;
   document.documentElement.dataset.locale = locale;
   window.BTM_LOCALE = locale;
