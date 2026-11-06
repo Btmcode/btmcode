@@ -95,12 +95,12 @@
     panel.hidden=!expanded;
     document.querySelectorAll("[data-consent-open]").forEach(button=>button.textContent=t.settings);
   }
-  function open() { expanded=true; render(); const first=panel.querySelector("[data-consent-analytics]"); if(first) first.focus(); }
+  function open(shouldFocus) { expanded=true; render(); if(shouldFocus) { const first=panel.querySelector("[data-consent-analytics]"); if(first) first.focus(); } }
   document.addEventListener("DOMContentLoaded",()=>{
     current=read();
     ensurePanel();
     document.querySelectorAll("[data-consent-open]").forEach(button=>button.addEventListener("click",open));
-    if(!current) open(); else apply();
+    if(!current) open(false); else apply();
     render();
   });
   window.BTMConsent={open,getPreferences:()=>current?{...current}:null};
