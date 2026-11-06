@@ -240,46 +240,11 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/contact/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/contact/" />
   </url>
-  <url><loc>https://btmcode.vercel.app/privacy/</loc><lastmod>2026-11-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/privacy/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/privacy/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/privacy/" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/privacy/" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/privacy/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/privacy/" />
-  </url>
-  <url><loc>https://btmcode.vercel.app/en/privacy/</loc><lastmod>2026-11-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/privacy/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/privacy/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/privacy/" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/privacy/" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/privacy/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/privacy/" />
-  </url>
-  <url><loc>https://btmcode.vercel.app/de/privacy/</loc><lastmod>2026-11-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/privacy/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/privacy/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/privacy/" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/privacy/" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/privacy/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/privacy/" />
-  </url>
-  <url><loc>https://btmcode.vercel.app/fr/privacy/</loc><lastmod>2026-11-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/privacy/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/privacy/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/privacy/" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/privacy/" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/privacy/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/privacy/" />
-  </url>
-  <url><loc>https://btmcode.vercel.app/ru/privacy/</loc><lastmod>2026-11-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/privacy/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/privacy/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://btmcode.vercel.app/de/privacy/" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://btmcode.vercel.app/fr/privacy/" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://btmcode.vercel.app/ru/privacy/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app/privacy/" />
-  </url>
+  
+  
+  
+  
+  
   <url><loc>https://btmcode.vercel.app/projects/imagehub/</loc><lastmod>2026-11-06</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://btmcode.vercel.app/projects/imagehub/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://btmcode.vercel.app/en/projects/imagehub/" />
