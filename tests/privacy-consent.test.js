@@ -29,7 +29,12 @@ test("WhatsApp contact number is normalized and uses wa.me", () => {
   assert.match(commerce, /https:\/\/wa\.me\//);
 });
 
-test("interim privacy page is excluded from indexing", () => {\n  const privacy = read("privacy/index.html");\n  assert.match(privacy, /name="robots" content="noindex,follow"/);\n});\n\ntest("shared UI is injected into built public HTML pages", () => {
+test("interim privacy page is excluded from indexing", () => {
+  const privacy = read("privacy/index.html");
+  assert.match(privacy, /name="robots" content="noindex,follow"/);
+});
+
+test("shared UI is injected into built public HTML pages", () => {
   const build = read("scripts/build.js");
   assert.match(build, /assets\/consent\.css/);
   assert.match(build, /assets\/consent\.js/);
