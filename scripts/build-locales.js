@@ -83,7 +83,7 @@ function localizedPath(locale, route) {
 }
 function localizeLinks(html, locale) {
   return html.replace(/\bhref=(["'])(\/[^"']*)\1/gi, (all,q,href) => {
-    if (href.startsWith("//") || /^\/(assets|api|favicon|manifest|robots|sitemap|admin)(\/|$)/.test(href)) return all;
+    if (href.startsWith("//") || /^\/(assets|api|admin)(\/|$)/.test(href) || ["/favicon.svg","/manifest.webmanifest","/robots.txt","/sitemap.xml"].includes(href)) return all;
     if (/^\/(en|de|fr|ru)(\/|$)/.test(href)) return all;
     return "href=" + q + localizedPath(locale,href) + q;
   });
