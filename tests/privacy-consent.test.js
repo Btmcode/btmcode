@@ -26,7 +26,8 @@ test("consent manager exposes reject, accept and granular choices", () => {
 test("WhatsApp contact number is normalized and uses wa.me", () => {
   const commerce = read("assets/commerce.js");
   assert.match(commerce, /const phone="905386949469"/);
-  assert.match(commerce, /https:\/\/wa\.me\//);\n  assert.match(commerce, /BTMConsent\.open\(true\)/);
+  assert.match(commerce, /https:\/\/wa\.me\//);
+  assert.match(commerce, /BTMConsent\.open\(true\)/);
 });
 
 test("interim privacy page is excluded from indexing", () => {
