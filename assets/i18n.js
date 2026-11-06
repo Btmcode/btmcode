@@ -300,6 +300,45 @@
     ru:{"/projects/aquaterra/":"AQUATERRA Atelier — Обзор проекта | BTMCode","/projects/aya/":"Aya Elektrik — Обзор проекта | BTMCode","/projects/demos-pizza/":"Demos Pizza — Обзор проекта | BTMCode","/projects/imagehub/":"ImageHub / imghost — Обзор проекта | BTMCode","/projects/zirve/":"Zirve Elektrik — Обзор проекта | BTMCode"}
   };
   if (meta[locale] && caseTitles[locale]) Object.assign(meta[locale], caseTitles[locale]);
+  const caseDescriptions = {
+    en:{
+      "/projects/aquaterra/":"A cinematic interactive concept for bespoke aquariums, aquascaping and landscape design, with a biotope calculator and enquiry flow.",
+      "/projects/aya/":"A local SEO and customer operations platform for electrical services, including AI-assisted content tools and CRM workflows.",
+      "/projects/demos-pizza/":"A full-stack restaurant ordering demo with menu, cart, delivery, order tracking and admin operations.",
+      "/projects/imagehub/":"An API-first image hosting and CDN product concept with image transformation, user dashboards and API key management.",
+      "/projects/zirve/":"A server-rendered Next.js service platform with local SEO pages, structured data, enquiry forms and admin content management."
+    },
+    de:{
+      "/projects/aquaterra/":"Ein interaktives Konzept für individuelle Aquarien, Aquascaping und Landschaftsdesign mit Biotop-Rechner und Anfrageablauf.",
+      "/projects/aya/":"Eine Local-SEO- und Kundenplattform für Elektrodienstleistungen mit KI-gestützten Content-Tools und CRM-Prozessen.",
+      "/projects/demos-pizza/":"Eine Full-Stack-Demo für Restaurantbestellungen mit Menü, Warenkorb, Lieferung, Bestellverfolgung und Admin-Verwaltung.",
+      "/projects/imagehub/":"Ein API-first-Konzept für Bildhosting und CDN mit Bildtransformation, Benutzer-Dashboard und API-Key-Verwaltung.",
+      "/projects/zirve/":"Eine serverseitig gerenderte Next.js-Serviceplattform mit Local-SEO-Seiten, strukturierten Daten, Anfrageformularen und Admin-CMS."
+    },
+    fr:{
+      "/projects/aquaterra/":"Un concept interactif pour aquariums sur mesure, aquascaping et paysage, avec calculateur de biotope et parcours de demande.",
+      "/projects/aya/":"Une plateforme de SEO local et d’opérations client pour services électriques, avec outils de contenu IA et flux CRM.",
+      "/projects/demos-pizza/":"Une démo full-stack de commande restaurant avec menu, panier, livraison, suivi de commande et gestion administrative.",
+      "/projects/imagehub/":"Un concept API-first d’hébergement d’images et de CDN avec transformation d’images, espace utilisateur et gestion des clés API.",
+      "/projects/zirve/":"Une plateforme de services Next.js rendue côté serveur, avec pages SEO locales, données structurées, formulaires et gestion de contenu."
+    },
+    ru:{
+      "/projects/aquaterra/":"Интерактивная концепция индивидуальных аквариумов, акваскейпинга и ландшафтного дизайна с калькулятором биотопа и формой заявки.",
+      "/projects/aya/":"Платформа локального SEO и клиентских операций для электротехнических услуг с инструментами ИИ-контента и CRM-процессами.",
+      "/projects/demos-pizza/":"Full-stack демо ресторанных заказов: меню, корзина, доставка, отслеживание заказов и административное управление.",
+      "/projects/imagehub/":"API-first концепция хостинга изображений и CDN с преобразованием изображений, кабинетом пользователя и управлением API-ключами.",
+      "/projects/zirve/":"Серверная платформа услуг на Next.js с локальными SEO-страницами, структурированными данными, формами заявок и административной CMS."
+    }
+  };
+  if (descriptions[locale] && caseDescriptions[locale]) Object.assign(descriptions[locale], caseDescriptions[locale]);
+  const commonUiText = {
+    "Ana menü":({en:"Main navigation",de:"Hauptnavigation",fr:"Navigation principale",ru:"Основная навигация"})[locale],
+    "Tüm hakları saklıdır":({en:"All rights reserved",de:"Alle Rechte vorbehalten",fr:"Tous droits réservés",ru:"Все права защищены"})[locale],
+    "İletişim":({en:"Contact",de:"Kontakt",fr:"Contact",ru:"Контакты"})[locale]
+  };
+  if (locale !== "tr") Object.assign(dictionaries[locale], commonUiText);
+
+
 
   document.documentElement.lang = locale;
   document.documentElement.dataset.locale = locale;
