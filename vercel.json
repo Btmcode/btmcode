@@ -28,39 +28,5 @@
       ]
     }
   ],
-  "rewrites": [
-    {
-      "source": "/en",
-      "destination": "/"
-    },
-    {
-      "source": "/en/:path*",
-      "destination": "/:path*"
-    },
-    {
-      "source": "/de",
-      "destination": "/"
-    },
-    {
-      "source": "/de/:path*",
-      "destination": "/:path*"
-    },
-    {
-      "source": "/fr",
-      "destination": "/"
-    },
-    {
-      "source": "/fr/:path*",
-      "destination": "/:path*"
-    },
-    {
-      "source": "/ru",
-      "destination": "/"
-    },
-    {
-      "source": "/ru/:path*",
-      "destination": "/:path*"
-    }
-  ],
   "outputDirectory": "public"
 }
