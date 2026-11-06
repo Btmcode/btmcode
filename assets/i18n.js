@@ -1,0 +1,334 @@
+(() => {
+  "use strict";
+  const localeCodes = ["tr", "en", "de", "fr", "ru"];
+  const locale = ((location.pathname.match(/^\/(en|de|fr|ru)(?:\/|$)/) || [])[1]) || "tr";
+  const rawPath = location.pathname.replace(/^\/(en|de|fr|ru)(?=\/|$)/, "") || "/";
+  const path = rawPath.endsWith("/") ? rawPath : rawPath + "/";
+  const dictionaries = {
+    en: {
+      "Ana içeriğe geç":"Skip to main content","Hakkımda":"About","Yetkinlikler":"Expertise","Projeler":"Projects","Notlar":"Journal","Proje konuşalım ↗":"Discuss a project ↗","Menüyü aç":"Open menu","Menüyü kapat":"Close menu","Dil seçimi":"Language",
+      "Fikirleri":"Turn ideas","çalışan":"into working","dijital":"digital","ürünlere dönüştür.":"products.","Ben Ahmet. Yazılım geliştirme, yapay zekâ ve ürün düşüncesini bir araya getirerek gerçek problemlere yönelik web uygulamaları, SaaS sistemleri ve otomasyonlar geliştiriyorum.":"I’m Ahmet. I combine software engineering, artificial intelligence and product thinking to build web applications, SaaS platforms and automations that solve real problems.",
+      "Bir proje konuşalım ↗":"Start a project ↗","Seçilmiş işler ↗":"Selected work ↗","Ürünün her katmanında":"Engineering at every layer","mühendislik.":"of the product.","Bir dijital ürünün yalnızca görünüşünü değil; mimarisini, kullanılabilirliğini, performansını ve güvenliğini birlikte ele alıyorum.":"I consider more than the appearance of a digital product: its architecture, usability, performance and security are designed together.",
+      "Modern web arayüzleri, responsive deneyimler, erişilebilir bileşenler ve performans odaklı frontend mimarisi.":"Modern web interfaces, responsive experiences, accessible components and performance-focused frontend architecture.",
+      "API tasarımı, veri modelleri, kimlik doğrulama ve gerçek iş akışlarını destekleyen backend sistemleri.":"API design, data models, authentication and backend systems that support real business workflows.",
+      "Kullanıcı ihtiyaçlarını anlaşılır akışlara, tutarlı tasarım sistemlerine ve kullanılabilir arayüzlere dönüştürme.":"Turning user needs into clear flows, consistent design systems and usable interfaces.",
+      "En az ayrıcalık, güvenli oturum, girdi doğrulama ve veri koruma ilkelerini geliştirme sürecine dahil etme.":"Applying least privilege, secure sessions, input validation and data protection throughout development.",
+      "Yetkinlik alanlarını keşfet ↗":"Explore expertise ↗","Farklı problemler.":"Different problems.","Somut yazılım çözümleri.":"Tangible software solutions.","SaaS ve API ürünlerinden kurumsal web platformlarına ve interaktif deneyimlere uzanan seçilmiş çalışmalar.":"Selected work spanning SaaS and API products, business web platforms and interactive experiences.",
+      "Her proje; gerçek kapsamı, teknoloji seçimi ve doğrulanabilen işlevleriyle sunulur.":"Each project is presented with its actual scope, technology choices and verifiable capabilities.",
+      "E-ticaret ve geliştiriciler için görsel yükleme, dönüştürme ve CDN dağıtım akışını tek bir API-first üründe birleştiren platform.":"An API-first platform that brings image uploads, transformations and CDN delivery together for ecommerce teams and developers.",
+      "İstanbul genelinde hizmet aramalarını karşılayan; içerik, bölge sayfaları ve talepleri tek yönetim yapısında birleştiren Next.js web platformu.":"A Next.js platform bringing service content, location pages and customer enquiries into one operating system for Istanbul-wide searches.",
+      "Özel akvaryum, aquascaping ve peyzaj tasarımını sinematik anlatı, etkileşimli hesaplama ve keşif akışlarıyla sunan premium dijital deneyim.":"A premium digital experience for bespoke aquariums, aquascaping and landscape design, with cinematic storytelling and interactive discovery tools.",
+      "Menü keşfinden sepete, sipariş takibinden yönetim ekranlarına uzanan restoran odaklı sipariş ve operasyon platformu demosu.":"A restaurant commerce demo covering menu discovery, cart, order tracking and operational management.",
+      "Yerel servis işletmeleri için ilçe ve hizmet odaklı içerik yapısı, talep yönetimi ve yapay zekâ destekli içerik üretim araçları.":"A local service platform with district- and service-focused content, enquiry management and AI-assisted content tools.",
+      "Teknik üretimden":"From engineering","iş değerine.":"to business value.","İhtiyaca göre şekillenen, bakımı yapılabilir ve büyümeye hazır dijital ürünler.":"Digital products shaped around real needs, built to be maintainable and ready to scale.",
+      "Net süreç.":"A clear process.","Gözlemlenebilir ilerleme.":"Visible progress.","Her proje, doğru problemi anlamakla başlar. Kapsamı netleştirir, geliştirir, test eder ve iyileştiririz.":"Every project starts by understanding the right problem. We define the scope, build, test and improve.",
+      "Bir sonraki fikri":"Let’s build the","birlikte inşa edelim.":"next idea together.","İhtiyacını anlat. Teknik olarak nasıl yaklaşabileceğimizi birlikte değerlendirelim.":"Tell me what you need. We’ll evaluate the right technical approach together.","İletişime geç ↗":"Get in touch ↗",
+      "Fikirleri çalışan dijital ürünlere dönüştürmek. Yazılım, yapay zekâ ve ürün mühendisliği.":"Turning ideas into working digital products through software, AI and product engineering.",
+      "Teknolojiyle düşünen,":"Technology-led thinking,","ürünle sonuçlanan":"product-driven","bir yaklaşım.":"execution.","Yazılımı yalnızca kod olarak görmüyorum.":"I don’t see software as code alone.","Bir ürünün başarılı olması için teknik doğruluk kadar gerçek ihtiyacı anlamak, kullanıcı deneyimini düşünmek ve sürdürülebilir bir yapı kurmak gerektiğine inanıyorum.":"A successful product requires more than technical correctness: it needs a clear understanding of real needs, thoughtful user experience and a sustainable foundation.",
+      "Bu nedenle geliştirme sürecini keşif, mimari, arayüz, backend, test ve dağıtım adımlarının bütünü olarak ele alıyorum.":"That is why I treat discovery, architecture, interface, backend, testing and deployment as one connected process.",
+      "Nasıl çalışırım?":"How I work","Önce problemi ve kullanıcı ihtiyacını netleştiririm.":"First, I clarify the problem and the user need.","Teknoloji seçimlerini ihtiyaca ve bakım maliyetine göre yaparım.":"I choose technologies based on the need and long-term maintenance cost.","Yapay zekâ araçlarını üretkenliği artırmak için kullanır, çıktıyı doğrularım.":"I use AI tools to increase productivity and verify their output.","Güvenlik, erişilebilirlik ve performansı sonradan eklenen işler olarak görmem.":"Security, accessibility and performance are not afterthoughts.","Gerçekleşmeyen sonuçları veya doğrulanmayan başarıları iddia etmem.":"I don’t claim outcomes that have not happened or results that cannot be verified.",
+      "Dört disiplin, tek ürün bakışı.":"Four disciplines. One product mindset.","Hızlı, erişilebilir ve cihazlar arasında tutarlı arayüzler.":"Fast, accessible interfaces that remain consistent across devices.","Veri, API ve kimlik doğrulama temelli uygulama mimarileri.":"Application architectures built around data, APIs and authentication.","Anlaşılır kullanıcı akışları ve amaca hizmet eden tasarım sistemleri.":"Clear user journeys and purposeful design systems.","Yetkilendirme, veri minimizasyonu ve güvenli varsayılanlar.":"Authorization, data minimization and secure defaults.",
+      "Doğru teknoloji. Doğru problem.":"The right technology. The right problem.","İş ihtiyacından çalışan ürüne kadar; web geliştirme, SaaS, AI otomasyonu ve uygulama kalitesine odaklanan teknik çözümler.":"Technical solutions focused on web development, SaaS, AI automation and software quality — from business need to working product.",
+      "Web sitesi ve uygulama geliştirme":"Website and application development","Kurumsal web siteleri, özel kullanıcı arayüzleri, responsive web uygulamaları, içerik ve yönetim ekranları.":"Corporate websites, custom user interfaces, responsive web apps, content systems and admin panels.",
+      "SaaS ve backend sistemleri":"SaaS and backend systems","İş kurallarını yöneten API'ler, kullanıcı rolleri, veritabanı tasarımı, entegrasyonlar ve paneller.":"APIs for business logic, user roles, database design, integrations and dashboards.",
+      "Yapay zekâ ve otomasyon":"AI and automation","AI destekli iş akışları, ajan entegrasyonları, içerik üretim sistemleri ve operasyon otomasyonu.":"AI-assisted workflows, agent integrations, content systems and operational automation.",
+      "Performans ve güvenli geliştirme":"Performance and secure development","Teknik SEO, web performansı, erişilebilirlik, güvenli kimlik doğrulama ve uygulama kalitesi.":"Technical SEO, web performance, accessibility, secure authentication and application quality.",
+      "Çalışmalar. Kanıtlanabilir şekilde.":"Work. With evidence.","Farklı sektörlerde geliştirdiğim seçilmiş web platformları, SaaS ürünleri ve etkileşimli dijital deneyimler.":"Selected web platforms, SaaS products and interactive digital experiences built across different industries.",
+      "Bir fikrin mi var?":"Have an idea?","Konuşalım.":"Let’s talk.","Projenin hedefini, mevcut durumunu ve çözmek istediğin problemi anlat. İlk değerlendirmeyi birlikte yapalım.":"Tell me about your project goals, current situation and the problem you want to solve. Let’s make an initial assessment together.",
+      "İyi bir başlangıç,":"A good start","iyi tanımlanmış ihtiyaçtır.":"begins with a clear need.","Proje kapsamını ve teknik uygunluğu değerlendirmek için ilk adım ihtiyacını anlamak.":"The first step is understanding your needs so we can assess scope and technical fit.",
+      "Ad Soyad *":"Full name *","E-posta *":"Email *","Şirket / Marka":"Company / Brand","İlgilendiğin konu":"Area of interest","Seçiniz":"Select an option","Web uygulaması":"Web application","SaaS / platform":"SaaS / platform","AI / otomasyon":"AI / automation","Teknik iyileştirme":"Technical improvement","Diğer":"Other","Proje özeti *":"Project summary *","Hangi problemi çözmek istiyorsun?":"What problem are you trying to solve?","Proje talebini gönder ↗":"Send project enquiry ↗","Form bağlantısı Supabase yapılandırması tamamlandığında aktif olacak.":"The contact form is connected to secure email delivery.","Henüz veritabanına kayıt yapılmıyor; form altyapısı yapılandırma bekliyor.":"Your enquiry is sent securely by email; no database is used.",
+      "Notlar, kararlar ve öğrendiklerim.":"Notes, decisions and lessons learned.","Yazılım mimarisi, yapay zekâ, web performansı, ürün geliştirme ve güvenli yazılım üzerine teknik notlar.":"Technical notes on software architecture, AI, web performance, product development and secure engineering.",
+      "İlk teknik yazılar hazırlanıyor.":"The first technical articles are in preparation.","Yayınlanacak içerikler gerçek geliştirme deneyimlerine ve doğrulanabilir teknik kaynaklara dayanacak.":"Published content will be based on real development experience and verifiable technical sources.","Kopya veya yalnızca arama hacmi için üretilmiş içerik yayınlanmayacak.":"Content will not be copied or created solely to chase search volume.",
+      "Gizlilik yaklaşımı.":"Privacy approach.","Bu ilk sürümde reklam ve davranışsal takip servisleri kullanılmıyor.":"This version does not use advertising or behavioural tracking services.","Veri işleme":"Data processing","Çerezler":"Cookies","Projenin amacı":"Project objective","Öne çıkan işlevler":"Key features","Kullanılan teknoloji":"Technology stack","Şeffaflık notu":"Transparency note","Tüm projeler":"All projects","Benzer bir proje konuşalım ↗":"Discuss a similar project ↗","Canlı demoyu aç ↗":"Open live demo ↗","GitHub kaynağı ↗":"GitHub source ↗",
+      "Projenin amacı":"Project objective","Klasik kurumsal site yerine; sinematik scroll hikâyesi, su-kara geçiş etkileşimi, biyotop hesaplayıcısı, proje keşfi ve önceden doldurulabilen teklif akışından oluşan etkileşimli stüdyo deneyimi.":"An interactive studio experience built around cinematic scroll storytelling, a water-to-land transition, a biotope calculator, project discovery and a pre-filled enquiry flow.",
+      "Öne çıkan işlevler":"Key features","Scroll progress ile ilerleyen sinematik hero hikâyesi":"A cinematic hero story driven by scroll progress","Su ve peyzaj arasında geçiş yapan interaktif slider":"An interactive slider transitioning between water and landscape","Hacim, filtrasyon, aydınlatma ve bitki önerileri sunan biyotop hesaplayıcısı":"A biotope calculator for volume, filtration, lighting and plant recommendations","Türkçe/İngilizce dil değişimi ve tema tercihi":"Turkish/English language switching and theme preference","Hesaplama özetiyle önceden doldurulan proje talep akışı":"A project enquiry flow pre-filled with the calculation summary",
+      "API-first image hosting ürünü; çoklu boyut varyantları, otomatik WebP dönüşümü, kullanıcı API anahtarları, görsel yönetimi, API dokümantasyonu ve ödeme/billing ekranlarını bir araya getiriyor.":"An API-first image hosting product combining multiple image sizes, automatic WebP conversion, user API keys, image management, API documentation and billing screens.",
+      "WebP dönüşümü ve görsel sıkıştırma iş akışı":"WebP conversion and image compression workflow","Thumbnail, medium ve large boyut varyantları":"Thumbnail, medium and large image variants","Korumalı kullanıcı paneli, upload ve görsel kütüphanesi":"Protected user dashboard, uploads and image library","API key yönetimi ve REST API dokümantasyonu":"API key management and REST API documentation","Billing, ödeme, kullanıcı ve güvenlik yönetimi için admin modülleri":"Admin modules for billing, payments, users and security",
+      "Restoranın dijital vitrinini sipariş akışı ve operasyon yönetimiyle birleştiren full-stack demo. Menü, kampanya, sepet, sipariş ve takip ekranları; yönetim API'leriyle destekleniyor.":"A full-stack demo combining a restaurant’s digital storefront with order flows and operations management. Menus, promotions, cart, orders and tracking are backed by admin APIs.",
+      "Kategori bazlı menü ve kampanya alanları":"Category-based menus and promotion areas","Sepet, teslimat adresi ve sipariş oluşturma akışı":"Cart, delivery address and order creation flow","Sipariş durumu ve takip sayfaları":"Order status and tracking pages","Admin tarafında menü, kampanya, mesaj ve sipariş yönetimi":"Admin management for menus, promotions, messages and orders","AI destekli arama ve öneri bileşenleri":"AI-assisted search and recommendation components",
+      "Elektrik servis işletmesi için geliştirilen yerel arama ve müşteri operasyon platformu. Bölgesel hizmet sayfaları, AI destekli içerik üretimi ve CRM ekranları aynı uygulamada buluşuyor.":"A local search and customer operations platform for an electrical services business, combining regional service pages, AI-assisted content creation and CRM screens.",
+      "İlçe ve hizmet niyetine göre ayrıştırılmış içerik sayfaları":"Content pages structured by district and service intent","Gemini ve Imagen entegrasyonlu AI içerik/görsel taslak akışları":"AI content and image drafting flows integrated with Gemini and Imagen","Talep ve müşteri yönetimi için admin ekranları":"Admin screens for enquiry and customer management",
+      "Sunucu tarafında render edilen kurumsal hizmet sitesi. Hizmet, ilçe, blog ve SSS sayfaları; LocalBusiness yapılandırılmış veri; talep formları ve yönetim paneli aynı ürün mimarisinde birleştiriliyor.":"A server-rendered corporate service website combining service, district, blog and FAQ pages, LocalBusiness structured data, enquiry forms and an admin panel.",
+      "Next.js App Router ile sunucu tarafı sayfa üretimi":"Server-rendered pages with the Next.js App Router","Hizmet, bölge, blog ve SSS için ayrı indekslenebilir sayfalar":"Separate indexable pages for services, regions, blog and FAQs","Electrician, WebSite ve FAQPage JSON-LD yapılandırılmış verileri":"Electrician, WebSite and FAQPage JSON-LD structured data",
+      "← Tüm projeler":"← All projects","Alan":"Area","Rol / Odak":"Role / Focus","Teknoloji":"Technology","Demo durumu":"Demo status","Kaynak kod":"Source code","Kaynak depo özel.":"The source repository is private.","Kaynak kod Özel depo":"Source code Private repository","Canlı site doğrulandı":"Live website verified","Canlı site erişilebilir":"Live website accessible","Demo bağlantısı":"Demo link","Canlı demo":"Live demo","Canlı demoyu aç ↗":"Open live demo ↗","Not: Projelerde doğrulanmamış gelir, trafik, kullanıcı veya dönüşüm metrikleri kullanılmamıştır.":"Note: No unverified revenue, traffic, user or conversion metrics are used in project descriptions."
+    },
+    de: {
+      "Ana içeriğe geç":"Zum Hauptinhalt","Hakkımda":"Über mich","Yetkinlikler":"Kompetenzen","Projeler":"Projekte","Notlar":"Journal","Proje konuşalım ↗":"Projekt besprechen ↗","Menüyü aç":"Menü öffnen","Menüyü kapat":"Menü schließen","Dil seçimi":"Sprache",
+      "Fikirleri":"Ideen","çalışan":"in funktionierende","dijital":"digitale","ürünlere dönüştür.":"Produkte verwandeln.","Ben Ahmet. Yazılım geliştirme, yapay zekâ ve ürün düşüncesini bir araya getirerek gerçek problemlere yönelik web uygulamaları, SaaS sistemleri ve otomasyonlar geliştiriyorum.":"Ich bin Ahmet. Ich verbinde Softwareentwicklung, künstliche Intelligenz und Produktdenken, um Webanwendungen, SaaS-Plattformen und Automatisierungen für reale Probleme zu entwickeln.",
+      "Bir proje konuşalım ↗":"Projekt besprechen ↗","Seçilmiş işler ↗":"Ausgewählte Arbeiten ↗","Ürünün her katmanında":"Engineering auf jeder","mühendislik.":"Produktebene.","Bir dijital ürünün yalnızca görünüşünü değil; mimarisini, kullanılabilirliğini, performansını ve güvenliğini birlikte ele alıyorum.":"Ich betrachte nicht nur das Erscheinungsbild eines digitalen Produkts, sondern auch Architektur, Benutzerfreundlichkeit, Leistung und Sicherheit.",
+      "Modern web arayüzleri, responsive deneyimler, erişilebilir bileşenler ve performans odaklı frontend mimarisi.":"Moderne Weboberflächen, responsive Erlebnisse, barrierefreie Komponenten und performante Frontend-Architektur.",
+      "API tasarımı, veri modelleri, kimlik doğrulama ve gerçek iş akışlarını destekleyen backend sistemleri.":"API-Design, Datenmodelle, Authentifizierung und Backend-Systeme für reale Geschäftsabläufe.",
+      "Kullanıcı ihtiyaçlarını anlaşılır akışlara, tutarlı tasarım sistemlerine ve kullanılabilir arayüzlere dönüştürme.":"Nutzerbedürfnisse in klare Abläufe, konsistente Designsysteme und benutzerfreundliche Oberflächen übersetzen.",
+      "En az ayrıcalık, güvenli oturum, girdi doğrulama ve veri koruma ilkelerini geliştirme sürecine dahil etme.":"Least Privilege, sichere Sitzungen, Eingabevalidierung und Datenschutz in den Entwicklungsprozess integrieren.",
+      "Yetkinlik alanlarını keşfet ↗":"Kompetenzen entdecken ↗","Farklı problemler.":"Unterschiedliche Probleme.","Somut yazılım çözümleri.":"Konkrete Softwarelösungen.","SaaS ve API ürünlerinden kurumsal web platformlarına ve interaktif deneyimlere uzanan seçilmiş çalışmalar.":"Ausgewählte Arbeiten von SaaS- und API-Produkten bis zu Business-Webplattformen und interaktiven Erlebnissen.","Her proje; gerçek kapsamı, teknoloji seçimi ve doğrulanabilen işlevleriyle sunulur.":"Jedes Projekt wird mit seinem tatsächlichen Umfang, der Technologiewahl und belegbaren Funktionen vorgestellt.",
+      "E-ticaret ve geliştiriciler için görsel yükleme, dönüştürme ve CDN dağıtım akışını tek bir API-first üründe birleştiren platform.":"Eine API-first-Plattform für Bild-Upload, Transformation und CDN-Auslieferung für E-Commerce und Entwickler.",
+      "İstanbul genelinde hizmet aramalarını karşılayan; içerik, bölge sayfaları ve talepleri tek yönetim yapısında birleştiren Next.js web platformu.":"Eine Next.js-Plattform, die Serviceinhalte, Standortseiten und Kundenanfragen für ganz Istanbul bündelt.",
+      "Özel akvaryum, aquascaping ve peyzaj tasarımını sinematik anlatı, etkileşimli hesaplama ve keşif akışlarıyla sunan premium dijital deneyim.":"Ein Premium-Digitalerlebnis für individuelle Aquarien, Aquascaping und Landschaftsdesign mit filmischer Erzählung und interaktiven Tools.",
+      "Menü keşfinden sepete, sipariş takibinden yönetim ekranlarına uzanan restoran odaklı sipariş ve operasyon platformu demosu.":"Eine Restaurant-Commerce-Demo mit Menüsuche, Warenkorb, Bestellverfolgung und Betriebsverwaltung.",
+      "Yerel servis işletmeleri için ilçe ve hizmet odaklı içerik yapısı, talep yönetimi ve yapay zekâ destekli içerik üretim araçları.":"Eine lokale Serviceplattform mit bezirks- und serviceorientierten Inhalten, Anfrageverwaltung und KI-gestützten Content-Tools.",
+      "Teknik üretimden":"Von Engineering","iş değerine.":"zu Geschäftswert.","İhtiyaca göre şekillenen, bakımı yapılabilir ve büyümeye hazır dijital ürünler.":"Digitale Produkte nach Bedarf, wartbar und bereit für Wachstum.",
+      "Net süreç.":"Klarer Prozess.","Gözlemlenebilir ilerleme.":"Nachvollziehbarer Fortschritt.","Her proje, doğru problemi anlamakla başlar. Kapsamı netleştirir, geliştirir, test eder ve iyileştiririz.":"Jedes Projekt beginnt mit dem Verständnis des richtigen Problems. Wir definieren den Umfang, entwickeln, testen und verbessern.",
+      "Bir sonraki fikri":"Die nächste Idee","birlikte inşa edelim.":"gemeinsam umsetzen.","İhtiyacını anlat. Teknik olarak nasıl yaklaşabileceğimizi birlikte değerlendirelim.":"Beschreiben Sie Ihren Bedarf. Gemeinsam bewerten wir den passenden technischen Ansatz.","İletişime geç ↗":"Kontakt aufnehmen ↗",
+      "Fikirleri çalışan dijital ürünlere dönüştürmek. Yazılım, yapay zekâ ve ürün mühendisliği.":"Ideen durch Software, KI und Produktentwicklung in funktionierende digitale Produkte verwandeln.",
+      "Teknolojiyle düşünen,":"Technologisch denken,","ürünle sonuçlanan":"mit Produkten","bir yaklaşım.":"Wirkung erzielen.","Yazılımı yalnızca kod olarak görmüyorum.":"Software ist für mich mehr als nur Code.","Bir ürünün başarılı olması için teknik doğruluk kadar gerçek ihtiyacı anlamak, kullanıcı deneyimini düşünmek ve sürdürülebilir bir yapı kurmak gerektiğine inanıyorum.":"Ein erfolgreiches Produkt erfordert neben technischer Präzision ein klares Verständnis des Bedarfs, eine durchdachte Nutzererfahrung und eine nachhaltige Grundlage.",
+      "Bu nedenle geliştirme sürecini keşif, mimari, arayüz, backend, test ve dağıtım adımlarının bütünü olarak ele alıyorum.":"Deshalb betrachte ich Analyse, Architektur, Oberfläche, Backend, Tests und Deployment als zusammenhängenden Prozess.",
+      "Nasıl çalışırım?":"So arbeite ich","Önce problemi ve kullanıcı ihtiyacını netleştiririm.":"Zuerst kläre ich das Problem und die Bedürfnisse der Nutzer.","Teknoloji seçimlerini ihtiyaca ve bakım maliyetine göre yaparım.":"Ich wähle Technologien nach Bedarf und Wartungsaufwand.","Yapay zekâ araçlarını üretkenliği artırmak için kullanır, çıktıyı doğrularım.":"Ich nutze KI zur Produktivitätssteigerung und überprüfe die Ergebnisse.","Güvenlik, erişilebilirlik ve performansı sonradan eklenen işler olarak görmem.":"Sicherheit, Barrierefreiheit und Performance sind keine nachträglichen Ergänzungen.","Gerçekleşmeyen sonuçları veya doğrulanmayan başarıları iddia etmem.":"Ich behaupte keine nicht erreichten oder nicht belegten Ergebnisse.",
+      "Dört disiplin, tek ürün bakışı.":"Vier Disziplinen. Ein Produktdenken.","Hızlı, erişilebilir ve cihazlar arasında tutarlı arayüzler.":"Schnelle, barrierefreie und geräteübergreifend konsistente Oberflächen.","Veri, API ve kimlik doğrulama temelli uygulama mimarileri.":"Anwendungsarchitekturen auf Basis von Daten, APIs und Authentifizierung.","Anlaşılır kullanıcı akışları ve amaca hizmet eden tasarım sistemleri.":"Klare Nutzerabläufe und zweckmäßige Designsysteme.","Yetkilendirme, veri minimizasyonu ve güvenli varsayılanlar.":"Autorisierung, Datenminimierung und sichere Standardeinstellungen.",
+      "Doğru teknoloji. Doğru problem.":"Die richtige Technologie. Das richtige Problem.","İş ihtiyacından çalışan ürüne kadar; web geliştirme, SaaS, AI otomasyonu ve uygulama kalitesine odaklanan teknik çözümler.":"Technische Lösungen für Webentwicklung, SaaS, KI-Automatisierung und Softwarequalität – vom Geschäftsbedarf bis zum fertigen Produkt.",
+      "Web sitesi ve uygulama geliştirme":"Websites und Anwendungen","Kurumsal web siteleri, özel kullanıcı arayüzleri, responsive web uygulamaları, içerik ve yönetim ekranları.":"Unternehmenswebsites, individuelle Benutzeroberflächen, responsive Web-Apps, Inhalte und Admin-Oberflächen.",
+      "SaaS ve backend sistemleri":"SaaS- und Backend-Systeme","İş kurallarını yöneten API'ler, kullanıcı rolleri, veritabanı tasarımı, entegrasyonlar ve paneller.":"APIs für Geschäftslogik, Benutzerrollen, Datenbankdesign, Integrationen und Dashboards.",
+      "Yapay zekâ ve otomasyon":"KI und Automatisierung","AI destekli iş akışları, ajan entegrasyonları, içerik üretim sistemleri ve operasyon otomasyonu.":"KI-gestützte Workflows, Agenten-Integrationen, Content-Systeme und Prozessautomatisierung.",
+      "Performans ve güvenli geliştirme":"Performance und sichere Entwicklung","Teknik SEO, web performansı, erişilebilirlik, güvenli kimlik doğrulama ve uygulama kalitesi.":"Technisches SEO, Web-Performance, Barrierefreiheit, sichere Authentifizierung und Anwendungsqualität.",
+      "Çalışmalar. Kanıtlanabilir şekilde.":"Arbeiten. Nachvollziehbar.","Farklı sektörlerde geliştirdiğim seçilmiş web platformları, SaaS ürünleri ve etkileşimli dijital deneyimler.":"Ausgewählte Webplattformen, SaaS-Produkte und interaktive digitale Erlebnisse aus verschiedenen Branchen.",
+      "Bir fikrin mi var?":"Eine Idee?","Konuşalım.":"Sprechen wir.","Projenin hedefini, mevcut durumunu ve çözmek istediğin problemi anlat. İlk değerlendirmeyi birlikte yapalım.":"Beschreiben Sie Ihre Ziele, den aktuellen Stand und das zu lösende Problem. Wir nehmen gemeinsam eine erste Einschätzung vor.",
+      "İyi bir başlangıç,":"Ein guter Start","iyi tanımlanmış ihtiyaçtır.":"beginnt mit einem klaren Bedarf.","Proje kapsamını ve teknik uygunluğu değerlendirmek için ilk adım ihtiyacını anlamak.":"Zuerst verstehen wir Ihren Bedarf, um Umfang und technische Eignung zu beurteilen.",
+      "Ad Soyad *":"Vollständiger Name *","E-posta *":"E-Mail *","Şirket / Marka":"Unternehmen / Marke","İlgilendiğin konu":"Thema","Seçiniz":"Bitte auswählen","Web uygulaması":"Webanwendung","SaaS / platform":"SaaS / Plattform","AI / otomasyon":"KI / Automatisierung","Teknik iyileştirme":"Technische Verbesserung","Diğer":"Sonstiges","Proje özeti *":"Projektbeschreibung *","Hangi problemi çözmek istiyorsun?":"Welches Problem möchten Sie lösen?","Proje talebini gönder ↗":"Anfrage senden ↗","Form bağlantısı Supabase yapılandırması tamamlandığında aktif olacak.":"Das Kontaktformular ist mit sicherem E-Mail-Versand verbunden.","Henüz veritabanına kayıt yapılmıyor; form altyapısı yapılandırma bekliyor.":"Ihre Anfrage wird sicher per E-Mail gesendet; es wird keine Datenbank verwendet.",
+      "Notlar, kararlar ve öğrendiklerim.":"Notizen, Entscheidungen und Erkenntnisse.","Yazılım mimarisi, yapay zekâ, web performansı, ürün geliştirme ve güvenli yazılım üzerine teknik notlar.":"Technische Notizen zu Softwarearchitektur, KI, Web-Performance, Produktentwicklung und sicherer Software.","İlk teknik yazılar hazırlanıyor.":"Die ersten Fachartikel werden vorbereitet.","Yayınlanacak içerikler gerçek geliştirme deneyimlerine ve doğrulanabilir teknik kaynaklara dayanacak.":"Veröffentlichte Inhalte basieren auf realer Entwicklungserfahrung und überprüfbaren technischen Quellen.","Kopya veya yalnızca arama hacmi için üretilmiş içerik yayınlanmayacak.":"Es werden keine kopierten oder nur für Suchvolumen erstellten Inhalte veröffentlicht.",
+      "Gizlilik yaklaşımı.":"Datenschutzansatz.","Bu ilk sürümde reklam ve davranışsal takip servisleri kullanılmıyor.":"Diese Version verwendet weder Werbung noch verhaltensbezogenes Tracking.","Veri işleme":"Datenverarbeitung","Çerezler":"Cookies","Projenin amacı":"Projektziel","Öne çıkan işlevler":"Wichtige Funktionen","Kullanılan teknoloji":"Technologie-Stack","Şeffaflık notu":"Transparenzhinweis","Tüm projeler":"Alle Projekte","Benzer bir proje konuşalım ↗":"Ähnliches Projekt besprechen ↗","Canlı demoyu aç ↗":"Live-Demo öffnen ↗","GitHub kaynağı ↗":"GitHub-Quelle ↗",
+      "← Tüm projeler":"← Alle Projekte","Alan":"Bereich","Rol / Odak":"Rolle / Fokus","Teknoloji":"Technologie","Demo durumu":"Demo-Status","Kaynak kod":"Quellcode","Kaynak depo özel.":"Das Quell-Repository ist privat.","Canlı site doğrulandı":"Live-Website überprüft","Canlı site erişilebilir":"Live-Website erreichbar","Demo bağlantısı":"Demo-Link","Canlı demo":"Live-Demo","Not: Projelerde doğrulanmamış gelir, trafik, kullanıcı veya dönüşüm metrikleri kullanılmamıştır.":"Hinweis: Die Projektbeschreibungen enthalten keine ungeprüften Kennzahlen zu Umsatz, Traffic, Nutzern oder Conversions."
+    },
+    fr: {
+      "Ana içeriğe geç":"Aller au contenu principal","Hakkımda":"À propos","Yetkinlikler":"Expertises","Projeler":"Projets","Notlar":"Journal","Proje konuşalım ↗":"Parlons de votre projet ↗","Menüyü aç":"Ouvrir le menu","Menüyü kapat":"Fermer le menu","Dil seçimi":"Langue",
+      "Fikirleri":"Transformer les idées","çalışan":"en","dijital":"produits","ürünlere dönüştür.":"numériques concrets.","Ben Ahmet. Yazılım geliştirme, yapay zekâ ve ürün düşüncesini bir araya getirerek gerçek problemlere yönelik web uygulamaları, SaaS sistemleri ve otomasyonlar geliştiriyorum.":"Je suis Ahmet. J’associe le développement logiciel, l’intelligence artificielle et la réflexion produit pour créer des applications web, des plateformes SaaS et des automatisations qui répondent à des problèmes concrets.",
+      "Bir proje konuşalım ↗":"Parlons d’un projet ↗","Seçilmiş işler ↗":"Projets sélectionnés ↗","Ürünün her katmanında":"L’ingénierie à chaque","mühendislik.":"niveau du produit.","Bir dijital ürünün yalnızca görünüşünü değil; mimarisini, kullanılabilirliğini, performansını ve güvenliğini birlikte ele alıyorum.":"Je conçois un produit numérique dans son ensemble : architecture, ergonomie, performances et sécurité.",
+      "Modern web arayüzleri, responsive deneyimler, erişilebilir bileşenler ve performans odaklı frontend mimarisi.":"Interfaces web modernes, expériences adaptatives, composants accessibles et architecture frontend performante.",
+      "API tasarımı, veri modelleri, kimlik doğrulama ve gerçek iş akışlarını destekleyen backend sistemleri.":"Conception d’API, modèles de données, authentification et systèmes backend adaptés aux processus réels.",
+      "Kullanıcı ihtiyaçlarını anlaşılır akışlara, tutarlı tasarım sistemlerine ve kullanılabilir arayüzlere dönüştürme.":"Transformer les besoins des utilisateurs en parcours clairs, systèmes de design cohérents et interfaces pratiques.",
+      "En az ayrıcalık, güvenli oturum, girdi doğrulama ve veri koruma ilkelerini geliştirme sürecine dahil etme.":"Intégrer le moindre privilège, les sessions sécurisées, la validation des entrées et la protection des données.",
+      "Yetkinlik alanlarını keşfet ↗":"Découvrir les expertises ↗","Farklı problemler.":"Des problèmes variés.","Somut yazılım çözümleri.":"Des solutions concrètes.","SaaS ve API ürünlerinden kurumsal web platformlarına ve interaktif deneyimlere uzanan seçilmiş çalışmalar.":"Une sélection de produits SaaS et API, de plateformes web professionnelles et d’expériences interactives.","Her proje; gerçek kapsamı, teknoloji seçimi ve doğrulanabilen işlevleriyle sunulur.":"Chaque projet présente son périmètre réel, ses choix technologiques et ses fonctionnalités vérifiables.",
+      "E-ticaret ve geliştiriciler için görsel yükleme, dönüştürme ve CDN dağıtım akışını tek bir API-first üründe birleştiren platform.":"Une plateforme API-first réunissant téléversement, transformation et diffusion CDN d’images pour le commerce en ligne et les développeurs.",
+      "İstanbul genelinde hizmet aramalarını karşılayan; içerik, bölge sayfaları ve talepleri tek yönetim yapısında birleştiren Next.js web platformu.":"Une plateforme Next.js qui centralise contenus de services, pages locales et demandes clients pour Istanbul.",
+      "Özel akvaryum, aquascaping ve peyzaj tasarımını sinematik anlatı, etkileşimli hesaplama ve keşif akışlarıyla sunan premium dijital deneyim.":"Une expérience numérique premium dédiée aux aquariums sur mesure, à l’aquascaping et au paysage, avec narration immersive et outils interactifs.",
+      "Menü keşfinden sepete, sipariş takibinden yönetim ekranlarına uzanan restoran odaklı sipariş ve operasyon platformu demosu.":"Une démonstration de plateforme de commande et d’opérations pour restaurants, du menu au panier et au suivi des commandes.",
+      "Yerel servis işletmeleri için ilçe ve hizmet odaklı içerik yapısı, talep yönetimi ve yapay zekâ destekli içerik üretim araçları.":"Une plateforme de services locaux avec contenus par quartier et service, gestion des demandes et outils de contenu assistés par l’IA.",
+      "Teknik üretimden":"De l’ingénierie","iş değerine.":"à la valeur métier.","İhtiyaca göre şekillenen, bakımı yapılabilir ve büyümeye hazır dijital ürünler.":"Des produits numériques adaptés aux besoins, faciles à maintenir et prêts à évoluer.",
+      "Net süreç.":"Un processus clair.","Gözlemlenebilir ilerleme.":"Une progression visible.","Her proje, doğru problemi anlamakla başlar. Kapsamı netleştirir, geliştirir, test eder ve iyileştiririz.":"Chaque projet commence par comprendre le bon problème. Nous définissons le périmètre, développons, testons et améliorons.",
+      "Bir sonraki fikri":"Construisons","birlikte inşa edelim.":"la prochaine idée ensemble.","İhtiyacını anlat. Teknik olarak nasıl yaklaşabileceğimizi birlikte değerlendirelim.":"Expliquez votre besoin. Nous évaluerons ensemble l’approche technique la plus adaptée.","İletişime geç ↗":"Me contacter ↗",
+      "Fikirleri çalışan dijital ürünlere dönüştürmek. Yazılım, yapay zekâ ve ürün mühendisliği.":"Transformer les idées en produits numériques concrets grâce au logiciel, à l’IA et à l’ingénierie produit.",
+      "Teknolojiyle düşünen,":"Une réflexion technologique,","ürünle sonuçlanan":"des résultats","bir yaklaşım.":"concrets.","Yazılımı yalnızca kod olarak görmüyorum.":"Le logiciel ne se résume pas au code.","Bir ürünün başarılı olması için teknik doğruluk kadar gerçek ihtiyacı anlamak, kullanıcı deneyimini düşünmek ve sürdürülebilir bir yapı kurmak gerektiğine inanıyorum.":"Un produit réussi exige plus que la justesse technique : il faut comprendre le besoin réel, soigner l’expérience utilisateur et bâtir une base durable.",
+      "Bu nedenle geliştirme sürecini keşif, mimari, arayüz, backend, test ve dağıtım adımlarının bütünü olarak ele alıyorum.":"C’est pourquoi je considère la découverte, l’architecture, l’interface, le backend, les tests et le déploiement comme un seul processus.",
+      "Nasıl çalışırım?":"Ma méthode","Önce problemi ve kullanıcı ihtiyacını netleştiririm.":"Je clarifie d’abord le problème et les besoins des utilisateurs.","Teknoloji seçimlerini ihtiyaca ve bakım maliyetine göre yaparım.":"Je choisis les technologies selon les besoins et le coût de maintenance.","Yapay zekâ araçlarını üretkenliği artırmak için kullanır, çıktıyı doğrularım.":"J’utilise les outils d’IA pour gagner en productivité et j’en vérifie les résultats.","Güvenlik, erişilebilirlik ve performansı sonradan eklenen işler olarak görmem.":"La sécurité, l’accessibilité et les performances ne sont pas des ajouts tardifs.","Gerçekleşmeyen sonuçları veya doğrulanmayan başarıları iddia etmem.":"Je ne revendique pas de résultats non obtenus ou non vérifiés.",
+      "Dört disiplin, tek ürün bakışı.":"Quatre disciplines. Une vision produit.","Hızlı, erişilebilir ve cihazlar arasında tutarlı arayüzler.":"Des interfaces rapides, accessibles et cohérentes sur tous les appareils.","Veri, API ve kimlik doğrulama temelli uygulama mimarileri.":"Des architectures applicatives fondées sur les données, les API et l’authentification.","Anlaşılır kullanıcı akışları ve amaca hizmet eden tasarım sistemleri.":"Des parcours utilisateurs clairs et des systèmes de design utiles.","Yetkilendirme, veri minimizasyonu ve güvenli varsayılanlar.":"Autorisation, minimisation des données et paramètres sécurisés par défaut.",
+      "Doğru teknoloji. Doğru problem.":"La bonne technologie. Le bon problème.","İş ihtiyacından çalışan ürüne kadar; web geliştirme, SaaS, AI otomasyonu ve uygulama kalitesine odaklanan teknik çözümler.":"Des solutions techniques centrées sur le web, le SaaS, l’automatisation IA et la qualité logicielle, du besoin métier au produit opérationnel.",
+      "Web sitesi ve uygulama geliştirme":"Sites web et applications","Kurumsal web siteleri, özel kullanıcı arayüzleri, responsive web uygulamaları, içerik ve yönetim ekranları.":"Sites institutionnels, interfaces sur mesure, applications web adaptatives, contenus et panneaux d’administration.",
+      "SaaS ve backend sistemleri":"Systèmes SaaS et backend","İş kurallarını yöneten API'ler, kullanıcı rolleri, veritabanı tasarımı, entegrasyonlar ve paneller.":"API métier, rôles utilisateurs, conception de bases de données, intégrations et tableaux de bord.",
+      "Yapay zekâ ve otomasyon":"IA et automatisation","AI destekli iş akışları, ajan entegrasyonları, içerik üretim sistemleri ve operasyon otomasyonu.":"Flux de travail assistés par l’IA, intégration d’agents, systèmes de contenu et automatisation opérationnelle.",
+      "Performans ve güvenli geliştirme":"Performance et développement sécurisé","Teknik SEO, web performansı, erişilebilirlik, güvenli kimlik doğrulama ve uygulama kalitesi.":"SEO technique, performances web, accessibilité, authentification sécurisée et qualité applicative.",
+      "Çalışmalar. Kanıtlanabilir şekilde.":"Des réalisations vérifiables.","Farklı sektörlerde geliştirdiğim seçilmiş web platformları, SaaS ürünleri ve etkileşimli dijital deneyimler.":"Une sélection de plateformes web, produits SaaS et expériences numériques interactives développés pour différents secteurs.",
+      "Bir fikrin mi var?":"Une idée ?","Konuşalım.":"Parlons-en.","Projenin hedefini, mevcut durumunu ve çözmek istediğin problemi anlat. İlk değerlendirmeyi birlikte yapalım.":"Présentez les objectifs du projet, son état actuel et le problème à résoudre. Faisons une première évaluation ensemble.",
+      "İyi bir başlangıç,":"Un bon départ","iyi tanımlanmış ihtiyaçtır.":"commence par un besoin clair.","Proje kapsamını ve teknik uygunluğu değerlendirmek için ilk adım ihtiyacını anlamak.":"La première étape consiste à comprendre votre besoin afin d’évaluer le périmètre et la faisabilité technique.",
+      "Ad Soyad *":"Nom complet *","E-posta *":"E-mail *","Şirket / Marka":"Entreprise / marque","İlgilendiğin konu":"Sujet","Seçiniz":"Choisir une option","Web uygulaması":"Application web","SaaS / platform":"SaaS / plateforme","AI / otomasyon":"IA / automatisation","Teknik iyileştirme":"Amélioration technique","Diğer":"Autre","Proje özeti *":"Résumé du projet *","Hangi problemi çözmek istiyorsun?":"Quel problème souhaitez-vous résoudre ?","Proje talebini gönder ↗":"Envoyer la demande ↗","Form bağlantısı Supabase yapılandırması tamamlandığında aktif olacak.":"Le formulaire de contact est relié à un envoi sécurisé par e-mail.","Henüz veritabanına kayıt yapılmıyor; form altyapısı yapılandırma bekliyor.":"Votre demande sera envoyée par e-mail de manière sécurisée ; aucune base de données n’est utilisée.",
+      "Notlar, kararlar ve öğrendiklerim.":"Notes, décisions et apprentissages.","Yazılım mimarisi, yapay zekâ, web performansı, ürün geliştirme ve güvenli yazılım üzerine teknik notlar.":"Notes techniques sur l’architecture logicielle, l’IA, les performances web, le développement produit et la sécurité.","İlk teknik yazılar hazırlanıyor.":"Les premiers articles techniques sont en préparation.","Yayınlanacak içerikler gerçek geliştirme deneyimlerine ve doğrulanabilir teknik kaynaklara dayanacak.":"Les contenus publiés s’appuieront sur une expérience réelle de développement et des sources techniques vérifiables.","Kopya veya yalnızca arama hacmi için üretilmiş içerik yayınlanmayacak.":"Aucun contenu copié ou créé uniquement pour le volume de recherche ne sera publié.",
+      "Gizlilik yaklaşımı.":"Approche de la confidentialité.","Bu ilk sürümde reklam ve davranışsal takip servisleri kullanılmıyor.":"Cette version n’utilise ni publicité ni suivi comportemental.","Veri işleme":"Traitement des données","Çerezler":"Cookies","Projenin amacı":"Objectif du projet","Öne çıkan işlevler":"Fonctionnalités clés","Kullanılan teknoloji":"Technologies utilisées","Şeffaflık notu":"Note de transparence","Tüm projeler":"Tous les projets","Benzer bir proje konuşalım ↗":"Parlons d’un projet similaire ↗","Canlı demoyu aç ↗":"Ouvrir la démo ↗","GitHub kaynağı ↗":"Code source GitHub ↗",
+      "← Tüm projeler":"← Tous les projets","Alan":"Domaine","Rol / Odak":"Rôle / focus","Teknoloji":"Technologies","Demo durumu":"État de la démo","Kaynak kod":"Code source","Kaynak depo özel.":"Le dépôt source est privé.","Canlı site doğrulandı":"Site actif vérifié","Canlı site erişilebilir":"Site actif accessible","Demo bağlantısı":"Lien de démonstration","Canlı demo":"Démo en direct","Not: Projelerde doğrulanmamış gelir, trafik, kullanıcı veya dönüşüm metrikleri kullanılmamıştır.":"Note : aucune donnée non vérifiée de revenus, trafic, utilisateurs ou conversions n’est utilisée dans les projets."
+    },
+    ru: {
+      "Ana içeriğe geç":"Перейти к основному содержимому","Hakkımda":"Обо мне","Yetkinlikler":"Компетенции","Projeler":"Проекты","Notlar":"Заметки","Proje konuşalım ↗":"Обсудим проект ↗","Menüyü aç":"Открыть меню","Menüyü kapat":"Закрыть меню","Dil seçimi":"Язык",
+      "Fikirleri":"Превращаю идеи","çalışan":"в работающие","dijital":"цифровые","ürünlere dönüştür.":"продукты.","Ben Ahmet. Yazılım geliştirme, yapay zekâ ve ürün düşüncesini bir araya getirerek gerçek problemlere yönelik web uygulamaları, SaaS sistemleri ve otomasyonlar geliştiriyorum.":"Я Ахмет. Объединяю разработку программного обеспечения, искусственный интеллект и продуктовое мышление, создавая веб-приложения, SaaS-платформы и автоматизацию для решения реальных задач.",
+      "Bir proje konuşalım ↗":"Обсудим проект ↗","Seçilmiş işler ↗":"Избранные работы ↗","Ürünün her katmanında":"Инженерия на каждом","mühendislik.":"уровне продукта.","Bir dijital ürünün yalnızca görünüşünü değil; mimarisini, kullanılabilirliğini, performansını ve güvenliğini birlikte ele alıyorum.":"Я работаю не только над внешним видом цифрового продукта, но и над его архитектурой, удобством, производительностью и безопасностью.",
+      "Modern web arayüzleri, responsive deneyimler, erişilebilir bileşenler ve performans odaklı frontend mimarisi.":"Современные веб-интерфейсы, адаптивные решения, доступные компоненты и производительная frontend-архитектура.",
+      "API tasarımı, veri modelleri, kimlik doğrulama ve gerçek iş akışlarını destekleyen backend sistemleri.":"Проектирование API, модели данных, аутентификация и backend-системы для реальных рабочих процессов.",
+      "Kullanıcı ihtiyaçlarını anlaşılır akışlara, tutarlı tasarım sistemlerine ve kullanılabilir arayüzlere dönüştürme.":"Преобразование потребностей пользователей в понятные сценарии, целостные дизайн-системы и удобные интерфейсы.",
+      "En az ayrıcalık, güvenli oturum, girdi doğrulama ve veri koruma ilkelerini geliştirme sürecine dahil etme.":"Внедрение принципа минимальных привилегий, безопасных сессий, проверки ввода и защиты данных в процесс разработки.",
+      "Yetkinlik alanlarını keşfet ↗":"Изучить компетенции ↗","Farklı problemler.":"Разные задачи.","Somut yazılım çözümleri.":"Конкретные программные решения.","SaaS ve API ürünlerinden kurumsal web platformlarına ve interaktif deneyimlere uzanan seçilmiş çalışmalar.":"Избранные проекты: от SaaS и API-продуктов до корпоративных веб-платформ и интерактивных решений.","Her proje; gerçek kapsamı, teknoloji seçimi ve doğrulanabilen işlevleriyle sunulur.":"Каждый проект представлен с фактическим объёмом, выбранными технологиями и проверяемыми функциями.",
+      "E-ticaret ve geliştiriciler için görsel yükleme, dönüştürme ve CDN dağıtım akışını tek bir API-first üründe birleştiren platform.":"API-first платформа, объединяющая загрузку изображений, преобразование и доставку через CDN для электронной коммерции и разработчиков.",
+      "İstanbul genelinde hizmet aramalarını karşılayan; içerik, bölge sayfaları ve talepleri tek yönetim yapısında birleştiren Next.js web platformu.":"Платформа Next.js, объединяющая контент услуг, локальные страницы и заявки клиентов для всего Стамбула.",
+      "Özel akvaryum, aquascaping ve peyzaj tasarımını sinematik anlatı, etkileşimli hesaplama ve keşif akışlarıyla sunan premium dijital deneyim.":"Премиальный цифровой опыт для индивидуальных аквариумов, акваскейпинга и ландшафтного дизайна с кинематографичной подачей и интерактивными инструментами.",
+      "Menü keşfinden sepete, sipariş takibinden yönetim ekranlarına uzanan restoran odaklı sipariş ve operasyon platformu demosu.":"Демонстрация ресторанной платформы: меню, корзина, отслеживание заказов и управление операциями.",
+      "Yerel servis işletmeleri için ilçe ve hizmet odaklı içerik yapısı, talep yönetimi ve yapay zekâ destekli içerik üretim araçları.":"Платформа локальных услуг с контентом по районам и услугам, управлением заявками и инструментами создания контента на базе ИИ.",
+      "Teknik üretimden":"От инженерии","iş değerine.":"к бизнес-ценности.","İhtiyaca göre şekillenen, bakımı yapılabilir ve büyümeye hazır dijital ürünler.":"Цифровые продукты под реальные задачи, удобные в поддержке и готовые к масштабированию.",
+      "Net süreç.":"Понятный процесс.","Gözlemlenebilir ilerleme.":"Прозрачный прогресс.","Her proje, doğru problemi anlamakla başlar. Kapsamı netleştirir, geliştirir, test eder ve iyileştiririz.":"Каждый проект начинается с понимания задачи. Мы определяем объём, разрабатываем, тестируем и улучшаем решение.",
+      "Bir sonraki fikri":"Давайте вместе","birlikte inşa edelim.":"создадим следующую идею.","İhtiyacını anlat. Teknik olarak nasıl yaklaşabileceğimizi birlikte değerlendirelim.":"Расскажите о своей задаче. Вместе оценим оптимальный технический подход.","İletişime geç ↗":"Связаться ↗",
+      "Fikirleri çalışan dijital ürünlere dönüştürmek. Yazılım, yapay zekâ ve ürün mühendisliği.":"Превращаем идеи в работающие цифровые продукты с помощью разработки, ИИ и продуктовой инженерии.",
+      "Teknolojiyle düşünen,":"Технологическое мышление,","ürünle sonuçlanan":"результат в","bir yaklaşım.":"продукте.","Yazılımı yalnızca kod olarak görmüyorum.":"Для меня программное обеспечение — это не только код.","Bir ürünün başarılı olması için teknik doğruluk kadar gerçek ihtiyacı anlamak, kullanıcı deneyimini düşünmek ve sürdürülebilir bir yapı kurmak gerektiğine inanıyorum.":"Успешный продукт требует не только технической точности, но и понимания реальных потребностей, продуманного пользовательского опыта и устойчивой архитектуры.",
+      "Bu nedenle geliştirme sürecini keşif, mimari, arayüz, backend, test ve dağıtım adımlarının bütünü olarak ele alıyorum.":"Поэтому я рассматриваю исследование, архитектуру, интерфейс, backend, тестирование и развёртывание как единый процесс.",
+      "Nasıl çalışırım?":"Как я работаю","Önce problemi ve kullanıcı ihtiyacını netleştiririm.":"Сначала определяю проблему и потребности пользователя.","Teknoloji seçimlerini ihtiyaca ve bakım maliyetine göre yaparım.":"Выбираю технологии с учётом задачи и стоимости поддержки.","Yapay zekâ araçlarını üretkenliği artırmak için kullanır, çıktıyı doğrularım.":"Использую ИИ для повышения продуктивности и проверяю результаты.","Güvenlik, erişilebilirlik ve performansı sonradan eklenen işler olarak görmem.":"Безопасность, доступность и производительность — не дополнительные задачи в конце.","Gerçekleşmeyen sonuçları veya doğrulanmayan başarıları iddia etmem.":"Не заявляю о результатах, которых нет или которые нельзя подтвердить.",
+      "Dört disiplin, tek ürün bakışı.":"Четыре направления. Единый продуктовый подход.","Hızlı, erişilebilir ve cihazlar arasında tutarlı arayüzler.":"Быстрые, доступные и единообразные интерфейсы на разных устройствах.","Veri, API ve kimlik doğrulama temelli uygulama mimarileri.":"Архитектура приложений на основе данных, API и аутентификации.","Anlaşılır kullanıcı akışları ve amaca hizmet eden tasarım sistemleri.":"Понятные пользовательские сценарии и функциональные дизайн-системы.","Yetkilendirme, veri minimizasyonu ve güvenli varsayılanlar.":"Авторизация, минимизация данных и безопасные настройки по умолчанию.",
+      "Doğru teknoloji. Doğru problem.":"Правильная технология. Правильная задача.","İş ihtiyacından çalışan ürüne kadar; web geliştirme, SaaS, AI otomasyonu ve uygulama kalitesine odaklanan teknik çözümler.":"Технические решения в области веб-разработки, SaaS, автоматизации на базе ИИ и качества приложений — от бизнес-задачи до работающего продукта.",
+      "Web sitesi ve uygulama geliştirme":"Разработка сайтов и приложений","Kurumsal web siteleri, özel kullanıcı arayüzleri, responsive web uygulamaları, içerik ve yönetim ekranları.":"Корпоративные сайты, индивидуальные интерфейсы, адаптивные веб-приложения, контент и административные панели.",
+      "SaaS ve backend sistemleri":"SaaS и backend-системы","İş kurallarını yöneten API'ler, kullanıcı rolleri, veritabanı tasarımı, entegrasyonlar ve paneller.":"API бизнес-логики, роли пользователей, проектирование баз данных, интеграции и панели управления.",
+      "Yapay zekâ ve otomasyon":"ИИ и автоматизация","AI destekli iş akışları, ajan entegrasyonları, içerik üretim sistemleri ve operasyon otomasyonu.":"Рабочие процессы с ИИ, интеграция агентов, системы создания контента и автоматизация операций.",
+      "Performans ve güvenli geliştirme":"Производительность и безопасная разработка","Teknik SEO, web performansı, erişilebilirlik, güvenli kimlik doğrulama ve uygulama kalitesi.":"Техническое SEO, производительность сайта, доступность, безопасная аутентификация и качество приложений.",
+      "Çalışmalar. Kanıtlanabilir şekilde.":"Работы. С проверяемыми фактами.","Farklı sektörlerde geliştirdiğim seçilmiş web platformları, SaaS ürünleri ve etkileşimli dijital deneyimler.":"Избранные веб-платформы, SaaS-продукты и интерактивные цифровые решения для разных отраслей.",
+      "Bir fikrin mi var?":"Есть идея?","Konuşalım.":"Обсудим.","Projenin hedefini, mevcut durumunu ve çözmek istediğin problemi anlat. İlk değerlendirmeyi birlikte yapalım.":"Расскажите о целях проекта, текущем состоянии и задаче, которую хотите решить. Проведём первичную оценку вместе.",
+      "İyi bir başlangıç,":"Хорошее начало","iyi tanımlanmış ihtiyaçtır.":"— чётко описанная задача.","Proje kapsamını ve teknik uygunluğu değerlendirmek için ilk adım ihtiyacını anlamak.":"Сначала нужно понять вашу задачу, чтобы оценить объём и техническую целесообразность.",
+      "Ad Soyad *":"Имя и фамилия *","E-posta *":"Электронная почта *","Şirket / Marka":"Компания / бренд","İlgilendiğin konu":"Тема обращения","Seçiniz":"Выберите вариант","Web uygulaması":"Веб-приложение","SaaS / platform":"SaaS / платформа","AI / otomasyon":"ИИ / автоматизация","Teknik iyileştirme":"Техническое улучшение","Diğer":"Другое","Proje özeti *":"Описание проекта *","Hangi problemi çözmek istiyorsun?":"Какую задачу вы хотите решить?","Proje talebini gönder ↗":"Отправить заявку ↗","Form bağlantısı Supabase yapılandırması tamamlandığında aktif olacak.":"Форма обратной связи подключена к безопасной отправке электронной почты.","Henüz veritabanına kayıt yapılmıyor; form altyapısı yapılandırma bekliyor.":"Заявка будет безопасно отправлена по электронной почте; база данных не используется.",
+      "Notlar, kararlar ve öğrendiklerim.":"Заметки, решения и выводы.","Yazılım mimarisi, yapay zekâ, web performansı, ürün geliştirme ve güvenli yazılım üzerine teknik notlar.":"Технические заметки об архитектуре ПО, ИИ, производительности веба, разработке продуктов и безопасности.","İlk teknik yazılar hazırlanıyor.":"Готовятся первые технические публикации.","Yayınlanacak içerikler gerçek geliştirme deneyimlerine ve doğrulanabilir teknik kaynaklara dayanacak.":"Публикации будут основаны на реальном опыте разработки и проверяемых технических источниках.","Kopya veya yalnızca arama hacmi için üretilmiş içerik yayınlanmayacak.":"Копии и материалы, созданные только ради поискового трафика, публиковаться не будут.",
+      "Gizlilik yaklaşımı.":"Подход к конфиденциальности.","Bu ilk sürümde reklam ve davranışsal takip servisleri kullanılmıyor.":"В этой версии не используются реклама и поведенческое отслеживание.","Veri işleme":"Обработка данных","Çerezler":"Файлы cookie","Projenin amacı":"Цель проекта","Öne çıkan işlevler":"Ключевые функции","Kullanılan teknoloji":"Технологический стек","Şeffaflık notu":"Примечание о прозрачности","Tüm projeler":"Все проекты","Benzer bir proje konuşalım ↗":"Обсудим похожий проект ↗","Canlı demoyu aç ↗":"Открыть демо ↗","GitHub kaynağı ↗":"Исходный код на GitHub ↗",
+      "← Tüm projeler":"← Все проекты","Alan":"Направление","Rol / Odak":"Роль / фокус","Teknoloji":"Технологии","Demo durumu":"Статус демо","Kaynak kod":"Исходный код","Kaynak depo özel.":"Исходный репозиторий закрытый.","Canlı site doğrulandı":"Работа сайта проверена","Canlı site erişilebilir":"Сайт доступен","Demo bağlantısı":"Ссылка на демо","Canlı demo":"Демо","Not: Projelerde doğrulanmamış gelir, trafik, kullanıcı veya dönüşüm metrikleri kullanılmamıştır.":"Примечание: в описаниях проектов не используются неподтверждённые показатели выручки, трафика, пользователей или конверсии."
+    }
+  };
+
+  const meta = {
+    en: {
+      "/":"BTMCode | Software, AI & Product Engineering",
+      "/about/":"About | BTMCode",
+      "/services/":"Software, SaaS & AI Engineering | BTMCode",
+      "/projects/":"Selected Software Projects | BTMCode",
+      "/contact/":"Contact & Project Enquiry | BTMCode",
+      "/journal/":"Engineering Journal | BTMCode",
+      "/privacy/":"Privacy | BTMCode"
+    },
+    de: {
+      "/":"BTMCode | Software, KI & Produktentwicklung",
+      "/about/":"Über mich | BTMCode",
+      "/services/":"Software-, SaaS- & KI-Entwicklung | BTMCode",
+      "/projects/":"Ausgewählte Softwareprojekte | BTMCode",
+      "/contact/":"Kontakt & Projektanfrage | BTMCode",
+      "/journal/":"Engineering-Journal | BTMCode",
+      "/privacy/":"Datenschutz | BTMCode"
+    },
+    fr: {
+      "/":"BTMCode | Logiciel, IA & ingénierie produit",
+      "/about/":"À propos | BTMCode",
+      "/services/":"Développement logiciel, SaaS & IA | BTMCode",
+      "/projects/":"Projets logiciels sélectionnés | BTMCode",
+      "/contact/":"Contact & demande de projet | BTMCode",
+      "/journal/":"Journal d’ingénierie | BTMCode",
+      "/privacy/":"Confidentialité | BTMCode"
+    },
+    ru: {
+      "/":"BTMCode | Разработка, ИИ и продуктовая инженерия",
+      "/about/":"Обо мне | BTMCode",
+      "/services/":"Разработка ПО, SaaS и ИИ | BTMCode",
+      "/projects/":"Избранные IT-проекты | BTMCode",
+      "/contact/":"Контакты и заявка на проект | BTMCode",
+      "/journal/":"Инженерные заметки | BTMCode",
+      "/privacy/":"Конфиденциальность | BTMCode"
+    }
+  };
+  const descriptions = {
+    en: {
+      "/":"Software engineering, SaaS platforms and AI automation. Explore selected BTMCode products, capabilities and product engineering.",
+      "/about/":"The software engineering, AI, product engineering and business development approach behind BTMCode.",
+      "/services/":"Web applications, SaaS platforms, AI automation, performance and secure software engineering.",
+      "/projects/":"Selected SaaS, API, web platform and interactive product engineering projects.",
+      "/contact/":"Share your web application, SaaS or AI automation project with BTMCode.",
+      "/journal/":"Notes on software architecture, AI, web performance, product development and secure engineering.",
+      "/privacy/":"How BTMCode handles contact enquiries and website privacy."
+    },
+    de: {
+      "/":"Softwareentwicklung, SaaS-Plattformen und KI-Automatisierung. Entdecken Sie ausgewählte BTMCode-Projekte und Kompetenzen.",
+      "/about/":"Der Ansatz von BTMCode in Softwareentwicklung, KI, Produktentwicklung und Business Development.",
+      "/services/":"Webanwendungen, SaaS-Plattformen, KI-Automatisierung, Performance und sichere Softwareentwicklung.",
+      "/projects/":"Ausgewählte Projekte aus SaaS, API, Webplattformen und interaktiver Produktentwicklung.",
+      "/contact/":"Beschreiben Sie Ihr Web-, SaaS- oder KI-Automatisierungsprojekt für BTMCode.",
+      "/journal/":"Notizen zu Softwarearchitektur, KI, Web-Performance und sicherer Entwicklung.",
+      "/privacy/":"Informationen zum Umgang von BTMCode mit Kontaktanfragen und Datenschutz."
+    },
+    fr: {
+      "/":"Développement logiciel, plateformes SaaS et automatisation IA. Découvrez les projets et expertises BTMCode.",
+      "/about/":"L’approche BTMCode en développement logiciel, IA, ingénierie produit et développement commercial.",
+      "/services/":"Applications web, plateformes SaaS, automatisation IA, performances et développement sécurisé.",
+      "/projects/":"Sélection de projets SaaS, API, plateformes web et expériences numériques interactives.",
+      "/contact/":"Présentez votre projet web, SaaS ou d’automatisation IA à BTMCode.",
+      "/journal/":"Notes sur l’architecture logicielle, l’IA, les performances web et le développement sécurisé.",
+      "/privacy/":"Comment BTMCode traite les demandes de contact et protège la confidentialité."
+    },
+    ru: {
+      "/":"Разработка ПО, SaaS-платформы и автоматизация с ИИ. Изучите проекты и компетенции BTMCode.",
+      "/about/":"Подход BTMCode к разработке ПО, ИИ, продуктовой инженерии и развитию бизнеса.",
+      "/services/":"Веб-приложения, SaaS-платформы, автоматизация ИИ, производительность и безопасная разработка.",
+      "/projects/":"Избранные проекты в SaaS, API, веб-платформах и интерактивных цифровых продуктах.",
+      "/contact/":"Опишите проект веб-приложения, SaaS или автоматизации ИИ для BTMCode.",
+      "/journal/":"Заметки об архитектуре ПО, ИИ, производительности веба и безопасной разработке.",
+      "/privacy/":"Как BTMCode обрабатывает обращения и обеспечивает конфиденциальность."
+    }
+  };
+
+  document.documentElement.lang = locale;
+  document.documentElement.dataset.locale = locale;
+  window.BTM_LOCALE = locale;
+  const messages = {
+    tr: {sending:"Gönderiliyor…",success:"Mesajınız alındı. En kısa sürede dönüş yapılacak.",error:"Gönderim tamamlanamadı. Lütfen tekrar deneyin.",unavailable:"Form şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin."},
+    en: {sending:"Sending…",success:"Your message has been sent. I’ll get back to you soon.",error:"We couldn’t send your message. Please try again.",unavailable:"The form is temporarily unavailable. Please try again later."},
+    de: {sending:"Wird gesendet…",success:"Ihre Nachricht wurde gesendet. Ich melde mich zeitnah.",error:"Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",unavailable:"Das Formular ist vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut."},
+    fr: {sending:"Envoi…",success:"Votre message a été envoyé. Je vous répondrai rapidement.",error:"Votre message n’a pas pu être envoyé. Veuillez réessayer.",unavailable:"Le formulaire est temporairement indisponible. Réessayez plus tard."},
+    ru: {sending:"Отправка…",success:"Ваше сообщение отправлено. Я скоро отвечу.",error:"Не удалось отправить сообщение. Попробуйте ещё раз.",unavailable:"Форма временно недоступна. Попробуйте позже."}
+  };
+  window.BTM_MESSAGES = messages[locale] || messages.tr;
+
+  if (locale !== "tr") {
+    const dict = dictionaries[locale] || {};
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    let node;
+    while ((node = walker.nextNode())) {
+      const original = node.nodeValue || "";
+      const trimmed = original.trim();
+      if (trimmed && Object.prototype.hasOwnProperty.call(dict, trimmed)) {
+        const offset = original.indexOf(trimmed);
+        node.nodeValue = original.slice(0, offset) + dict[trimmed] + original.slice(offset + trimmed.length);
+      }
+    }
+    document.querySelectorAll("[placeholder],[aria-label],[title]").forEach(el => {
+      ["placeholder", "aria-label", "title"].forEach(attr => {
+        const value = el.getAttribute(attr);
+        if (value && dict[value]) el.setAttribute(attr, dict[value]);
+      });
+    });
+    document.querySelectorAll("input, textarea").forEach(el => {
+      if (el.name === "name") el.placeholder = locale === "en" ? "Your name" : locale === "de" ? "Ihr Name" : locale === "fr" ? "Votre nom" : "Ваше имя";
+      if (el.name === "email") el.placeholder = "name@example.com";
+      if (el.name === "company") el.placeholder = locale === "en" ? "Company name (optional)" : locale === "de" ? "Unternehmen (optional)" : locale === "fr" ? "Entreprise (facultatif)" : "Компания (необязательно)";
+      if (el.name === "message") el.placeholder = locale === "en" ? "What would you like to build?" : locale === "de" ? "Was möchten Sie entwickeln?" : locale === "fr" ? "Que souhaitez-vous créer ?" : "Что вы хотите создать?";
+    });
+    const title = (meta[locale] && meta[locale][path]) || ("BTMCode | " + locale.toUpperCase());
+    document.title = title;
+    const description = descriptions[locale] && descriptions[locale][path];
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc && description) desc.content = description;
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.content = title;
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc && description) ogDesc.content = description;
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale) ogLocale.content = ({en:"en_US", de:"de_DE", fr:"fr_FR", ru:"ru_RU"})[locale];
+  }
+
+  const languageSelect = document.querySelector("[data-language-select]");
+  if (languageSelect) {
+    languageSelect.value = locale;
+    const langLabel = ({tr:"Dil seçimi",en:"Language",de:"Sprache",fr:"Langue",ru:"Язык"})[locale];
+    languageSelect.setAttribute("aria-label", langLabel);
+    languageSelect.addEventListener("change", () => {
+      const next = languageSelect.value;
+      try { localStorage.setItem("btm-locale", next); } catch (e) {}
+      const targetPath = next === "tr" ? path : "/" + next + (path === "/" ? "/" : path);
+      location.assign(targetPath + location.search + location.hash);
+    });
+  }
+  try { localStorage.setItem("btm-locale", locale); } catch (e) {}
+
+  document.querySelectorAll('a[href^="/"]').forEach(link => {
+    const href = link.getAttribute("href");
+    if (!href || href.startsWith("//") || href.startsWith("/api/") || href.startsWith("/favicon") || href.startsWith("/manifest")) return;
+    if (/^\/(en|de|fr|ru)(\/|$)/.test(href)) return;
+    if (locale !== "tr") link.setAttribute("href", "/" + locale + (href === "/" ? "/" : href));
+  });
+
+  const canonicalPath = locale === "tr" ? path : "/" + locale + (path === "/" ? "/" : path);
+  const canonicalUrl = "https://btmcode.vercel.app" + canonicalPath;
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) canonical.href = canonicalUrl;
+  const ogUrl = document.querySelector('meta[property="og:url"]');
+  if (ogUrl) ogUrl.content = canonicalUrl;
+  localeCodes.forEach(code => {
+    const href = "https://btmcode.vercel.app" + (code === "tr" ? path : "/" + code + (path === "/" ? "/" : path));
+    let link = document.head.querySelector('link[rel="alternate"][hreflang="' + code + '"]');
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "alternate";
+      link.hreflang = code;
+      document.head.appendChild(link);
+    }
+    link.href = href;
+  });
+  let xDefault = document.head.querySelector('link[rel="alternate"][hreflang="x-default"]');
+  if (!xDefault) {
+    xDefault = document.createElement("link");
+    xDefault.rel = "alternate";
+    xDefault.hreflang = "x-default";
+    document.head.appendChild(xDefault);
+  }
+  xDefault.href = "https://btmcode.vercel.app" + path;
+})();
