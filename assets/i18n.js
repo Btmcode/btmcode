@@ -1031,13 +1031,13 @@ for (const locale of ["en","de","fr","ru","zh"]) Object.assign(dictionaries[loca
       en:"Your message is delivered securely by email through Resend.",
       de:"Ihre Nachricht wird sicher per E-Mail über Resend zugestellt.",
       fr:"Votre message est transmis de manière sécurisée par e-mail via Resend.",
-      ru:"Ваше сообщение безопасно отправляется по электронной почте через Resend."
+      ru:"Ваше сообщение безопасно отправляется по электронной почте через Resend.", zh:"您的消息将通过 Resend 邮件服务安全发送。"
     })[locale];
     dictionaries[locale]["Form verileri BTMCode tarafından bir veritabanında saklanmaz."] = ({
       en:"BTMCode does not store form submissions in a database.",
       de:"BTMCode speichert Formulareingaben nicht in einer Datenbank.",
       fr:"BTMCode ne stocke pas les formulaires dans une base de données.",
-      ru:"BTMCode не сохраняет данные формы в базе данных."
+      ru:"BTMCode не сохраняет данные формы в базе данных.", zh:"BTMCode 不会将表单数据存储在数据库中。"
     })[locale];
   }
   const caseTitles = {
