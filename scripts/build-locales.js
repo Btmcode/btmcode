@@ -32,6 +32,8 @@ function extractObject(name) {
   throw new Error("Unclosed object literal: " + name);
 }
 const dictionaries = extractObject("dictionaries");
+const sharedUiTranslations = extractObject("sharedUiTranslations");
+for (const locale of LOCALES) Object.assign(dictionaries[locale], sharedUiTranslations[locale] || {});
 const meta = extractObject("meta");
 const descriptions = extractObject("descriptions");
 const caseTitles = extractObject("caseTitles");
