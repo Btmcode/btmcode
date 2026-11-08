@@ -1,8 +1,8 @@
 (() => {
   "use strict";
-  const localeCodes = ["tr", "en", "de", "fr", "ru"];
-  const locale = ((location.pathname.match(/^\/(en|de|fr|ru)(?:\/|$)/) || [])[1]) || "tr";
-  const rawPath = location.pathname.replace(/^\/(en|de|fr|ru)(?=\/|$)/, "") || "/";
+  const localeCodes = ["tr", "en", "de", "fr", "ru", "zh"];
+  const locale = ((location.pathname.match(/^\/(en|de|fr|ru|zh)(?:\/|$)/) || [])[1]) || "tr";
+  const rawPath = location.pathname.replace(/^\/(en|de|fr|ru|zh)(?=\/|$)/, "") || "/";
   const path = rawPath.endsWith("/") ? rawPath : rawPath + "/";
   const dictionaries = {
     en: {
@@ -297,7 +297,116 @@
       "Gizlilik yaklaşımı.":"Подход к конфиденциальности.","Bu ilk sürümde reklam ve davranışsal takip servisleri kullanılmıyor.":"В этой версии не используются реклама и поведенческое отслеживание.","Veri işleme":"Обработка данных","Çerezler":"Файлы cookie","Projenin amacı":"Цель проекта","Öne çıkan işlevler":"Ключевые функции","Kullanılan teknoloji":"Технологический стек","Şeffaflık notu":"Примечание о прозрачности","Tüm projeler":"Все проекты","Benzer bir proje konuşalım ↗":"Обсудим похожий проект ↗","Canlı demoyu aç ↗":"Открыть демо ↗","GitHub kaynağı ↗":"Исходный код на GitHub ↗",
       "← Tüm projeler":"← Все проекты","Alan":"Направление","Rol / Odak":"Роль / фокус","Teknoloji":"Технологии","Demo durumu":"Статус демо","Kaynak kod":"Исходный код","Kaynak depo özel.":"Исходный репозиторий закрытый.","Canlı site doğrulandı":"Работа сайта проверена","Canlı site erişilebilir":"Сайт доступен","Demo bağlantısı":"Ссылка на демо","Canlı demo":"Демо","Not: Projelerde doğrulanmamış gelir, trafik, kullanıcı veya dönüşüm metrikleri kullanılmamıştır.":"Примечание: в описаниях проектов не используются неподтверждённые показатели выручки, трафика, пользователей или конверсии."
     }
-  };
+  ,
+    zh: {
+      "İŞLETMELER İÇİN WEB & YAZILIM": "面向企业的网站与软件开发",
+      "Web sitesi ve": "网站与",
+      "özel yazılım": "定制软件",
+      "geliştiriyorum.": "由我开发。",
+      "İşletmeler için kurumsal web siteleri, ihtiyaca özel yazılımlar ve iş süreçlerini kolaylaştıran yapay zekâ otomasyonları geliştiriyorum. Projenizi anlatın; kapsamı birlikte netleştirelim.": "我为企业开发专业网站、定制软件和人工智能自动化方案，帮助简化日常业务流程。告诉我您的需求，我们将共同明确项目范围。",
+      "Projenizi anlatın ↗": "介绍您的项目 ↗",
+      "Örnek işlerimi görün ↗": "查看精选案例 ↗",
+      "WEB SİTESİ · ÖZEL YAZILIM · AI OTOMASYONU": "企业网站 · 定制软件 · AI 自动化",
+      "KURUMSAL WEB SİTELERİ": "企业网站",
+      "ÖZEL YAZILIM": "定制软件",
+      "SAAS PLATFORMLARI": "SaaS 平台",
+      "İŞ AKIŞI OTOMASYONU": "工作流程自动化",
+      "TEKNİK İYİLEŞTİRME": "技术优化",
+      "01 / HİZMETLER": "01 / 服务",
+      "İşinizi kolaylaştıran": "让业务更轻松的",
+      "doğru çözümler.": "合适解决方案。",
+      "Web sitenizden özel yazılıma ve otomasyona kadar, ihtiyacınız olan dijital çözümü planlıyor ve geliştiriyorum.": "从企业网站、定制软件到自动化，我为您的业务规划并开发合适的数字化解决方案。",
+      "01 — WEB SİTESİ": "01 — 网站开发",
+      "Kurumsal web siteleri": "企业网站",
+      "İşletmenizi doğru anlatan, mobil uyumlu, hızlı ve arama motorları için düzenlenmiş web siteleri.": "清晰展示企业形象、适配移动设备、加载快速并针对搜索引擎优化的网站。",
+      "02 — ÖZEL YAZILIM": "02 — 定制软件",
+      "İşinize özel yazılımlar": "贴合业务的软件",
+      "İş süreçlerinizi kolaylaştıran yönetim panelleri, müşteri portalları ve size özel web uygulamaları.": "围绕您的业务流程打造管理后台、客户门户和专属 Web 应用。",
+      "03 — AI OTOMASYON": "03 — AI 自动化",
+      "Yapay zekâ ve otomasyon": "人工智能与自动化",
+      "Tekrarlayan görevleri azaltan AI destekli iş akışları, ajanlar ve sistem entegrasyonları.": "通过 AI 工作流、智能代理和系统集成，减少重复性工作。",
+      "04 — İYİLEŞTİRME": "04 — 系统优化",
+      "Mevcut sistemleri iyileştirme": "优化现有系统",
+      "Performans, güvenlik, erişilebilirlik ve teknik SEO geliştirmeleriyle mevcut sitenizi ve yazılımınızı güçlendirme.": "通过性能、安全性、无障碍体验和技术 SEO 优化，提升现有网站与软件。",
+      "PROJENİZİ HAYATA GEÇİRELİM": "让我们启动您的项目",
+      "Web sitenizi veya": "开始打造您的网站",
+      "yazılım projenizi başlatalım.": "或软件项目。",
+      "İhtiyacınızı kısaca anlatın. Size uygun çözümü ve sonraki adımları birlikte belirleyelim.": "请简要说明您的需求。我们将共同确定合适的方案和下一步计划。",
+      "İşletmeler için web siteleri, özel yazılımlar ve yapay zekâ otomasyonları.": "为企业提供网站、定制软件和 AI 自动化服务。",
+      "Hakkımda": "关于我",
+      "Yetkinlikler": "服务能力",
+      "Projeler": "项目案例",
+      "Notlar": "技术文章",
+      "İletişim": "联系",
+      "Ana içeriğe geç": "跳转到主要内容",
+      "Menüyü aç": "打开菜单",
+      "Menüyü kapat": "关闭菜单",
+      "Dil seçimi": "语言",
+      "Fikirleri": "将想法",
+      "çalışan": "变成可运行的",
+      "dijital": "数字化",
+      "ürünlere dönüştür.": "产品。",
+      "Bir proje konuşalım ↗": "讨论您的项目 ↗",
+      "Seçilmiş işler ↗": "精选案例 ↗",
+      "Farklı problemler.": "不同的问题。",
+      "Somut yazılım çözümleri.": "切实可行的软件解决方案。",
+      "SaaS ve API ürünlerinden kurumsal web platformlarına ve interaktif deneyimlere uzanan seçilmiş çalışmalar.": "精选案例涵盖 SaaS 与 API 产品、企业网站平台及互动数字体验。",
+      "Her proje; gerçek kapsamı, teknoloji seçimi ve doğrulanabilen işlevleriyle sunulur.": "每个项目均展示真实范围、技术选型和可验证的功能。",
+      "Teknik üretimden": "从技术实现",
+      "iş değerine.": "到业务价值。",
+      "İhtiyaca göre şekillenen, bakımı yapılabilir ve büyümeye hazır dijital ürünler.": "根据实际需求打造易于维护、可持续扩展的数字产品。",
+      "Net süreç.": "流程清晰。",
+      "Gözlemlenebilir ilerleme.": "进度透明。",
+      "Her proje, doğru problemi anlamakla başlar. Kapsamı netleştirir, geliştirir, test eder ve iyileştiririz.": "每个项目都从理解真正的问题开始。我们明确范围、开发、测试并持续改进。",
+      "Keşif": "需求梳理",
+      "Mimari & Tasarım": "架构与设计",
+      "Geliştirme": "开发",
+      "Yayın & İyileştirme": "发布与优化",
+      "İhtiyacı, kullanıcıyı, iş hedefini ve mevcut teknik durumu anlamak.": "了解需求、用户、业务目标和现有技术状况。",
+      "Kapsamı, kullanıcı akışlarını, veri modelini ve teknik yaklaşımı belirlemek.": "确定项目范围、用户流程、数据模型和技术方案。",
+      "Modüler kod, kontrollü entegrasyonlar ve gerçek testlerle ilerlemek.": "通过模块化代码、受控集成和实际测试推进项目。",
+      "Dağıtım, gözlemleme, geri bildirim ve sürdürülebilir geliştirme.": "部署、监控、反馈和持续迭代。",
+      "Teknolojiyle düşünen,": "以技术为基础，",
+      "ürünle sonuçlanan": "以产品成果为导向的",
+      "bir yaklaşım.": "方法。",
+      "Yazılımı yalnızca kod olarak görmüyorum.": "我不把软件仅仅看作代码。",
+      "Nasıl çalışırım?": "我的工作方式",
+      "Doğru teknoloji. Doğru problem.": "合适的技术，解决真正的问题。",
+      "Çalışmalar. Kanıtlanabilir şekilde.": "项目成果，真实可验证。",
+      "Bir fikrin mi var?": "有项目想法？",
+      "Konuşalım.": "聊一聊。",
+      "Ad Soyad *": "姓名 *",
+      "E-posta *": "电子邮箱 *",
+      "Şirket / Marka": "公司 / 品牌",
+      "İlgilendiğin konu": "您感兴趣的服务",
+      "Seçiniz": "请选择",
+      "Web uygulaması": "Web 应用",
+      "SaaS / platform": "SaaS / 平台",
+      "AI / otomasyon": "AI / 自动化",
+      "Teknik iyileştirme": "技术优化",
+      "Diğer": "其他",
+      "Proje özeti *": "项目简介 *",
+      "Hangi problemi çözmek istiyorsun?": "您希望解决什么问题？",
+      "Proje talebini gönder ↗": "提交项目需求 ↗",
+      "Notlar, kararlar ve öğrendiklerim.": "技术笔记、决策与经验。",
+      "Yazılım mimarisi, yapay zekâ, web performansı, ürün geliştirme ve güvenli yazılım üzerine teknik notlar.": "关于软件架构、人工智能、Web 性能、产品开发和安全工程的技术文章。",
+      "İlk teknik yazılar hazırlanıyor.": "首批技术文章正在准备中。",
+      "Gizlilik yaklaşımı.": "隐私说明。",
+      "Veri işleme": "数据处理",
+      "Çerezler": "Cookie",
+      "Projenin amacı": "项目目标",
+      "Öne çıkan işlevler": "主要功能",
+      "Kullanılan teknoloji": "使用的技术",
+      "Şeffaflık notu": "透明度说明",
+      "Tüm projeler": "全部项目",
+      "Benzer bir proje konuşalım ↗": "讨论类似项目 ↗",
+      "Canlı demoyu aç ↗": "打开在线演示 ↗",
+      "GitHub kaynağı ↗": "查看 GitHub 源码 ↗",
+      "Vaka analizini gör ↗": "查看项目案例 ↗",
+      "Tüm seçilmiş projeler ↗": "查看全部精选项目 ↗",
+      "BTMCode · Tüm hakları saklıdır": "BTMCode · 版权所有",
+      "Fikirleri çalışan dijital ürünlere dönüştürmek. Yazılım, yapay zekâ ve ürün mühendisliği.": "将想法转化为可运行的数字产品，专注软件开发、人工智能与产品工程。"
+    }};
 
   const meta = {
     en: {
@@ -336,7 +445,16 @@
       "/journal/":"Инженерные заметки | BTMCode",
       "/privacy/":"Конфиденциальность | BTMCode"
     }
-  };
+  ,
+    zh: {
+      "/": "企业网站与定制软件开发 | BTMCode",
+      "/about/": "关于 BTMCode | BTMCode",
+      "/services/": "企业网站、软件与 AI 自动化服务 | BTMCode",
+      "/projects/": "精选软件开发项目 | BTMCode",
+      "/contact/": "联系 BTMCode · 项目咨询 | BTMCode",
+      "/journal/": "软件工程技术文章 | BTMCode",
+      "/privacy/": "隐私说明 | BTMCode"
+    }};
   const descriptions = {
     en: {
       "/":"BTMCode builds professional business websites, custom software and AI automations. Tell us what you need and plan your project.",
@@ -374,7 +492,16 @@
       "/journal/":"Заметки об архитектуре ПО, ИИ, производительности веба и безопасной разработке.",
       "/privacy/":"Как BTMCode обрабатывает обращения и обеспечивает конфиденциальность."
     }
-  };
+  ,
+    zh: {
+      "/": "BTMCode 为企业开发专业网站、定制软件和 AI 自动化方案。告诉我们您的需求，规划您的项目。",
+      "/about/": "了解 BTMCode 的软件工程、人工智能和产品开发理念。",
+      "/services/": "企业网站、Web 应用、SaaS 平台、AI 自动化和安全软件开发服务。",
+      "/projects/": "精选 SaaS、API、企业网站平台和互动数字产品案例。",
+      "/contact/": "向 BTMCode 介绍您的网站、软件或 AI 自动化项目。",
+      "/journal/": "关于软件架构、人工智能、Web 性能、产品开发和安全工程的技术文章。",
+      "/privacy/": "了解 BTMCode 如何处理联系咨询和网站隐私。"
+    }};
 
   const localizedUi = {
     tr:{openMenu:"Menüyü aç",closeMenu:"Menüyü kapat",lightTheme:"Açık temaya geç",darkTheme:"Koyu temaya geç"},
@@ -417,7 +544,12 @@
       "Form; ad, e-posta adresi, isteğe bağlı şirket bilgisi, konu ve mesaj alanlarını işler. E-posta sağlayıcısı Resend, mesajın iletilmesi için verileri işler. Hassas bilgi veya parola göndermeyin. Veriler, talebi yanıtlamak ve gerekli yazışmayı sürdürmek için e-posta hesabında tutulabilir; silinmesini istemek için BTMCode ile iletişime geçebilirsiniz.":"Форма обрабатывает имя, адрес электронной почты, необязательные сведения о компании, тему и сообщение. Resend обрабатывает данные для доставки письма. Не отправляйте конфиденциальные сведения или пароли. Сообщение может храниться в почтовом ящике для ответа и дальнейшей переписки; для запроса на удаление свяжитесь с BTMCode.",
       "Reklam veya davranışsal izleme çerezleri kullanılmaz. Görünüm tercihi (açık/koyu tema) ve seçilen dil, tarayıcının yerel depolama alanında saklanır.":"Рекламные файлы cookie и отслеживание поведения не используются. Выбранная тема (светлая/тёмная) и язык сохраняются в локальном хранилище браузера."
     }
-  };
+  ,
+    zh: {
+      "İletişim formu aracılığıyla gönderilen bilgiler, talebinizi yanıtlamak amacıyla Resend e-posta altyapısı üzerinden BTMCode e-posta adresine iletilir. Form verileri BTMCode web sitesinde bir veritabanında saklanmaz.": "通过联系表单提交的信息将经由 Resend 邮件服务发送至 BTMCode 邮箱，以便回复您的咨询。BTMCode 不会在网站数据库中保存表单内容。",
+      "Form; ad, e-posta adresi, isteğe bağlı şirket bilgisi, konu ve mesaj alanlarını işler. E-posta sağlayıcısı Resend, mesajın iletilmesi için verileri işler. Hassas bilgi veya parola göndermeyin. Veriler, talebi yanıtlamak ve gerekli yazışmayı sürdürmek için e-posta hesabında tutulabilir; silinmesini istemek için BTMCode ile iletişime geçebilirsiniz.": "表单会处理姓名、电子邮箱、可选公司信息、主题和留言。邮件服务商 Resend 会处理这些数据以发送邮件。请勿提交敏感信息或密码。相关信息可能保留在邮箱中以处理咨询和后续沟通；如需删除，请联系 BTMCode。",
+      "Reklam veya davranışsal izleme çerezleri kullanılmaz. Görünüm tercihi (açık/koyu tema) ve seçilen dil, tarayıcının yerel depolama alanında saklanır.": "本网站不使用广告或行为追踪 Cookie。显示主题（浅色/深色）和所选语言保存在浏览器本地存储中。"
+    }};
   if (locale !== "tr" && dictionaries[locale]) {
     Object.assign(dictionaries[locale], privacyTranslations[locale] || {});
     dictionaries[locale]["Mesajınız Resend üzerinden güvenli e-posta kanalıyla iletilir."] = ({
@@ -438,7 +570,14 @@
     de:{"/projects/aquaterra/":"AQUATERRA Atelier — Projektfallstudie | BTMCode","/projects/aya/":"Aya Elektrik — Projektfallstudie | BTMCode","/projects/demos-pizza/":"Demos Pizza — Projektfallstudie | BTMCode","/projects/imagehub/":"ImageHub / imghost — Projektfallstudie | BTMCode","/projects/zirve/":"Zirve Elektrik — Projektfallstudie | BTMCode"},
     fr:{"/projects/aquaterra/":"AQUATERRA Atelier — Étude de projet | BTMCode","/projects/aya/":"Aya Elektrik — Étude de projet | BTMCode","/projects/demos-pizza/":"Demos Pizza — Étude de projet | BTMCode","/projects/imagehub/":"ImageHub / imghost — Étude de projet | BTMCode","/projects/zirve/":"Zirve Elektrik — Étude de projet | BTMCode"},
     ru:{"/projects/aquaterra/":"AQUATERRA Atelier — Обзор проекта | BTMCode","/projects/aya/":"Aya Elektrik — Обзор проекта | BTMCode","/projects/demos-pizza/":"Demos Pizza — Обзор проекта | BTMCode","/projects/imagehub/":"ImageHub / imghost — Обзор проекта | BTMCode","/projects/zirve/":"Zirve Elektrik — Обзор проекта | BTMCode"}
-  };
+  ,
+    zh: {
+      "/projects/aquaterra/": "AQUATERRA Atelier — 项目案例 | BTMCode",
+      "/projects/aya/": "Aya Elektrik — 项目案例 | BTMCode",
+      "/projects/demos-pizza/": "Demos Pizza — 项目案例 | BTMCode",
+      "/projects/imagehub/": "ImageHub / imghost — 项目案例 | BTMCode",
+      "/projects/zirve/": "Zirve Elektrik — 项目案例 | BTMCode"
+    }};
   if (meta[locale] && caseTitles[locale]) Object.assign(meta[locale], caseTitles[locale]);
   const caseDescriptions = {
     en:{
@@ -469,18 +608,25 @@
       "/projects/imagehub/":"API-first концепция хостинга изображений и CDN с преобразованием изображений, кабинетом пользователя и управлением API-ключами.",
       "/projects/zirve/":"Серверная платформа услуг на Next.js с локальными SEO-страницами, структурированными данными, формами заявок и административной CMS."
     }
-  };
+  ,
+    zh: {
+      "/projects/aquaterra/": "为定制水族箱、水草造景和景观设计打造的互动体验，包含生态缸计算器和项目咨询流程。",
+      "/projects/aya/": "面向电气服务企业的本地搜索与客户运营平台，包含 AI 内容工具和 CRM 工作流。",
+      "/projects/demos-pizza/": "全栈餐厅点餐演示，涵盖菜单、购物车、配送、订单追踪和后台运营。",
+      "/projects/imagehub/": "API 优先的图片托管与 CDN 产品概念，支持图片转换、用户面板和 API 密钥管理。",
+      "/projects/zirve/": "基于 Next.js 的服务平台，包含本地 SEO 页面、结构化数据、咨询表单和内容管理后台。"
+    }};
   if (descriptions[locale] && caseDescriptions[locale]) Object.assign(descriptions[locale], caseDescriptions[locale]);
   const commonUiText = {
-    "Ana menü":({en:"Main navigation",de:"Hauptnavigation",fr:"Navigation principale",ru:"Основная навигация"})[locale],
-    "Tüm hakları saklıdır":({en:"All rights reserved",de:"Alle Rechte vorbehalten",fr:"Tous droits réservés",ru:"Все права защищены"})[locale],
-    "İletişim":({en:"Contact",de:"Kontakt",fr:"Contact",ru:"Контакты"})[locale]
+    "Ana menü":({en:"Main navigation",de:"Hauptnavigation",fr:"Navigation principale",ru:"Основная навигация",zh:"主导航"})[locale],
+    "Tüm hakları saklıdır":({en:"All rights reserved",de:"Alle Rechte vorbehalten",fr:"Tous droits réservés",ru:"Все права защищены",zh:"版权所有"})[locale],
+    "İletişim":({en:"Contact",de:"Kontakt",fr:"Contact",ru:"Контакты",zh:"联系"})[locale]
   };
   if (locale !== "tr") Object.assign(dictionaries[locale], commonUiText);
 
 
 
-  document.documentElement.lang = locale;
+  document.documentElement.lang = locale === "zh" ? "zh-CN" : locale;
   document.documentElement.dataset.locale = locale;
   window.BTM_LOCALE = locale;
   const messages = {
@@ -488,7 +634,8 @@
     en: {sending:"Sending…",success:"Your message has been sent. I’ll get back to you soon.",error:"We couldn’t send your message. Please try again.",unavailable:"The form is temporarily unavailable. Please try again later."},
     de: {sending:"Wird gesendet…",success:"Ihre Nachricht wurde gesendet. Ich melde mich zeitnah.",error:"Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",unavailable:"Das Formular ist vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut."},
     fr: {sending:"Envoi…",success:"Votre message a été envoyé. Je vous répondrai rapidement.",error:"Votre message n’a pas pu être envoyé. Veuillez réessayer.",unavailable:"Le formulaire est temporairement indisponible. Réessayez plus tard."},
-    ru: {sending:"Отправка…",success:"Ваше сообщение отправлено. Я скоро отвечу.",error:"Не удалось отправить сообщение. Попробуйте ещё раз.",unavailable:"Форма временно недоступна. Попробуйте позже."}
+    ru: {sending:"Отправка…",success:"Ваше сообщение отправлено. Я скоро отвечу.",error:"Не удалось отправить сообщение. Попробуйте ещё раз.",unavailable:"Форма временно недоступна. Попробуйте позже."},
+    zh: {sending:"正在发送…",success:"您的消息已发送，我们会尽快回复。",error:"发送失败，请重试。",unavailable:"表单暂时无法使用，请稍后再试。"}
   };
   window.BTM_MESSAGES = messages[locale] || messages.tr;
 
@@ -526,17 +673,17 @@
     const ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc && description) ogDesc.content = description;
     const ogLocale = document.querySelector('meta[property="og:locale"]');
-    if (ogLocale) ogLocale.content = ({en:"en_US", de:"de_DE", fr:"fr_FR", ru:"ru_RU"})[locale];
+    if (ogLocale) ogLocale.content = ({en:"en_US", de:"de_DE", fr:"fr_FR", ru:"ru_RU", zh:"zh_CN"})[locale];
   }
 
   const languageSelect = document.querySelector("[data-language-select]");
   if (languageSelect) {
     languageSelect.value = locale;
-    const langLabel = ({tr:"Dil seçimi",en:"Language",de:"Sprache",fr:"Langue",ru:"Язык"})[locale];
+    const langLabel = ({tr:"Dil seçimi",en:"Language",de:"Sprache",fr:"Langue",ru:"Язык",zh:"语言"})[locale];
     languageSelect.setAttribute("aria-label", langLabel);
     languageSelect.addEventListener("change", () => {
       const next = languageSelect.value;
-      try { localStorage.setItem("btm-locale", next); } catch (e) {}
+      try { localStorage.setItem("btm-locale", next); localStorage.setItem("btm-locale-preference", next); } catch (e) {}
       const targetPath = next === "tr" ? path : "/" + next + (path === "/" ? "" : path.replace(/\/$/, ""));
       location.assign(targetPath + location.search + location.hash);
     });
@@ -546,7 +693,7 @@
   document.querySelectorAll('a[href^="/"]').forEach(link => {
     const href = link.getAttribute("href");
     if (!href || href.startsWith("//") || href.startsWith("/api/") || href.startsWith("/favicon") || href.startsWith("/manifest")) return;
-    if (/^\/(en|de|fr|ru)(\/|$)/.test(href)) return;
+    if (/^\/(en|de|fr|ru|zh)(\/|$)/.test(href)) return;
     if (locale !== "tr") link.setAttribute("href", "/" + locale + (href === "/" ? "" : href.replace(/\/$/, "")));
   });
 
@@ -562,7 +709,7 @@
     if (!link) {
       link = document.createElement("link");
       link.rel = "alternate";
-      link.hreflang = code;
+      link.hreflang = code === "zh" ? "zh-CN" : code;
       document.head.appendChild(link);
     }
     link.href = href;
