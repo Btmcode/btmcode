@@ -585,7 +585,15 @@
     "ve": "and",
     "Proje talebi": "Project enquiry",
     "Gizlilik": "Privacy",
-    "Özel depo": "Private repository"
+    "Özel depo": "Private repository",
+    "BUILD / ITERATE / SHIP": "BUILD / ITERATE / SHIP",
+    "IDEAS INTO SYSTEMS — 001": "IDEAS INTO SYSTEMS — 001",
+    "PRODUCT ENGINEERING": "PRODUCT ENGINEERING",
+    "SaaS & API": "SaaS & API",
+    "Commerce": "Commerce",
+    "Frontend": "Frontend",
+    "Backend": "Backend",
+    "Secure Development": "Secure Development"
   },
   "de": {
     "Language": "Sprache",
@@ -658,7 +666,15 @@
     "ve": "und",
     "Proje talebi": "Projektanfrage",
     "Gizlilik": "Datenschutz",
-    "Özel depo": "Privates Repository"
+    "Özel depo": "Privates Repository",
+    "BUILD / ITERATE / SHIP": "ENTWICKELN / ITERIEREN / AUSLIEFERN",
+    "IDEAS INTO SYSTEMS — 001": "VON IDEEN ZU SYSTEMEN — 001",
+    "PRODUCT ENGINEERING": "PRODUKTENTWICKLUNG",
+    "SaaS & API": "SaaS & APIs",
+    "Commerce": "E-Commerce",
+    "Frontend": "Frontend",
+    "Backend": "Backend",
+    "Secure Development": "Sichere Entwicklung"
   },
   "fr": {
     "Language": "Langue",
@@ -731,7 +747,15 @@
     "ve": "et",
     "Proje talebi": "Demande de projet",
     "Gizlilik": "Confidentialité",
-    "Özel depo": "Dépôt privé"
+    "Özel depo": "Dépôt privé",
+    "BUILD / ITERATE / SHIP": "CONSTRUIRE / ITÉRER / LIVRER",
+    "IDEAS INTO SYSTEMS — 001": "DES IDÉES AUX SYSTÈMES — 001",
+    "PRODUCT ENGINEERING": "INGÉNIERIE PRODUIT",
+    "SaaS & API": "SaaS & API",
+    "Commerce": "Commerce",
+    "Frontend": "Frontend",
+    "Backend": "Backend",
+    "Secure Development": "Développement sécurisé"
   },
   "ru": {
     "Language": "Язык",
@@ -804,7 +828,15 @@
     "ve": "и",
     "Proje talebi": "Запрос проекта",
     "Gizlilik": "Конфиденциальность",
-    "Özel depo": "Закрытый репозиторий"
+    "Özel depo": "Закрытый репозиторий",
+    "BUILD / ITERATE / SHIP": "СОЗДАВАТЬ / ИТЕРИРОВАТЬ / ЗАПУСКАТЬ",
+    "IDEAS INTO SYSTEMS — 001": "ОТ ИДЕЙ К СИСТЕМАМ — 001",
+    "PRODUCT ENGINEERING": "ПРОДУКТОВАЯ ИНЖЕНЕРИЯ",
+    "SaaS & API": "SaaS и API",
+    "Commerce": "Коммерция",
+    "Frontend": "Фронтенд",
+    "Backend": "Бэкенд",
+    "Secure Development": "Безопасная разработка"
   },
   "zh": {
     "Language": "语言",
@@ -877,7 +909,15 @@
     "ve": "与",
     "Proje talebi": "项目咨询",
     "Gizlilik": "隐私",
-    "Özel depo": "私有代码仓库"
+    "Özel depo": "私有代码仓库",
+    "BUILD / ITERATE / SHIP": "构建 / 迭代 / 发布",
+    "IDEAS INTO SYSTEMS — 001": "从创意到系统 — 001",
+    "PRODUCT ENGINEERING": "产品工程",
+    "SaaS & API": "SaaS 与 API",
+    "Commerce": "商业系统",
+    "Frontend": "前端",
+    "Backend": "后端",
+    "Secure Development": "安全开发"
   }
 };
 for (const locale of ["en","de","fr","ru","zh"]) Object.assign(dictionaries[locale], sharedUiTranslations[locale]);
