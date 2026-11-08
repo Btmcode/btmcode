@@ -20,7 +20,7 @@
     if(footer&&!footer.querySelector(".btm-trust")){
       const trust=document.createElement("div");
       trust.className="btm-trust";
-      trust.innerHTML='<div class="btm-trust__badges"><span><i aria-hidden="true">✓</i>'+t.https+'</span><span><i aria-hidden="true">◆</i>'+t.direct+'</span><span><i aria-hidden="true">↗</i>'+t.scope+'</span></div><div class="btm-trust__links"><a href="'+whatsapp+'" target="_blank" rel="noopener noreferrer">'+t.whatsapp+'</a><button type="button" data-consent-open>'+t.privacy+'</button><a href="'+prefix+'/privacy/">'+(locale==="tr"?"Gizlilik":locale==="de"?"Datenschutz":locale==="fr"?"Confidentialité":locale==="ru"?"Конфиденциальность":"Privacy")+'</a></div>';
+      trust.innerHTML='<div class="btm-trust__badges"><span><i aria-hidden="true">✓</i>'+t.https+'</span><span><i aria-hidden="true">◆</i>'+t.direct+'</span><span><i aria-hidden="true">↗</i>'+t.scope+'</span></div><div class="btm-trust__links"><a href="'+whatsapp+'" target="_blank" rel="noopener noreferrer">'+t.whatsapp+'</a><button type="button" data-consent-open>'+t.privacy+'</button><a href="'+prefix+'/privacy/">'+(locale==="tr"?"Gizlilik":locale==="de"?"Datenschutz":locale==="fr"?"Confidentialité":locale==="ru"?"Конфиденциальность":locale==="zh"?"隐私":"Privacy")+'</a></div>';
       const bottom=footer.querySelector(".footer-bottom");
       if(bottom) bottom.before(trust);
       const settings=trust.querySelector("[data-consent-open]");
