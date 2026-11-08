@@ -53,5 +53,5 @@ test("Simplified Chinese locale is used by shared footer and consent UI", () => 
   assert.match(commerce, /\(en\|de\|fr\|ru\|zh\)/);
   assert.match(commerce, /zh:\{whatsapp:/);
   assert.match(commerce, /常驻土耳其的独立软件开发者/);
-  assert.match(commerce, /locale==="zh"\?"隐私"/);
+  assert.match(commerce, /locale==="ru"\?"Конфиденциальность":locale==="zh"\?"隐私":"Privacy"/);
 });
