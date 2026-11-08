@@ -508,7 +508,8 @@
     en:{openMenu:"Open menu",closeMenu:"Close menu",lightTheme:"Switch to light theme",darkTheme:"Switch to dark theme"},
     de:{openMenu:"Menü öffnen",closeMenu:"Menü schließen",lightTheme:"Helles Design aktivieren",darkTheme:"Dunkles Design aktivieren"},
     fr:{openMenu:"Ouvrir le menu",closeMenu:"Fermer le menu",lightTheme:"Activer le thème clair",darkTheme:"Activer le thème sombre"},
-    ru:{openMenu:"Открыть меню",closeMenu:"Закрыть меню",lightTheme:"Включить светлую тему",darkTheme:"Включить тёмную тему"}
+    ru:{openMenu:"Открыть меню",closeMenu:"Закрыть меню",lightTheme:"Включить светлую тему",darkTheme:"Включить тёмную тему"},
+    zh:{openMenu:"打开菜单",closeMenu:"关闭菜单",lightTheme:"切换浅色主题",darkTheme:"切换深色主题"}
   };
   window.BTM_UI_TEXT = localizedUi[locale] || localizedUi.tr;
   const uiMenu = document.querySelector("[data-menu-toggle]");
