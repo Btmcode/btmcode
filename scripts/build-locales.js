@@ -428,14 +428,14 @@ function translateText(html, dict) {
   });
 }
 function translateAttributes(html, dict) {
-  return html.replace(/\\b(placeholder|aria-label|title|alt)=(["'])(.*?)\\2/gi, (all, name, quote, value) => {
+  return html.replace(/\b(placeholder|aria-label|title|alt)=(["'])(.*?)\2/gi, (all, name, quote, value) => {
     if (!Object.prototype.hasOwnProperty.call(dict, value)) return all;
     return name + "=" + quote + escapeHtml(dict[value]) + quote;
   });
 }
 
 function translateJsonLd(html, dict) {
-  return html.replace(/(<script\\b(?=[^>]*type=["']application\\/ld\\+json["'])[^>]*>)([\\s\\S]*?)(<\\/script>)/gi, (all, open, source, close) => {
+  return html.replace(/(<script\b(?=[^>]*type=["']application\/ld\+json["'])[^>]*>)([\s\S]*?)(<\/script>)/gi, (all, open, source, close) => {
     try {
       const data = JSON.parse(source);
       const translate = value => {
