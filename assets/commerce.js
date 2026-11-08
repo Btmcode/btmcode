@@ -13,7 +13,15 @@
   };
   const t=labels[locale]||labels.en;
   const phone="905386949469";
-  const message=encodeURIComponent(locale==="tr"?"Merhaba, BTMCode üzerinden bir yazılım projesi hakkında görüşmek istiyorum.":"Hello, I would like to discuss a software project with BTMCode.");
+  const whatsappMessages={
+    tr:"Merhaba, BTMCode üzerinden bir yazılım projesi hakkında görüşmek istiyorum.",
+    en:"Hello, I would like to discuss a software project with BTMCode.",
+    de:"Hallo, ich möchte mit BTMCode über ein Softwareprojekt sprechen.",
+    fr:"Bonjour, je souhaite discuter d’un projet logiciel avec BTMCode.",
+    ru:"Здравствуйте, я хотел(а) бы обсудить программный проект с BTMCode.",
+    zh:"您好，我想与 BTMCode 讨论一个软件项目。"
+  };
+  const message=encodeURIComponent(whatsappMessages[locale]||whatsappMessages.en);
   const whatsapp="https://wa.me/"+phone+"?text="+message;
   document.addEventListener("DOMContentLoaded",()=>{
     const footer=document.querySelector(".footer");
