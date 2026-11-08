@@ -764,10 +764,10 @@
       });
     });
     document.querySelectorAll("input, textarea").forEach(el => {
-      if (el.name === "name") el.placeholder = locale === "en" ? "Your name" : locale === "de" ? "Ihr Name" : locale === "fr" ? "Votre nom" : "Ваше имя";
+      if (el.name === "name") el.placeholder = locale === "en" ? "Your name" : locale === "de" ? "Ihr Name" : locale === "fr" ? "Votre nom" : locale === "zh" ? "您的姓名" : "Ваше имя";
       if (el.name === "email") el.placeholder = "name@example.com";
-      if (el.name === "company") el.placeholder = locale === "en" ? "Company name (optional)" : locale === "de" ? "Unternehmen (optional)" : locale === "fr" ? "Entreprise (facultatif)" : "Компания (необязательно)";
-      if (el.name === "message") el.placeholder = locale === "en" ? "What would you like to build?" : locale === "de" ? "Was möchten Sie entwickeln?" : locale === "fr" ? "Que souhaitez-vous créer ?" : "Что вы хотите создать?";
+      if (el.name === "company") el.placeholder = locale === "en" ? "Company name (optional)" : locale === "de" ? "Unternehmen (optional)" : locale === "fr" ? "Entreprise (facultatif)" : locale === "zh" ? "公司名称（选填）" : "Компания (необязательно)";
+      if (el.name === "message") el.placeholder = locale === "en" ? "What would you like to build?" : locale === "de" ? "Was möchten Sie entwickeln?" : locale === "fr" ? "Que souhaitez-vous créer ?" : locale === "zh" ? "您希望开发什么项目？" : "Что вы хотите создать?";
     });
     const title = (meta[locale] && meta[locale][path]) || ("BTMCode | " + locale.toUpperCase());
     document.title = title;
