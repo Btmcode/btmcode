@@ -43,3 +43,15 @@ test("shared UI is injected into built public HTML pages", () => {
   assert.match(build, /data-footer-trust/);
   assert.doesNotMatch(build, /"docs",/);
 });
+
+
+test("Simplified Chinese locale is used by shared footer and consent UI", () => {
+  const consent = read("assets/consent.js");
+  const commerce = read("assets/commerce.js");
+  assert.match(consent, /\(en\|de\|fr\|ru\|zh\)/);
+  assert.match(consent, /zh:\{title:"隐私偏好设置"/);
+  assert.match(commerce, /\(en\|de\|fr\|ru\|zh\)/);
+  assert.match(commerce, /zh:\{whatsapp:/);
+  assert.match(commerce, /常驻土耳其的独立软件开发者/);
+  assert.match(commerce, /locale==="ru"\?"Конфиденциальность":locale==="zh"\?"隐私":"Privacy"/);
+});
