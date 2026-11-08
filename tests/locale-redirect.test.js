@@ -56,3 +56,11 @@ test("all source pages expose the Simplified Chinese language option", () => {
     assert.match(html, /<option value="zh">ZH<\/option>/, page + " must offer Chinese");
   }
 });
+
+test("localized builds translate accessible attributes and JSON-LD string values", () => {
+  const build = fs.readFileSync(path.join(root, "scripts/build-locales.js"), "utf8");
+  assert.match(build, /function translateAttributes\(html, dict\)/);
+  assert.match(build, /function translateJsonLd\(html, dict\)/);
+  assert.match(build, /html = translateAttributes\(html,dict\)/);
+  assert.match(build, /html = translateJsonLd\(html,dict\)/);
+});
