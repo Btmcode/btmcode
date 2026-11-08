@@ -462,7 +462,7 @@ function localizeHtml(source,locale,route) {
   let html = translateText(source,dictionaries[locale] || {});
   const title = (meta[locale] && meta[locale][route]) || ("BTMCode | " + locale.toUpperCase());
   const description = descriptions[locale] && descriptions[locale][route];
-  html = html.replace(/<html\b([^>]*)\blang=["'][^"']*["']/i,'<html$1lang="' + locale + '"');
+  html = html.replace(/<html\b([^>]*)\blang=["'][^"']*["']/i,'<html$1lang="' + (locale === "zh" ? "zh-CN" : locale) + '"');
   html = html.replace(/<title>[\s\S]*?<\/title>/i,"<title>" + escapeHtml(title) + "</title>");
   if (description) {
     html = setMeta(html,/<meta\b(?=[^>]*\bname=["']description["'])[^>]*>/i,description);
