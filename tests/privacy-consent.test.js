@@ -49,7 +49,7 @@ test("Simplified Chinese locale is used by shared footer and consent UI", () => 
   const consent = read("assets/consent.js");
   const commerce = read("assets/commerce.js");
   assert.match(consent, /\(en\|de\|fr\|ru\|zh\)/);
-  assert.match(consent, /zh:\{title:"隐私偏好设置"/);
+  assert.match(consent, /zh:\{eyebrow:"BTMCODE · 隐私",title:"隐私偏好设置"/);
   assert.match(commerce, /\(en\|de\|fr\|ru\|zh\)/);
   assert.match(commerce, /zh:\{whatsapp:/);
   assert.match(commerce, /常驻土耳其的独立软件开发者/);
