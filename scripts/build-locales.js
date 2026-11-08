@@ -32,6 +32,8 @@ function extractObject(name) {
   throw new Error("Unclosed object literal: " + name);
 }
 const dictionaries = extractObject("dictionaries");
+const sharedUiTranslations = extractObject("sharedUiTranslations");
+for (const locale of LOCALES) Object.assign(dictionaries[locale], sharedUiTranslations[locale] || {});
 const meta = extractObject("meta");
 const descriptions = extractObject("descriptions");
 const caseTitles = extractObject("caseTitles");
@@ -427,6 +429,32 @@ function translateText(html, dict) {
     return ">" + text.slice(0,offset) + dict[key] + text.slice(offset+key.length) + "<";
   });
 }
+function translateAttributes(html, dict) {
+  return html.replace(/\b(placeholder|aria-label|title|alt)=(["'])(.*?)\2/gi, (all, name, quote, value) => {
+    if (!Object.prototype.hasOwnProperty.call(dict, value)) return all;
+    return name + "=\"" + escapeHtml(dict[value]) + "\"";
+  });
+}
+
+function translateJsonLd(html, dict) {
+  return html.replace(/(<script\b(?=[^>]*type=["']application\/ld\+json["'])[^>]*>)([\s\S]*?)(<\/script>)/gi, (all, open, source, close) => {
+    try {
+      const data = JSON.parse(source);
+      const translate = value => {
+        if (typeof value === "string") return Object.prototype.hasOwnProperty.call(dict, value) ? dict[value] : value;
+        if (Array.isArray(value)) return value.map(translate);
+        if (value && typeof value === "object") {
+          for (const key of Object.keys(value)) value[key] = translate(value[key]);
+        }
+        return value;
+      };
+      return open + JSON.stringify(translate(data)) + close;
+    } catch (error) {
+      return all;
+    }
+  });
+}
+
 function setMeta(html, selector, value) {
   return html.replace(selector, tag => {
     if (/\bcontent=(["']).*?\1/i.test(tag)) return tag.replace(/\bcontent=(["']).*?\1/i, "content=\"" + escapeHtml(value) + "\"");
@@ -459,7 +487,10 @@ function addAlternates(html, route) {
   return html.replace("</head>",links.join("")+"</head>");
 }
 function localizeHtml(source,locale,route) {
-  let html = translateText(source,dictionaries[locale] || {});
+  const dict = dictionaries[locale] || {};
+  let html = translateText(source,dict);
+  html = translateAttributes(html,dict);
+  html = translateJsonLd(html,dict);
   const title = (meta[locale] && meta[locale][route]) || ("BTMCode | " + locale.toUpperCase());
   const description = descriptions[locale] && descriptions[locale][route];
   html = html.replace(/<html\b([^>]*)\blang=["'][^"']*["']/i,'<html$1lang="' + (locale === "zh" ? "zh-CN" : locale) + '"');

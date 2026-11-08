@@ -49,9 +49,24 @@ test("Simplified Chinese locale is used by shared footer and consent UI", () => 
   const consent = read("assets/consent.js");
   const commerce = read("assets/commerce.js");
   assert.match(consent, /\(en\|de\|fr\|ru\|zh\)/);
-  assert.match(consent, /zh:\{title:"隐私偏好设置"/);
+  assert.match(consent, /zh:\{eyebrow:"BTMCODE · 隐私",title:"隐私偏好设置"/);
   assert.match(commerce, /\(en\|de\|fr\|ru\|zh\)/);
   assert.match(commerce, /zh:\{whatsapp:/);
   assert.match(commerce, /常驻土耳其的独立软件开发者/);
   assert.match(commerce, /locale==="ru"\?"Конфиденциальность":locale==="zh"\?"隐私":"Privacy"/);
+});
+
+test("Chinese runtime contact messages never resolve to undefined", () => {
+  const i18n = read("assets/i18n.js");
+  assert.match(i18n, /zh:"您的消息将通过 Resend 邮件服务安全发送。"/);
+  assert.match(i18n, /zh:"BTMCode 不会将表单数据存储在数据库中。"/);
+});
+
+test("cookie privacy eyebrow and dynamic service labels are localized", () => {
+  const consent = read("assets/consent.js");
+  const commerce = read("assets/commerce.js");
+  assert.match(consent, /zh:\{eyebrow:"BTMCODE · 隐私"/);
+  assert.match(consent, /btm-consent__eyebrow/);
+  assert.match(commerce, /retainerKicker:"月度合作",monthly:"每月"/);
+  assert.match(commerce, /zh:"您好，我想与 BTMCode 讨论一个软件项目。"/);
 });
