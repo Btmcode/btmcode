@@ -430,7 +430,7 @@ function translateText(html, dict) {
 function translateAttributes(html, dict) {
   return html.replace(/\b(placeholder|aria-label|title|alt)=(["'])(.*?)\2/gi, (all, name, quote, value) => {
     if (!Object.prototype.hasOwnProperty.call(dict, value)) return all;
-    return name + "=" + quote + escapeHtml(dict[value]) + quote;
+    return name + "=\"" + escapeHtml(dict[value]) + "\"";
   });
 }
 
