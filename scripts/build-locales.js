@@ -3,8 +3,8 @@ const path = require("node:path");
 const vm = require("node:vm");
 const PUBLIC = path.join(process.cwd(), "public");
 const SOURCE = require("node:fs").readFileSync(path.join(PUBLIC, "assets/i18n.js"), "utf8");
-const LOCALES = ["en","de","fr","ru"];
-const LOCALE_TAGS = {en:"en_US",de:"de_DE",fr:"fr_FR",ru:"ru_RU"};
+const LOCALES = ["en","de","fr","ru","zh"];
+const LOCALE_TAGS = {en:"en_US",de:"de_DE",fr:"fr_FR",ru:"ru_RU",zh:"zh_CN"};
 
 function extractObject(name) {
   const start = SOURCE.indexOf("const " + name + " =");
@@ -47,7 +47,12 @@ const ui = {
   de:{open:"Menü öffnen",light:"Helles Design aktivieren",nav:"Hauptnavigation"},
   fr:{open:"Ouvrir le menu",light:"Activer le thème clair",nav:"Navigation principale"},
   ru:{open:"Открыть меню",light:"Включить светлую тему",nav:"Основная навигация"}
-};
+,
+  zh: {
+    "open": "打开菜单",
+    "light": "切换浅色主题",
+    "nav": "主导航"
+  }};
 const extra = {
   en:{"Mesajınız Resend üzerinden güvenli e-posta kanalıyla iletilir.":"Your message is delivered securely by email through Resend.","Form verileri BTMCode tarafından bir veritabanında saklanmaz.":"BTMCode does not store form submissions in a database.",
     "Bu sayfa, BTMCode'un veri işleme yaklaşımına ilişkin geçici bilgilendirmedir; nihai KVKK aydınlatma metni değildir. İletişim formu aracılığıyla gönderilen bilgiler, talebinizi yanıtlamak amacıyla Resend e-posta altyapısı üzerinden iletilir. Google Analytics bu sürümde bir Measurement ID tanımlanmadıkça yüklenmez; yapılandırıldığında yalnızca analitik tercihi açıkça kabul edilirse etkinleşir. Form verileri BTMCode web sitesinde bir veritabanında saklanmaz; e-posta sağlayıcısındaki saklama ve yurt dışı aktarım koşulları ayrıca doğrulanmalıdır.":"This page is an interim notice about BTMCode's data practices and is not the final KVKK information notice. Contact form details are sent through Resend email infrastructure so the enquiry can be answered. Google Analytics is not loaded unless a Measurement ID is configured; once configured, it activates only if analytics is explicitly accepted. BTMCode does not store form submissions in a website database; the email provider's retention and international transfer conditions must be verified separately."},
@@ -57,7 +62,12 @@ const extra = {
     "Bu sayfa, BTMCode'un veri işleme yaklaşımına ilişkin geçici bilgilendirmedir; nihai KVKK aydınlatma metni değildir. İletişim formu aracılığıyla gönderilen bilgiler, talebinizi yanıtlamak amacıyla Resend e-posta altyapısı üzerinden iletilir. Google Analytics bu sürümde bir Measurement ID tanımlanmadıkça yüklenmez; yapılandırıldığında yalnızca analitik tercihi açıkça kabul edilirse etkinleşir. Form verileri BTMCode web sitesinde bir veritabanında saklanmaz; e-posta sağlayıcısındaki saklama ve yurt dışı aktarım koşulları ayrıca doğrulanmalıdır.":"Cette page est une information provisoire sur les pratiques de traitement des données de BTMCode et ne constitue pas la notice d'information KVKK définitive. Les données du formulaire de contact sont transmises via l'infrastructure e-mail Resend afin de répondre à la demande. Google Analytics n'est chargé que si un identifiant Measurement est configuré et ne s'active qu'après acceptation explicite des statistiques. BTMCode ne stocke pas les formulaires dans une base de données du site ; les conditions de conservation et de transfert international du fournisseur de messagerie doivent être vérifiées séparément."},
   ru:{"Mesajınız Resend üzerinden güvenli e-posta kanalıyla iletilir.":"Ваше сообщение безопасно отправляется по электронной почте через Resend.","Form verileri BTMCode tarafından bir veritabanında saklanmaz.":"BTMCode не сохраняет данные формы в базе данных.",
     "Bu sayfa, BTMCode'un veri işleme yaklaşımına ilişkin geçici bilgilendirmedir; nihai KVKK aydınlatma metni değildir. İletişim formu aracılığıyla gönderilen bilgiler, talebinizi yanıtlamak amacıyla Resend e-posta altyapısı üzerinden iletilir. Google Analytics bu sürümde bir Measurement ID tanımlanmadıkça yüklenmez; yapılandırıldığında yalnızca analitik tercihi açıkça kabul edilirse etkinleşir. Form verileri BTMCode web sitesinde bir veritabanında saklanmaz; e-posta sağlayıcısındaki saklama ve yurt dışı aktarım koşulları ayrıca doğrulanmalıdır.":"Эта страница является предварительным уведомлением о практиках обработки данных BTMCode и не заменяет окончательное уведомление KVKK. Данные контактной формы передаются через почтовую инфраструктуру Resend для ответа на запрос. Google Analytics не загружается без настроенного Measurement ID и активируется только после явного согласия на аналитику. BTMCode не хранит отправленные формы в базе данных сайта; сроки хранения и условия международной передачи данных почтовым провайдером должны быть проверены отдельно."}
-};
+,
+  zh: {
+    "Mesajınız Resend üzerinden güvenli e-posta kanalıyla iletilir.": "您的消息将通过 Resend 邮件服务安全发送。",
+    "Form verileri BTMCode tarafından bir veritabanında saklanmaz.": "BTMCode 不会将表单数据存储在数据库中。",
+    "Bu sayfa, BTMCode'un veri işleme yaklaşımına ilişkin geçici bilgilendirmedir; nihai KVKK aydınlatma metni değildir. İletişim formu aracılığıyla gönderilen bilgiler, talebinizi yanıtlamak amacıyla Resend e-posta altyapısı üzerinden iletilir. Google Analytics bu sürümde bir Measurement ID tanımlanmadıkça yüklenmez; yapılandırıldığında yalnızca analitik tercihi açıkça kabul edilirse etkinleşir. Form verileri BTMCode web sitesinde bir veritabanında saklanmaz; e-posta sağlayıcısındaki saklama ve yurt dışı aktarım koşulları ayrıca doğrulanmalıdır.": "本页面是 BTMCode 数据处理方式的临时说明，并非最终 KVKK 隐私告知文本。联系表单信息通过 Resend 邮件服务传递，以便回复您的咨询。除非配置 Measurement ID，网站不会加载 Google Analytics；配置后也仅在用户明确同意统计分析时启用。BTMCode 不会在网站数据库中保存表单数据；邮件服务商的数据保留和跨境传输条件仍需另行核实。"
+  }};
 for (const locale of LOCALES) Object.assign(dictionaries[locale], extra[locale], {"Ana menü":ui[locale].nav});
 
 const moreTranslations = {
@@ -249,7 +259,50 @@ const moreTranslations = {
     "JWT ve HttpOnly cookie tabanlı yönetici oturumu":"Административная сессия на основе JWT и HttpOnly cookie",
     "6 Kasım 2026 tarihinde canlı ana sayfa HTTP 200 döndürdü; sunucu HTML'inde ana içerik, canonical ve yapılandırılmış veri doğrulandı.":"6 ноября 2026 года главная страница вернула HTTP 200; основной контент, canonical URL и структурированные данные проверены в серверном HTML."
   }
-};
+,
+  zh: {
+    "Ben Ahmet. Yazılım geliştirme, yapay zekâ ve iş geliştirme kesişiminde dijital ürünler ve iş süreçleri tasarlıyorum.": "我是 Ahmet，专注于软件开发、人工智能与业务创新交汇处的数字产品和业务流程设计。",
+    "Vaka analizini gör ↗": "查看项目案例 ↗",
+    "Tüm seçilmiş projeler ↗": "查看全部精选项目 ↗",
+    "Özel Web Uygulamaları": "定制 Web 应用",
+    "Kurumsal web deneyimleri, müşteri portalları, yönetim panelleri ve operasyon araçları.": "企业网站体验、客户门户、管理后台和运营工具。",
+    "Abonelik tabanlı ürünler, çok rollü paneller, veri odaklı araçlar ve API-first sistemler.": "订阅制产品、多角色后台、数据工具和 API 优先系统。",
+    "Yapay zekâ ajanları, içerik üretim sistemleri ve tekrarlayan operasyonların otomasyonu.": "AI 智能代理、内容生成系统和重复业务流程自动化。",
+    "Performans ve Güvenli Geliştirme": "性能与安全开发",
+    "Keşif": "需求梳理",
+    "Mimari & Tasarım": "架构与设计",
+    "Geliştirme": "开发",
+    "Yayın & İyileştirme": "发布与优化",
+    "İletişim": "联系",
+    "Tüm hakları saklıdır": "版权所有",
+    "Bir fikrin mi var?": "有项目想法？",
+    "Konuşalım.": "聊一聊。",
+    "Ad Soyad *": "姓名 *",
+    "E-posta *": "电子邮箱 *",
+    "Şirket / Marka": "公司 / 品牌",
+    "İlgilendiğin konu": "感兴趣的服务",
+    "Seçiniz": "请选择",
+    "Web uygulaması": "Web 应用",
+    "SaaS / platform": "SaaS / 平台",
+    "AI / otomasyon": "AI / 自动化",
+    "Teknik iyileştirme": "技术优化",
+    "Diğer": "其他",
+    "Proje özeti *": "项目简介 *",
+    "Hangi problemi çözmek istiyorsun?": "您希望解决什么问题？",
+    "Proje talebini gönder ↗": "提交项目需求 ↗",
+    "Notlar, kararlar ve öğrendiklerim.": "技术笔记、决策与经验。",
+    "İlk teknik yazılar hazırlanıyor.": "首批技术文章正在准备中。",
+    "Veri işleme": "数据处理",
+    "Çerezler": "Cookie",
+    "Projenin amacı": "项目目标",
+    "Öne çıkan işlevler": "主要功能",
+    "Kullanılan teknoloji": "使用的技术",
+    "Şeffaflık notu": "透明度说明",
+    "Tüm projeler": "全部项目",
+    "Canlı demoyu aç ↗": "打开在线演示 ↗",
+    "GitHub kaynağı ↗": "查看 GitHub 源码 ↗",
+    "BTMCode · Tüm hakları saklıdır": "BTMCode · 版权所有"
+  }};
 for (const locale of LOCALES) Object.assign(dictionaries[locale], moreTranslations[locale]);
 
 const caseTranslations = {
@@ -331,8 +384,34 @@ const caseTranslations = {
     "Hizmet, bölge, blog ve SSS için ayrı indekslenebilir sayfalar":"Отдельные индексируемые страницы услуг, регионов, блога и FAQ",
     "Electrician, WebSite ve FAQPage JSON-LD yapılandırılmış verileri":"Структурированные данные JSON-LD Electrician, WebSite и FAQPage"
   }
-};
-for (const locale of ["de","fr","ru"]) Object.assign(dictionaries[locale], caseTranslations[locale]);
+,
+  zh: {
+    "Klasik kurumsal site yerine; sinematik scroll hikâyesi, su-kara geçiş etkileşimi, biyotop hesaplayıcısı, proje keşfi ve önceden doldurulabilen teklif akışından oluşan etkileşimli stüdyo deneyimi.": "这是一种互动式工作室体验，而非传统企业网站，包含电影感滚动叙事、水景与陆景切换、生态缸计算器、项目探索和预填项目咨询流程。",
+    "Su ve peyzaj arasında geçiş yapan interaktif slider": "水景与景观之间的互动切换滑块",
+    "Hacim, filtrasyon, aydınlatma ve bitki önerileri sunan biyotop hesaplayıcısı": "提供容量、过滤、照明和植物建议的生态缸计算器",
+    "Türkçe/İngilizce dil değişimi ve tema tercihi": "土耳其语/英语切换与主题偏好",
+    "Hesaplama özetiyle önceden doldurulan proje talep akışı": "自动填入计算摘要的项目咨询流程",
+    "Elektrik servis işletmesi için geliştirilen yerel arama ve müşteri operasyon platformu. Bölgesel hizmet sayfaları, AI destekli içerik üretimi ve CRM ekranları aynı uygulamada buluşuyor.": "为电气服务企业打造的本地搜索与客户运营平台，将区域服务页面、AI 内容生成和 CRM 管理整合在同一应用中。",
+    "İlçe ve hizmet niyetine göre ayrıştırılmış içerik sayfaları": "按地区和服务搜索意图组织的内容页面",
+    "Gemini ve Imagen entegrasyonlu AI içerik/görsel taslak akışları": "集成 Gemini 和 Imagen 的 AI 文案与图片草稿流程",
+    "Talep ve müşteri yönetimi için admin ekranları": "用于咨询和客户管理的后台界面",
+    "Restoranın dijital vitrinini sipariş akışı ve operasyon yönetimiyle birleştiren full-stack demo. Menü, kampanya, sepet, sipariş ve takip ekranları; yönetim API'leriyle destekleniyor.": "将餐厅数字门店、点餐流程和运营管理结合的全栈演示，包含菜单、促销、购物车、订单和追踪页面，并由管理 API 提供支持。",
+    "Kategori bazlı menü ve kampanya alanları": "分类菜单和促销区域",
+    "Sepet, teslimat adresi ve sipariş oluşturma akışı": "购物车、配送地址和下单流程",
+    "Sipariş durumu ve takip sayfaları": "订单状态与追踪页面",
+    "Admin tarafında menü, kampanya, mesaj ve sipariş yönetimi": "后台菜单、促销、消息和订单管理",
+    "AI destekli arama ve öneri bileşenleri": "AI 搜索与推荐组件",
+    "API-first image hosting ürünü; çoklu boyut varyantları, otomatik WebP dönüşümü, kullanıcı API anahtarları, görsel yönetimi, API dokümantasyonu ve ödeme/billing ekranlarını bir araya getiriyor.": "API 优先的图片托管产品概念，整合多尺寸图片、自动 WebP 转换、用户 API 密钥、图片管理、API 文档和账单界面。",
+    "WebP dönüşümü ve görsel sıkıştırma iş akışı": "WebP 转换与图片压缩流程",
+    "Thumbnail, medium ve large boyut varyantları": "缩略图、中尺寸和大尺寸图片版本",
+    "Korumalı kullanıcı paneli, upload ve görsel kütüphanesi": "受保护的用户后台、上传和图片库",
+    "Billing, ödeme, kullanıcı ve güvenlik yönetimi için admin modülleri": "账单、支付、用户和安全管理后台模块",
+    "Sunucu tarafında render edilen kurumsal hizmet sitesi. Hizmet, ilçe, blog ve SSS sayfaları; LocalBusiness yapılandırılmış veri; talep formları ve yönetim paneli aynı ürün mimarisinde birleştiriliyor.": "采用服务端渲染的企业服务网站，将服务、地区、博客和常见问题页面、LocalBusiness 结构化数据、咨询表单与管理后台整合在统一架构中。",
+    "Next.js App Router ile sunucu tarafı sayfa üretimi": "使用 Next.js App Router 进行服务端页面生成",
+    "Hizmet, bölge, blog ve SSS için ayrı indekslenebilir sayfalar": "服务、地区、博客和 FAQ 的独立可索引页面",
+    "Electrician, WebSite ve FAQPage JSON-LD yapılandırılmış verileri": "Electrician、WebSite 和 FAQPage JSON-LD 结构化数据"
+  }};
+for (const locale of ["de","fr","ru","zh"]) Object.assign(dictionaries[locale], caseTranslations[locale]);
 
 
 
@@ -364,15 +443,16 @@ function localizedPath(locale, route) {
 function localizeLinks(html, locale) {
   return html.replace(/\bhref=(["'])(\/[^"']*)\1/gi, (all,q,href) => {
     if (href.startsWith("//") || /^\/(assets|api|admin)(\/|$)/.test(href) || ["/favicon.svg","/manifest.webmanifest","/robots.txt","/sitemap.xml"].includes(href)) return all;
-    if (/^\/(en|de|fr|ru)(\/|$)/.test(href)) return all;
+    if (/^\/(en|de|fr|ru|zh)(\/|$)/.test(href)) return all;
     return "href=" + q + localizedPath(locale,href) + q;
   });
 }
 function addAlternates(html, route) {
-  const codes = ["tr","en","de","fr","ru"];
+  const codes = ["tr","en","de","fr","ru","zh"];
   const links = codes.map(code => {
     const url = "https://btmcode.vercel.app" + (code === "tr" ? route : localizedPath(code,route));
-    return '<link rel="alternate" hreflang="' + code + '" href="' + url + '">';
+    const hreflang = code === "zh" ? "zh-CN" : code;
+    return '<link rel="alternate" hreflang="' + hreflang + '" href="' + url + '">';
   });
   links.push('<link rel="alternate" hreflang="x-default" href="https://btmcode.vercel.app' + route + '">');
   html = html.replace(/<link\b[^>]*rel=["']alternate["'][^>]*>/gi,"");
@@ -403,7 +483,7 @@ async function htmlFiles(dir,relative="") {
   for (const entry of await fs.readdir(dir,{withFileTypes:true})) {
     const rel = path.posix.join(relative,entry.name);
     if (entry.isDirectory()) {
-      if (["admin","api","en","de","fr","ru"].includes(entry.name)) continue;
+      if (["admin","api","en","de","fr","ru","zh"].includes(entry.name)) continue;
       result.push(...await htmlFiles(path.join(dir,entry.name),rel));
     } else if (entry.isFile() && entry.name === "index.html") result.push(rel);
   }
