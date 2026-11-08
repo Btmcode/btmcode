@@ -6,6 +6,7 @@
   const path = rawPath.endsWith("/") ? rawPath : rawPath + "/";
   const dictionaries = {
     en: {
+      "Hizmetlerin tamamını görün ↗":"View all services ↗",
       "İŞLETMELER İÇİN WEB & YAZILIM":"WEBSITES & SOFTWARE FOR BUSINESSES",
       "Web sitesi ve":"Websites and",
       "özel yazılım":"custom software",
@@ -87,6 +88,7 @@
       "← Tüm projeler":"← All projects","Alan":"Area","Rol / Odak":"Role / Focus","Teknoloji":"Technology","Demo durumu":"Demo status","Kaynak kod":"Source code","Kaynak depo özel.":"The source repository is private.","Kaynak kod Özel depo":"Source code Private repository","Canlı site doğrulandı":"Live website verified","Canlı site erişilebilir":"Live website accessible","Demo bağlantısı":"Demo link","Canlı demo":"Live demo","Canlı demoyu aç ↗":"Open live demo ↗","Not: Projelerde doğrulanmamış gelir, trafik, kullanıcı veya dönüşüm metrikleri kullanılmamıştır.":"Note: No unverified revenue, traffic, user or conversion metrics are used in project descriptions."
     },
     de: {
+      "Hizmetlerin tamamını görün ↗":"Alle Leistungen ansehen ↗",
       "İŞLETMELER İÇİN WEB & YAZILIM":"WEBSITES & SOFTWARE FÜR UNTERNEHMEN",
       "Web sitesi ve":"Websites und",
       "özel yazılım":"individuelle Software",
@@ -156,6 +158,7 @@
       "← Tüm projeler":"← Alle Projekte","Alan":"Bereich","Rol / Odak":"Rolle / Fokus","Teknoloji":"Technologie","Demo durumu":"Demo-Status","Kaynak kod":"Quellcode","Kaynak depo özel.":"Das Quell-Repository ist privat.","Canlı site doğrulandı":"Live-Website überprüft","Canlı site erişilebilir":"Live-Website erreichbar","Demo bağlantısı":"Demo-Link","Canlı demo":"Live-Demo","Not: Projelerde doğrulanmamış gelir, trafik, kullanıcı veya dönüşüm metrikleri kullanılmamıştır.":"Hinweis: Die Projektbeschreibungen enthalten keine ungeprüften Kennzahlen zu Umsatz, Traffic, Nutzern oder Conversions."
     },
     fr: {
+      "Hizmetlerin tamamını görün ↗":"Voir tous les services ↗",
       "İŞLETMELER İÇİN WEB & YAZILIM":"SITES WEB ET LOGICIELS POUR LES ENTREPRISES",
       "Web sitesi ve":"Sites web et",
       "özel yazılım":"logiciels sur mesure",
@@ -225,6 +228,7 @@
       "← Tüm projeler":"← Tous les projets","Alan":"Domaine","Rol / Odak":"Rôle / focus","Teknoloji":"Technologies","Demo durumu":"État de la démo","Kaynak kod":"Code source","Kaynak depo özel.":"Le dépôt source est privé.","Canlı site doğrulandı":"Site actif vérifié","Canlı site erişilebilir":"Site actif accessible","Demo bağlantısı":"Lien de démonstration","Canlı demo":"Démo en direct","Not: Projelerde doğrulanmamış gelir, trafik, kullanıcı veya dönüşüm metrikleri kullanılmamıştır.":"Note : aucune donnée non vérifiée de revenus, trafic, utilisateurs ou conversions n’est utilisée dans les projets."
     },
     ru: {
+      "Hizmetlerin tamamını görün ↗":"Посмотреть все услуги ↗",
       "İŞLETMELER İÇİN WEB & YAZILIM":"САЙТЫ И ПРОГРАММЫ ДЛЯ БИЗНЕСА",
       "Web sitesi ve":"Сайты и",
       "özel yazılım":"программное обеспечение",
