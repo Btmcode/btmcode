@@ -72,7 +72,8 @@
     panel.hidden=true;
     panel.innerHTML='<div class="btm-consent__card"><div class="btm-consent__eyebrow">BTMCODE · PRIVACY</div><h2 id="btm-consent-title"></h2><p class="btm-consent__body"></p><div class="btm-consent__options"><div class="btm-consent__option"><div><strong data-label="necessary"></strong><small data-desc="necessaryDesc"></small></div><span class="btm-consent__locked" data-label="always"></span></div><label class="btm-consent__option"><span><strong data-label="analytics"></strong><small data-desc="analyticsDesc"></small></span><input type="checkbox" data-consent-analytics></label><label class="btm-consent__option"><span><strong data-label="marketing"></strong><small data-desc="marketingDesc"></small></span><input type="checkbox" data-consent-marketing></label></div><p class="btm-consent__note"></p><div class="btm-consent__actions"><button type="button" data-consent-reject></button><button type="button" data-consent-save></button><button type="button" data-consent-accept></button></div></div>';
     document.body.appendChild(panel);
-    panel.querySelector(".btm-consent__eyebrow").textContent=t.eyebrow;\n    panel.querySelector("h2").textContent=t.title;
+    panel.querySelector(".btm-consent__eyebrow").textContent=t.eyebrow;
+    panel.querySelector("h2").textContent=t.title;
     panel.querySelector(".btm-consent__body").textContent=t.body;
     panel.querySelector(".btm-consent__note").textContent=t.note;
     panel.querySelectorAll("[data-label]").forEach(el=>el.textContent=t[el.dataset.label]);
