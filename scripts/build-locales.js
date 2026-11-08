@@ -487,7 +487,10 @@ function addAlternates(html, route) {
   return html.replace("</head>",links.join("")+"</head>");
 }
 function localizeHtml(source,locale,route) {
-  const dict = dictionaries[locale] || {};\n  let html = translateText(source,dict);\n  html = translateAttributes(html,dict);\n  html = translateJsonLd(html,dict);
+  const dict = dictionaries[locale] || {};
+  let html = translateText(source,dict);
+  html = translateAttributes(html,dict);
+  html = translateJsonLd(html,dict);
   const title = (meta[locale] && meta[locale][route]) || ("BTMCode | " + locale.toUpperCase());
   const description = descriptions[locale] && descriptions[locale][route];
   html = html.replace(/<html\b([^>]*)\blang=["'][^"']*["']/i,'<html$1lang="' + (locale === "zh" ? "zh-CN" : locale) + '"');
