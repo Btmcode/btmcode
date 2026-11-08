@@ -298,7 +298,6 @@
   const meta = {
     en: {
       "/":"Web Design & Custom Software Development | BTMCode",
-      "/":"BTMCode | Software, AI & Product Engineering",
       "/about/":"About | BTMCode",
       "/services/":"Software, SaaS & AI Engineering | BTMCode",
       "/projects/":"Selected Software Projects | BTMCode",
@@ -308,7 +307,6 @@
     },
     de: {
       "/":"Websites & individuelle Softwareentwicklung | BTMCode",
-      "/":"BTMCode | Software, KI & Produktentwicklung",
       "/about/":"Über mich | BTMCode",
       "/services/":"Software-, SaaS- & KI-Entwicklung | BTMCode",
       "/projects/":"Ausgewählte Softwareprojekte | BTMCode",
@@ -318,7 +316,6 @@
     },
     fr: {
       "/":"Création de sites web et logiciels sur mesure | BTMCode",
-      "/":"BTMCode | Logiciel, IA & ingénierie produit",
       "/about/":"À propos | BTMCode",
       "/services/":"Développement logiciel, SaaS & IA | BTMCode",
       "/projects/":"Projets logiciels sélectionnés | BTMCode",
@@ -328,7 +325,6 @@
     },
     ru: {
       "/":"Создание сайтов и разработка ПО | BTMCode",
-      "/":"BTMCode | Разработка, ИИ и продуктовая инженерия",
       "/about/":"Обо мне | BTMCode",
       "/services/":"Разработка ПО, SaaS и ИИ | BTMCode",
       "/projects/":"Избранные IT-проекты | BTMCode",
@@ -340,7 +336,6 @@
   const descriptions = {
     en: {
       "/":"BTMCode builds professional business websites, custom software and AI automations. Tell us what you need and plan your project.",
-      "/":"Software engineering, SaaS platforms and AI automation. Explore selected BTMCode products, capabilities and product engineering.",
       "/about/":"The software engineering, AI, product engineering and business development approach behind BTMCode.",
       "/services/":"Web applications, SaaS platforms, AI automation, performance and secure software engineering.",
       "/projects/":"Selected SaaS, API, web platform and interactive product engineering projects.",
@@ -350,7 +345,6 @@
     },
     de: {
       "/":"BTMCode entwickelt professionelle Unternehmenswebsites, individuelle Software und KI-Automatisierungen. Beschreiben Sie Ihr Projekt.",
-      "/":"Softwareentwicklung, SaaS-Plattformen und KI-Automatisierung. Entdecken Sie ausgewählte BTMCode-Projekte und Kompetenzen.",
       "/about/":"Der Ansatz von BTMCode in Softwareentwicklung, KI, Produktentwicklung und Business Development.",
       "/services/":"Webanwendungen, SaaS-Plattformen, KI-Automatisierung, Performance und sichere Softwareentwicklung.",
       "/projects/":"Ausgewählte Projekte aus SaaS, API, Webplattformen und interaktiver Produktentwicklung.",
@@ -360,7 +354,6 @@
     },
     fr: {
       "/":"BTMCode crée des sites web professionnels, des logiciels sur mesure et des automatisations IA. Présentez votre projet.",
-      "/":"Développement logiciel, plateformes SaaS et automatisation IA. Découvrez les projets et expertises BTMCode.",
       "/about/":"L’approche BTMCode en développement logiciel, IA, ingénierie produit et développement commercial.",
       "/services/":"Applications web, plateformes SaaS, automatisation IA, performances et développement sécurisé.",
       "/projects/":"Sélection de projets SaaS, API, plateformes web et expériences numériques interactives.",
@@ -370,7 +363,6 @@
     },
     ru: {
       "/":"BTMCode разрабатывает сайты для бизнеса, программные решения на заказ и ИИ-автоматизацию. Расскажите о своём проекте.",
-      "/":"Разработка ПО, SaaS-платформы и автоматизация с ИИ. Изучите проекты и компетенции BTMCode.",
       "/about/":"Подход BTMCode к разработке ПО, ИИ, продуктовой инженерии и развитию бизнеса.",
       "/services/":"Веб-приложения, SaaS-платформы, автоматизация ИИ, производительность и безопасная разработка.",
       "/projects/":"Избранные проекты в SaaS, API, веб-платформах и интерактивных цифровых продуктах.",
