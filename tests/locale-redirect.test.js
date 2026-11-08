@@ -53,7 +53,7 @@ test("all source pages expose the Simplified Chinese language option", () => {
   ];
   for (const page of pages) {
     const html = fs.readFileSync(path.join(root, page), "utf8");
-    assert.match(html, /<option value="zh">ZH<\/option>/, page + " must offer Chinese");
+    assert.equal((html.match(/<option value="zh">ZH<\/option>/g) || []).length, 1, page + " must offer exactly one Chinese option");
   }
 });
 
