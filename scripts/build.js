@@ -34,7 +34,7 @@ const publicEntries = [
         if (!html.includes("/assets/consent.js")) html = html.replace("</head>", '<script defer src="/assets/consent.js"></script></head>');
         if (!html.includes("/assets/commerce.js")) html = html.replace("</head>", '<script defer src="/assets/commerce.js"></script></head>');
         if (!html.includes("/assets/locale-redirect.js")) html = html.replace("</head>", '<script src="/assets/locale-redirect.js"></script></head>');
-        const languageSelect = html.match(/(<select\\b[^>]*data-language-select[^>]*>)([\\s\\S]*?)(<\\/select>)/i);
+        const languageSelect = html.match(/(<select\${ch}[^>]*data-language-select[^>]*>)([\${ch}\\S]*?)(<\${ch}select>)/i);
         if (languageSelect && !/value=["']zh["']/.test(languageSelect[2])) {
           html = html.replace(languageSelect[0], languageSelect[1] + languageSelect[2] + '<option value="zh">中文（简体）</option>' + languageSelect[3]);
         }
