@@ -1286,7 +1286,7 @@ for (const locale of ["en","de","fr","ru","zh"]) Object.assign(dictionaries[loca
       "/": "BTMCode 为欧洲及国际市场的企业开发网站体验、定制软件、B2B/B2C/C2C 平台和 Python 解决方案。",
       "/about/": "了解 BTMCode 的软件工程、人工智能和产品开发理念。",
       "/services/": "网站与数字体验、定制软件与 SaaS、B2B/B2C/C2C 平台以及 Python 与 AI 工程。",
-      "/projects/": "由 BTMCode 端到端开发的企业网站、定制软件、SaaS 产品和数字平台。,
+      "/projects/": "由 BTMCode 端到端开发的企业网站、定制软件、SaaS 产品和数字平台。",
       "/contact/": "向 BTMCode 介绍您的网站、软件或 AI 自动化项目。",
       "/journal/": "关于软件架构、人工智能、Web 性能、产品开发和安全工程的技术文章。",
       "/privacy/": "了解 BTMCode 如何处理联系咨询和网站隐私。"
