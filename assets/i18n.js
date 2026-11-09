@@ -1199,94 +1199,94 @@ for (const locale of ["en","de","fr","ru","zh"]) Object.assign(dictionaries[loca
 
   const meta = {
     en: {
-      "/":"Web Design & Custom Software Development | BTMCode",
+      "/":"Custom Software, Digital Platforms & Python Engineering | BTMCode",
       "/about/":"About | BTMCode",
-      "/services/":"Software, SaaS & AI Engineering | BTMCode",
-      "/projects/":"Selected Software Projects | BTMCode",
+      "/services/":"Web, Custom Software & Python Engineering | BTMCode",
+      "/projects/":"Software & Digital Platform Portfolio | BTMCode",
       "/contact/":"Contact & Project Enquiry | BTMCode",
       "/journal/":"Engineering Journal | BTMCode",
       "/privacy/":"Privacy | BTMCode"
     },
     de: {
-      "/":"Websites & individuelle Softwareentwicklung | BTMCode",
+      "/":"Individuelle Software, Plattformen & Python | BTMCode",
       "/about/":"Über mich | BTMCode",
-      "/services/":"Software-, SaaS- & KI-Entwicklung | BTMCode",
-      "/projects/":"Ausgewählte Softwareprojekte | BTMCode",
+      "/services/":"Web, individuelle Software & Python-Engineering | BTMCode",
+      "/projects/":"Portfolio für Software & digitale Plattformen | BTMCode",
       "/contact/":"Kontakt & Projektanfrage | BTMCode",
       "/journal/":"Engineering-Journal | BTMCode",
       "/privacy/":"Datenschutz | BTMCode"
     },
     fr: {
-      "/":"Création de sites web et logiciels sur mesure | BTMCode",
+      "/":"Logiciels sur mesure, plateformes & Python | BTMCode",
       "/about/":"À propos | BTMCode",
-      "/services/":"Développement logiciel, SaaS & IA | BTMCode",
-      "/projects/":"Projets logiciels sélectionnés | BTMCode",
+      "/services/":"Web, logiciel sur mesure & ingénierie Python | BTMCode",
+      "/projects/":"Portfolio logiciel & plateformes numériques | BTMCode",
       "/contact/":"Contact & demande de projet | BTMCode",
       "/journal/":"Journal d’ingénierie | BTMCode",
       "/privacy/":"Confidentialité | BTMCode"
     },
     ru: {
-      "/":"Создание сайтов и разработка ПО | BTMCode",
+      "/":"Заказное ПО, платформы и Python-разработка | BTMCode",
       "/about/":"Обо мне | BTMCode",
-      "/services/":"Разработка ПО, SaaS и ИИ | BTMCode",
-      "/projects/":"Избранные IT-проекты | BTMCode",
+      "/services/":"Веб, заказное ПО и разработка на Python | BTMCode",
+      "/projects/":"Портфолио ПО и цифровых платформ | BTMCode",
       "/contact/":"Контакты и заявка на проект | BTMCode",
       "/journal/":"Инженерные заметки | BTMCode",
       "/privacy/":"Конфиденциальность | BTMCode"
     }
   ,
     zh: {
-      "/": "企业网站与定制软件开发 | BTMCode",
+      "/": "定制软件、数字平台与 Python 工程 | BTMCode",
       "/about/": "关于 BTMCode | BTMCode",
-      "/services/": "企业网站、软件与 AI 自动化服务 | BTMCode",
-      "/projects/": "精选软件开发项目 | BTMCode",
+      "/services/": "网站、定制软件、平台与 Python 工程 | BTMCode",
+      "/projects/": "软件与数字平台项目组合 | BTMCode",
       "/contact/": "联系 BTMCode · 项目咨询 | BTMCode",
       "/journal/": "软件工程技术文章 | BTMCode",
       "/privacy/": "隐私说明 | BTMCode"
     }};
   const descriptions = {
     en: {
-      "/":"BTMCode builds professional business websites, custom software and AI automations. Tell us what you need and plan your project.",
+      "/":"BTMCode builds web experiences, custom software, B2B/B2C/C2C platforms and Python-based solutions for businesses in Europe and international markets.",
       "/about/":"The software engineering, AI, product engineering and business development approach behind BTMCode.",
-      "/services/":"Web applications, SaaS platforms, AI automation, performance and secure software engineering.",
-      "/projects/":"Selected SaaS, API, web platform and interactive product engineering projects.",
+      "/services/":"Web and digital experiences, custom software and SaaS, B2B/B2C/C2C platforms, Python development and AI engineering.",
+      "/projects/":"End-to-end websites, custom software, SaaS products and digital platforms developed by BTMCode.",
       "/contact/":"Share your web application, SaaS or AI automation project with BTMCode.",
       "/journal/":"Notes on software architecture, AI, web performance, product development and secure engineering.",
       "/privacy/":"How BTMCode handles contact enquiries and website privacy."
     },
     de: {
-      "/":"BTMCode entwickelt professionelle Unternehmenswebsites, individuelle Software und KI-Automatisierungen. Beschreiben Sie Ihr Projekt.",
+      "/":"BTMCode entwickelt Web-Erlebnisse, individuelle Software, B2B-/B2C-/C2C-Plattformen und Python-Lösungen für Unternehmen in Europa und internationalen Märkten.",
       "/about/":"Der Ansatz von BTMCode in Softwareentwicklung, KI, Produktentwicklung und Business Development.",
-      "/services/":"Webanwendungen, SaaS-Plattformen, KI-Automatisierung, Performance und sichere Softwareentwicklung.",
-      "/projects/":"Ausgewählte Projekte aus SaaS, API, Webplattformen und interaktiver Produktentwicklung.",
+      "/services/":"Web-Erlebnisse, individuelle Software und SaaS, B2B-/B2C-/C2C-Plattformen sowie Python- und KI-Engineering.",
+      "/projects/":"Ganzheitlich entwickelte Websites, individuelle Software, SaaS-Produkte und digitale Plattformen von BTMCode.",
       "/contact/":"Beschreiben Sie Ihr Web-, SaaS- oder KI-Automatisierungsprojekt für BTMCode.",
       "/journal/":"Notizen zu Softwarearchitektur, KI, Web-Performance und sicherer Entwicklung.",
       "/privacy/":"Informationen zum Umgang von BTMCode mit Kontaktanfragen und Datenschutz."
     },
     fr: {
-      "/":"BTMCode crée des sites web professionnels, des logiciels sur mesure et des automatisations IA. Présentez votre projet.",
+      "/":"BTMCode développe des expériences web, des logiciels sur mesure, des plateformes B2B/B2C/C2C et des solutions Python pour les entreprises en Europe et à l’international.",
       "/about/":"L’approche BTMCode en développement logiciel, IA, ingénierie produit et développement commercial.",
-      "/services/":"Applications web, plateformes SaaS, automatisation IA, performances et développement sécurisé.",
-      "/projects/":"Sélection de projets SaaS, API, plateformes web et expériences numériques interactives.",
+      "/services/":"Expériences web, logiciels sur mesure et SaaS, plateformes B2B/B2C/C2C et ingénierie Python & IA.",
+      "/projects/":"Sites web de bout en bout, logiciels sur mesure, produits SaaS et plateformes numériques développés par BTMCode.",
       "/contact/":"Présentez votre projet web, SaaS ou d’automatisation IA à BTMCode.",
       "/journal/":"Notes sur l’architecture logicielle, l’IA, les performances web et le développement sécurisé.",
       "/privacy/":"Comment BTMCode traite les demandes de contact et protège la confidentialité."
     },
     ru: {
-      "/":"BTMCode разрабатывает сайты для бизнеса, программные решения на заказ и ИИ-автоматизацию. Расскажите о своём проекте.",
+      "/":"BTMCode разрабатывает веб-решения, заказное ПО, платформы B2B/B2C/C2C и решения на Python для компаний в Европе и на международных рынках.",
       "/about/":"Подход BTMCode к разработке ПО, ИИ, продуктовой инженерии и развитию бизнеса.",
-      "/services/":"Веб-приложения, SaaS-платформы, автоматизация ИИ, производительность и безопасная разработка.",
-      "/projects/":"Избранные проекты в SaaS, API, веб-платформах и интерактивных цифровых продуктах.",
+      "/services/":"Веб-решения, заказное ПО и SaaS, платформы B2B/B2C/C2C, разработка на Python и инженерия ИИ.",
+      "/projects/":"Корпоративные сайты полного цикла, заказное ПО, SaaS-продукты и цифровые платформы BTMCode.",
       "/contact/":"Опишите проект веб-приложения, SaaS или автоматизации ИИ для BTMCode.",
       "/journal/":"Заметки об архитектуре ПО, ИИ, производительности веба и безопасной разработке.",
       "/privacy/":"Как BTMCode обрабатывает обращения и обеспечивает конфиденциальность."
     }
   ,
     zh: {
-      "/": "BTMCode 为企业开发专业网站、定制软件和 AI 自动化方案。告诉我们您的需求，规划您的项目。",
+      "/": "BTMCode 为欧洲及国际市场的企业开发网站体验、定制软件、B2B/B2C/C2C 平台和 Python 解决方案。",
       "/about/": "了解 BTMCode 的软件工程、人工智能和产品开发理念。",
-      "/services/": "企业网站、Web 应用、SaaS 平台、AI 自动化和安全软件开发服务。",
-      "/projects/": "精选 SaaS、API、企业网站平台和互动数字产品案例。",
+      "/services/": "网站与数字体验、定制软件与 SaaS、B2B/B2C/C2C 平台以及 Python 与 AI 工程。",
+      "/projects/": "由 BTMCode 端到端开发的企业网站、定制软件、SaaS 产品和数字平台。,
       "/contact/": "向 BTMCode 介绍您的网站、软件或 AI 自动化项目。",
       "/journal/": "关于软件架构、人工智能、Web 性能、产品开发和安全工程的技术文章。",
       "/privacy/": "了解 BTMCode 如何处理联系咨询和网站隐私。"
