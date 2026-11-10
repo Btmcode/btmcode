@@ -38,6 +38,14 @@ const meta = extractObject("meta");
 const descriptions = extractObject("descriptions");
 const caseTitles = extractObject("caseTitles");
 const caseDescriptions = extractObject("caseDescriptions");
+const sevgiCaseTranslations = extractObject("sevgiCaseTranslations");
+const sevgiCaseTitles = extractObject("sevgiCaseTitles");
+const sevgiCaseDescriptions = extractObject("sevgiCaseDescriptions");
+for (const locale of LOCALES) {
+  Object.assign(dictionaries[locale] || {}, sevgiCaseTranslations[locale] || {});
+  Object.assign(meta[locale] || {}, sevgiCaseTitles[locale] || {});
+  Object.assign(descriptions[locale] || {}, sevgiCaseDescriptions[locale] || {});
+}
 const privacyTranslations = extractObject("privacyTranslations");
 for (const locale of LOCALES) {
   Object.assign(meta[locale] || {}, caseTitles[locale] || {});
