@@ -15,6 +15,7 @@ BTMCode is the personal software engineering portfolio of Ahmet.
 - [AQUATERRA Atelier](https://btmcode.vercel.app/projects/aquaterra/): Özel akvaryum, aquascaping ve peyzaj tasarımını sinematik anlatı, etkileşimli hesaplama ve keşif akışlarıyla sunan premium dijital deneyim.
 - [Demos Pizza](https://btmcode.vercel.app/projects/demos-pizza/): Menü keşfinden sepete, sipariş takibinden yönetim ekranlarına uzanan restoran odaklı sipariş ve operasyon platformu demosu.
 - [Aya Elektrik](https://btmcode.vercel.app/projects/aya/): Yerel servis işletmeleri için ilçe ve hizmet odaklı içerik yapısı, talep yönetimi ve yapay zekâ destekli içerik üretim araçları.
+- [SEVGİ MAKEUP ARTIST](https://btmcode.vercel.app/projects/sevgi/): İstanbul’da yerinde hizmet veren profesyonel makyaj sanatçısı için beş dilde, mobil öncelikli ve doğrudan telefon/WhatsApp iletişimine odaklanan platform.
 
 ## Pages
 - [About](https://btmcode.vercel.app/about/)
