@@ -1242,7 +1242,220 @@
 };
 for (const locale of ["en","de","fr","ru","zh"]) Object.assign(dictionaries[locale], sharedUiTranslations[locale]);
 
-  const meta = {
+  const sevgiCaseTranslations = {
+  "en": {
+    "07 / WEB PLATFORM · MULTILINGUAL LOCAL SEO": "07 / WEB PLATFORM · MULTILINGUAL LOCAL SEO",
+    "07 / MULTILINGUAL · MOBILE FIRST · LOCAL SEO": "07 / MULTILINGUAL · MOBILE FIRST · LOCAL SEO",
+    "İstanbul’da yerinde profesyonel makyaj hizmeti sunan Sevgi Şanlı için beş dilli, mobil öncelikli ve doğrudan iletişim odaklı dijital marka deneyimi.": "A five-language, mobile-first digital brand experience for Sevgi Şanlı, providing professional on-location makeup services across Istanbul.",
+    "Vercel dağıtımı READY": "Vercel deployment READY",
+    "Canlı siteyi aç ↗": "Open live website ↗",
+    "Tüm projelere dön": "Back to all projects",
+    "Projenin amacı": "Project objective",
+    "Profesyonel makyaj hizmetini İstanbul’da müşterinin bulunduğu yere taşıyan bir sanatçı markası için; hizmetleri, deneyimi ve hizmet bölgelerini açıkça anlatan, mobil kullanıcıyı doğrudan telefon ve WhatsApp iletişimine yönlendiren bir web platformu geliştirildi.": "A website was developed for an artist brand bringing professional makeup to the customer's location in Istanbul. It clearly presents services, experience and service areas while guiding mobile visitors directly to phone and WhatsApp contact.",
+    "Öne çıkan işlevler": "Key features",
+    "Türkçe, İngilizce, Rusça, Arapça ve Farsça için ayrı statik dil rotaları": "Separate static language routes for Turkish, English, Russian, Arabic and Persian",
+    "Arapça ve Farsça sayfalarda sağdan sola (RTL) sayfa yönü ve düzen desteği": "Right-to-left (RTL) direction and layout support for Arabic and Persian pages",
+    "Mobil cihazlarda sabit telefon ve WhatsApp iletişim çubuğu": "Sticky phone and WhatsApp contact bar on mobile devices",
+    "İstanbul’un 39 ilçesini kapsayan hizmet alanı içeriği": "Service-area content covering all 39 Istanbul districts",
+    "Gelin, ev/otel, özel gün ve TV/sinema prodüksiyon makyajı hizmet sayfaları": "Service pages for bridal, home/hotel, special occasions and TV/film production makeup",
+    "Canonical, hreflang, Open Graph, sitemap, robots.txt ve yapılandırılmış veri": "Canonical URLs, hreflang, Open Graph, sitemap, robots.txt and structured data",
+    "Hafif CSS tabanlı arayüz, erişilebilir menü, klavye odağı ve azaltılmış hareket tercihi": "Lightweight CSS interface, accessible navigation, keyboard focus and reduced-motion support",
+    "Güvenlik başlıkları, sınırlı üçüncü taraf bağımlılıkları ve herkese açık konut adresi kullanmayan hizmet modeli": "Security headers, limited third-party dependencies and a service model that does not publish a residential address",
+    "Kullanılan teknoloji": "Technology stack",
+    "Randevu sistemi değil, doğrudan iletişim.": "Direct contact, not an online booking system.",
+    "Ürün kapsamına online randevu takvimi, CRM, müşteri üyeliği, ödeme veya web formu eklenmedi. Ana dönüşüm akışları doğrudan telefon araması ve önceden doldurulmuş WhatsApp mesajıdır. Gerçek arama, müşteri kazanımı veya dönüşüm metriği henüz raporlanmamaktadır.": "No online booking calendar, CRM, customer account, payment or web enquiry form was included. The primary conversion paths are direct phone calls and pre-filled WhatsApp messages. Actual calls, acquired customers and conversion metrics are not yet reported.",
+    "10 Kasım 2026 tarihli Vercel üretim dağıtımı READY durumunda tamamlandı. Next.js üretim derlemesi ve TypeScript kontrolü başarılı oldu; 31 statik sayfa/rota üretildi. Bu kayıt trafik, hız skoru, arama sıralaması veya müşteri dönüşümü iddiası içermez. Gerçek portföy fotoğrafları işletme tarafından onaylandığında eklenecektir.": "The Vercel production deployment reached READY on 10 November 2026. The Next.js production build and TypeScript checks passed, generating 31 static pages/routes. This case study makes no claims about traffic, performance scores, search rankings or customer conversions. Authentic portfolio photography will be added after approval by the business owner.",
+    "Alan": "Industry",
+    "Rol / Odak": "Role / Focus",
+    "Teknoloji": "Technology",
+    "Dil desteği": "Languages",
+    "Hizmet alanı": "Service area",
+    "İstanbul · 39 ilçe": "Istanbul · 39 districts",
+    "Dağıtım durumu": "Deployment",
+    "Vercel production · READY": "Vercel production · READY",
+    "Canlı site": "Live website",
+    "Kaynak kod": "Source code",
+    "Özel GitHub deposu": "Private GitHub repository",
+    "BTMCode tarafından uçtan uca geliştirilen beş dilli, mobil öncelikli profesyonel makyaj sanatçısı web sitesi.": "A five-language, mobile-first website for a professional makeup artist, designed and built end to end by BTMCode."
+  },
+  "de": {
+    "07 / WEB PLATFORM · MULTILINGUAL LOCAL SEO": "07 / WEBPLATTFORM · MEHRSPRACHIGES LOCAL SEO",
+    "07 / MULTILINGUAL · MOBILE FIRST · LOCAL SEO": "07 / MEHRSPRACHIG · MOBILE FIRST · LOCAL SEO",
+    "İstanbul’da yerinde profesyonel makyaj hizmeti sunan Sevgi Şanlı için beş dilli, mobil öncelikli ve doğrudan iletişim odaklı dijital marka deneyimi.": "Ein fünfsprachiges, mobilorientiertes Markenerlebnis für Sevgi Şanlı mit professionellem Make-up-Service vor Ort in Istanbul.",
+    "Vercel dağıtımı READY": "Vercel-Deployment READY",
+    "Canlı siteyi aç ↗": "Live-Website öffnen ↗",
+    "Tüm projelere dön": "Zurück zu allen Projekten",
+    "Projenin amacı": "Projektziel",
+    "Profesyonel makyaj hizmetini İstanbul’da müşterinin bulunduğu yere taşıyan bir sanatçı markası için; hizmetleri, deneyimi ve hizmet bölgelerini açıkça anlatan, mobil kullanıcıyı doğrudan telefon ve WhatsApp iletişimine yönlendiren bir web platformu geliştirildi.": "Für eine Make-up-Marke mit mobilem Service in Istanbul wurde eine Website entwickelt, die Leistungen, Erfahrung und Einsatzgebiete klar präsentiert und mobile Besucher direkt zu Telefon und WhatsApp führt.",
+    "Öne çıkan işlevler": "Kernfunktionen",
+    "Türkçe, İngilizce, Rusça, Arapça ve Farsça için ayrı statik dil rotaları": "Separate statische Sprachrouten für Türkisch, Englisch, Russisch, Arabisch und Persisch",
+    "Arapça ve Farsça sayfalarda sağdan sola (RTL) sayfa yönü ve düzen desteği": "Rechts-nach-links-Ausrichtung (RTL) und Layout-Unterstützung für Arabisch und Persisch",
+    "Mobil cihazlarda sabit telefon ve WhatsApp iletişim çubuğu": "Fixierte Telefon- und WhatsApp-Kontaktleiste auf Mobilgeräten",
+    "İstanbul’un 39 ilçesini kapsayan hizmet alanı içeriği": "Inhalte zum Einsatzgebiet mit allen 39 Bezirken Istanbuls",
+    "Gelin, ev/otel, özel gün ve TV/sinema prodüksiyon makyajı hizmet sayfaları": "Leistungsseiten für Braut-, Haus-/Hotel-, Event- sowie TV-/Film- und Produktions-Make-up",
+    "Canonical, hreflang, Open Graph, sitemap, robots.txt ve yapılandırılmış veri": "Canonical, hreflang, Open Graph, Sitemap, robots.txt und strukturierte Daten",
+    "Hafif CSS tabanlı arayüz, erişilebilir menü, klavye odağı ve azaltılmış hareket tercihi": "Schlanke CSS-Oberfläche, barrierefreie Navigation, Tastaturfokus und reduzierte Animationen",
+    "Güvenlik başlıkları, sınırlı üçüncü taraf bağımlılıkları ve herkese açık konut adresi kullanmayan hizmet modeli": "Sicherheits-Header, wenige Drittanbieter-Abhängigkeiten und ein Servicemodell ohne öffentliche Wohnadresse",
+    "Kullanılan teknoloji": "Technologie-Stack",
+    "Randevu sistemi değil, doğrudan iletişim.": "Direkter Kontakt statt Online-Buchung.",
+    "Ürün kapsamına online randevu takvimi, CRM, müşteri üyeliği, ödeme veya web formu eklenmedi. Ana dönüşüm akışları doğrudan telefon araması ve önceden doldurulmuş WhatsApp mesajıdır. Gerçek arama, müşteri kazanımı veya dönüşüm metriği henüz raporlanmamaktadır.": "Es gibt keinen Online-Buchungskalender, kein CRM, Kundenkonto, Zahlungssystem oder Webformular. Die zentralen Kontaktwege sind direkte Anrufe und vorausgefüllte WhatsApp-Nachrichten. Reale Anrufe, gewonnene Kunden und Conversion-Kennzahlen werden noch nicht ausgewiesen.",
+    "10 Kasım 2026 tarihli Vercel üretim dağıtımı READY durumunda tamamlandı. Next.js üretim derlemesi ve TypeScript kontrolü başarılı oldu; 31 statik sayfa/rota üretildi. Bu kayıt trafik, hız skoru, arama sıralaması veya müşteri dönüşümü iddiası içermez. Gerçek portföy fotoğrafları işletme tarafından onaylandığında eklenecektir.": "Das Vercel-Produktionsdeployment erreichte am 10. November 2026 den Status READY. Der Next.js-Produktionsbuild und die TypeScript-Prüfung waren erfolgreich; 31 statische Seiten/Routen wurden erzeugt. Diese Fallstudie behauptet keine Besucherzahlen, Performance-Scores, Suchrankings oder Conversions. Echte Portfoliofotos werden nach Freigabe durch die Geschäftsinhaberin ergänzt.",
+    "Alan": "Bereich",
+    "Rol / Odak": "Rolle / Schwerpunkt",
+    "Teknoloji": "Technologie",
+    "Dil desteği": "Sprachen",
+    "Hizmet alanı": "Einsatzgebiet",
+    "İstanbul · 39 ilçe": "Istanbul · 39 Bezirke",
+    "Dağıtım durumu": "Deployment-Status",
+    "Vercel production · READY": "Vercel Production · READY",
+    "Canlı site": "Live-Website",
+    "Kaynak kod": "Quellcode",
+    "Özel GitHub deposu": "Privates GitHub-Repository",
+    "BTMCode tarafından uçtan uca geliştirilen beş dilli, mobil öncelikli profesyonel makyaj sanatçısı web sitesi.": "Eine fünfsprachige, mobilorientierte Website für eine professionelle Make-up-Künstlerin, vollständig von BTMCode entwickelt."
+  },
+  "fr": {
+    "07 / WEB PLATFORM · MULTILINGUAL LOCAL SEO": "07 / PLATEFORME WEB · SEO LOCAL MULTILINGUE",
+    "07 / MULTILINGUAL · MOBILE FIRST · LOCAL SEO": "07 / MULTILINGUE · MOBILE FIRST · SEO LOCAL",
+    "İstanbul’da yerinde profesyonel makyaj hizmeti sunan Sevgi Şanlı için beş dilli, mobil öncelikli ve doğrudan iletişim odaklı dijital marka deneyimi.": "Une expérience de marque numérique en cinq langues, pensée pour le mobile, pour Sevgi Şanlı et ses prestations de maquillage à domicile à Istanbul.",
+    "Vercel dağıtımı READY": "Déploiement Vercel READY",
+    "Canlı siteyi aç ↗": "Ouvrir le site ↗",
+    "Tüm projelere dön": "Retour à tous les projets",
+    "Projenin amacı": "Objectif du projet",
+    "Profesyonel makyaj hizmetini İstanbul’da müşterinin bulunduğu yere taşıyan bir sanatçı markası için; hizmetleri, deneyimi ve hizmet bölgelerini açıkça anlatan, mobil kullanıcıyı doğrudan telefon ve WhatsApp iletişimine yönlendiren bir web platformu geliştirildi.": "Un site a été conçu pour une artiste qui se déplace à Istanbul. Il présente clairement les services, l’expérience et les zones couvertes, puis oriente les visiteurs mobiles vers un appel ou WhatsApp.",
+    "Öne çıkan işlevler": "Fonctionnalités clés",
+    "Türkçe, İngilizce, Rusça, Arapça ve Farsça için ayrı statik dil rotaları": "Des routes statiques distinctes en turc, anglais, russe, arabe et persan",
+    "Arapça ve Farsça sayfalarda sağdan sola (RTL) sayfa yönü ve düzen desteği": "Prise en charge de l’écriture de droite à gauche (RTL) en arabe et en persan",
+    "Mobil cihazlarda sabit telefon ve WhatsApp iletişim çubuğu": "Barre de contact téléphone et WhatsApp fixe sur mobile",
+    "İstanbul’un 39 ilçesini kapsayan hizmet alanı içeriği": "Contenu couvrant les 39 districts d’Istanbul",
+    "Gelin, ev/otel, özel gün ve TV/sinema prodüksiyon makyajı hizmet sayfaları": "Pages dédiées au maquillage de mariée, à domicile/en hôtel, aux événements et aux productions TV/cinéma",
+    "Canonical, hreflang, Open Graph, sitemap, robots.txt ve yapılandırılmış veri": "Canonical, hreflang, Open Graph, sitemap, robots.txt et données structurées",
+    "Hafif CSS tabanlı arayüz, erişilebilir menü, klavye odağı ve azaltılmış hareket tercihi": "Interface CSS légère, navigation accessible, focus clavier et prise en charge de la réduction des animations",
+    "Güvenlik başlıkları, sınırlı üçüncü taraf bağımlılıkları ve herkese açık konut adresi kullanmayan hizmet modeli": "En-têtes de sécurité, dépendances tierces limitées et service sans publication d’adresse résidentielle",
+    "Kullanılan teknoloji": "Technologies utilisées",
+    "Randevu sistemi değil, doğrudan iletişim.": "Contact direct, sans réservation en ligne.",
+    "Ürün kapsamına online randevu takvimi, CRM, müşteri üyeliği, ödeme veya web formu eklenmedi. Ana dönüşüm akışları doğrudan telefon araması ve önceden doldurulmuş WhatsApp mesajıdır. Gerçek arama, müşteri kazanımı veya dönüşüm metriği henüz raporlanmamaktadır.": "Aucun calendrier de réservation, CRM, compte client, paiement ou formulaire web n’a été ajouté. Les principaux parcours de conversion sont l’appel direct et le message WhatsApp prérempli. Les appels réels, les clients acquis et les taux de conversion ne sont pas encore mesurés.",
+    "10 Kasım 2026 tarihli Vercel üretim dağıtımı READY durumunda tamamlandı. Next.js üretim derlemesi ve TypeScript kontrolü başarılı oldu; 31 statik sayfa/rota üretildi. Bu kayıt trafik, hız skoru, arama sıralaması veya müşteri dönüşümü iddiası içermez. Gerçek portföy fotoğrafları işletme tarafından onaylandığında eklenecektir.": "Le déploiement de production Vercel a atteint le statut READY le 10 novembre 2026. La compilation Next.js et la vérification TypeScript ont réussi, avec 31 pages/routes statiques générées. Cette étude ne revendique aucun trafic, score de performance, classement de recherche ou taux de conversion. Les vraies photos du portfolio seront ajoutées après validation de l’entreprise.",
+    "Alan": "Secteur",
+    "Rol / Odak": "Rôle / Expertise",
+    "Teknoloji": "Technologies",
+    "Dil desteği": "Langues",
+    "Hizmet alanı": "Zone desservie",
+    "İstanbul · 39 ilçe": "Istanbul · 39 districts",
+    "Dağıtım durumu": "Déploiement",
+    "Vercel production · READY": "Production Vercel · READY",
+    "Canlı site": "Site en ligne",
+    "Kaynak kod": "Code source",
+    "Özel GitHub deposu": "Dépôt GitHub privé",
+    "BTMCode tarafından uçtan uca geliştirilen beş dilli, mobil öncelikli profesyonel makyaj sanatçısı web sitesi.": "Site web multilingue et mobile-first pour une maquilleuse professionnelle, conçu et développé de bout en bout par BTMCode."
+  },
+  "ru": {
+    "07 / WEB PLATFORM · MULTILINGUAL LOCAL SEO": "07 / ВЕБ-ПЛАТФОРМА · МНОГОЯЗЫЧНОЕ ЛОКАЛЬНОЕ SEO",
+    "07 / MULTILINGUAL · MOBILE FIRST · LOCAL SEO": "07 / МНОГОЯЗЫЧНОСТЬ · MOBILE FIRST · LOCAL SEO",
+    "İstanbul’da yerinde profesyonel makyaj hizmeti sunan Sevgi Şanlı için beş dilli, mobil öncelikli ve doğrudan iletişim odaklı dijital marka deneyimi.": "Пятиъязычный цифровой бренд с приоритетом мобильных устройств для Севги Шанлы, предлагающей профессиональный выездной макияж в Стамбуле.",
+    "Vercel dağıtımı READY": "Развёртывание Vercel: READY",
+    "Canlı siteyi aç ↗": "Открыть сайт ↗",
+    "Tüm projelere dön": "Ко всем проектам",
+    "Projenin amacı": "Цель проекта",
+    "Profesyonel makyaj hizmetini İstanbul’da müşterinin bulunduğu yere taşıyan bir sanatçı markası için; hizmetleri, deneyimi ve hizmet bölgelerini açıkça anlatan, mobil kullanıcıyı doğrudan telefon ve WhatsApp iletişimine yönlendiren bir web platformu geliştirildi.": "Создан сайт для бренда профессионального визажиста с выездом по Стамбулу. Он ясно представляет услуги, опыт и районы обслуживания и направляет мобильных посетителей к прямому звонку или сообщению в WhatsApp.",
+    "Öne çıkan işlevler": "Ключевые функции",
+    "Türkçe, İngilizce, Rusça, Arapça ve Farsça için ayrı statik dil rotaları": "Отдельные статические языковые маршруты на турецком, английском, русском, арабском и персидском",
+    "Arapça ve Farsça sayfalarda sağdan sola (RTL) sayfa yönü ve düzen desteği": "Поддержка направления справа налево (RTL) для арабской и персидской версий",
+    "Mobil cihazlarda sabit telefon ve WhatsApp iletişim çubuğu": "Закреплённая панель телефона и WhatsApp на мобильных устройствах",
+    "İstanbul’un 39 ilçesini kapsayan hizmet alanı içeriği": "Контент о выездном обслуживании во всех 39 районах Стамбула",
+    "Gelin, ev/otel, özel gün ve TV/sinema prodüksiyon makyajı hizmet sayfaları": "Страницы услуг: свадебный, домашний/отельный, праздничный макияж и макияж для ТВ/кино",
+    "Canonical, hreflang, Open Graph, sitemap, robots.txt ve yapılandırılmış veri": "Canonical, hreflang, Open Graph, sitemap, robots.txt и структурированные данные",
+    "Hafif CSS tabanlı arayüz, erişilebilir menü, klavye odağı ve azaltılmış hareket tercihi": "Лёгкий интерфейс на CSS, доступная навигация, клавиатурный фокус и поддержка уменьшения анимации",
+    "Güvenlik başlıkları, sınırlı üçüncü taraf bağımlılıkları ve herkese açık konut adresi kullanmayan hizmet modeli": "Заголовки безопасности, минимум сторонних зависимостей и отсутствие публичного домашнего адреса",
+    "Kullanılan teknoloji": "Технологический стек",
+    "Randevu sistemi değil, doğrudan iletişim.": "Прямой контакт вместо онлайн-бронирования.",
+    "Ürün kapsamına online randevu takvimi, CRM, müşteri üyeliği, ödeme veya web formu eklenmedi. Ana dönüşüm akışları doğrudan telefon araması ve önceden doldurulmuş WhatsApp mesajıdır. Gerçek arama, müşteri kazanımı veya dönüşüm metriği henüz raporlanmamaktadır.": "В продукт не включены онлайн-календарь записи, CRM, аккаунты клиентов, платежи или веб-формы. Основные пути обращения — прямой звонок и заранее заполненное сообщение WhatsApp. Реальные звонки, привлечённые клиенты и конверсия пока не измеряются.",
+    "10 Kasım 2026 tarihli Vercel üretim dağıtımı READY durumunda tamamlandı. Next.js üretim derlemesi ve TypeScript kontrolü başarılı oldu; 31 statik sayfa/rota üretildi. Bu kayıt trafik, hız skoru, arama sıralaması veya müşteri dönüşümü iddiası içermez. Gerçek portföy fotoğrafları işletme tarafından onaylandığında eklenecektir.": "10 ноября 2026 года production-развёртывание Vercel получило статус READY. Production-сборка Next.js и проверка TypeScript завершились успешно; создана 31 статическая страница/маршрут. В кейсе не заявляются показатели трафика, скорости, поисковых позиций или конверсии. Настоящие фотографии работ будут добавлены после согласования с владельцем бизнеса.",
+    "Alan": "Сфера",
+    "Rol / Odak": "Роль / специализация",
+    "Teknoloji": "Технологии",
+    "Dil desteği": "Языки",
+    "Hizmet alanı": "Зона обслуживания",
+    "İstanbul · 39 ilçe": "Стамбул · 39 районов",
+    "Dağıtım durumu": "Статус развёртывания",
+    "Vercel production · READY": "Vercel production · READY",
+    "Canlı site": "Сайт",
+    "Kaynak kod": "Исходный код",
+    "Özel GitHub deposu": "Приватный репозиторий GitHub",
+    "BTMCode tarafından uçtan uca geliştirilen beş dilli, mobil öncelikli profesyonel makyaj sanatçısı web sitesi.": "Пятиъязычный мобильный сайт профессионального визажиста, полностью разработанный BTMCode."
+  },
+  "zh": {
+    "07 / WEB PLATFORM · MULTILINGUAL LOCAL SEO": "07 / 多语言网站平台 · 本地 SEO",
+    "07 / MULTILINGUAL · MOBILE FIRST · LOCAL SEO": "07 / 多语言 · 移动优先 · 本地 SEO",
+    "İstanbul’da yerinde profesyonel makyaj hizmeti sunan Sevgi Şanlı için beş dilli, mobil öncelikli ve doğrudan iletişim odaklı dijital marka deneyimi.": "为在伊斯坦布尔提供上门专业化妆服务的 Sevgi Şanlı 打造的五语言、移动优先、以直接联系为核心的数字品牌体验。",
+    "Vercel dağıtımı READY": "Vercel 部署状态 READY",
+    "Canlı siteyi aç ↗": "访问线上网站 ↗",
+    "Tüm projelere dön": "返回全部项目",
+    "Projenin amacı": "项目目标",
+    "Profesyonel makyaj hizmetini İstanbul’da müşterinin bulunduğu yere taşıyan bir sanatçı markası için; hizmetleri, deneyimi ve hizmet bölgelerini açıkça anlatan, mobil kullanıcıyı doğrudan telefon ve WhatsApp iletişimine yönlendiren bir web platformu geliştirildi.": "为在伊斯坦布尔提供上门化妆服务的专业品牌开发网站，清晰展示服务、经验和服务区域，并引导移动端访客直接拨打电话或通过 WhatsApp 联系。",
+    "Öne çıkan işlevler": "核心功能",
+    "Türkçe, İngilizce, Rusça, Arapça ve Farsça için ayrı statik dil rotaları": "提供土耳其语、英语、俄语、阿拉伯语和波斯语的独立静态语言路由",
+    "Arapça ve Farsça sayfalarda sağdan sola (RTL) sayfa yönü ve düzen desteği": "阿拉伯语和波斯语页面支持从右向左（RTL）布局",
+    "Mobil cihazlarda sabit telefon ve WhatsApp iletişim çubuğu": "移动端固定电话与 WhatsApp 联系栏",
+    "İstanbul’un 39 ilçesini kapsayan hizmet alanı içeriği": "覆盖伊斯坦布尔全部 39 个区的服务区域内容",
+    "Gelin, ev/otel, özel gün ve TV/sinema prodüksiyon makyajı hizmet sayfaları": "新娘妆、上门/酒店化妆、特殊活动及影视制作化妆服务页面",
+    "Canonical, hreflang, Open Graph, sitemap, robots.txt ve yapılandırılmış veri": "Canonical、hreflang、Open Graph、站点地图、robots.txt 和结构化数据",
+    "Hafif CSS tabanlı arayüz, erişilebilir menü, klavye odağı ve azaltılmış hareket tercihi": "轻量 CSS 界面、无障碍导航、键盘焦点和减少动态效果支持",
+    "Güvenlik başlıkları, sınırlı üçüncü taraf bağımlılıkları ve herkese açık konut adresi kullanmayan hizmet modeli": "安全响应头、有限的第三方依赖，以及不公开住宅地址的服务模式",
+    "Kullanılan teknoloji": "技术栈",
+    "Randevu sistemi değil, doğrudan iletişim.": "直接联系，而非在线预约。",
+    "Ürün kapsamına online randevu takvimi, CRM, müşteri üyeliği, ödeme veya web formu eklenmedi. Ana dönüşüm akışları doğrudan telefon araması ve önceden doldurulmuş WhatsApp mesajıdır. Gerçek arama, müşteri kazanımı veya dönüşüm metriği henüz raporlanmamaktadır.": "产品未包含在线预约日历、CRM、客户账户、支付或网站表单。主要转化路径为直接电话和预填 WhatsApp 消息。目前尚未报告真实来电、获客或转化指标。",
+    "10 Kasım 2026 tarihli Vercel üretim dağıtımı READY durumunda tamamlandı. Next.js üretim derlemesi ve TypeScript kontrolü başarılı oldu; 31 statik sayfa/rota üretildi. Bu kayıt trafik, hız skoru, arama sıralaması veya müşteri dönüşümü iddiası içermez. Gerçek portföy fotoğrafları işletme tarafından onaylandığında eklenecektir.": "Vercel 生产部署于 2026 年 11 月 10 日达到 READY 状态。Next.js 生产构建和 TypeScript 检查通过，共生成 31 个静态页面/路由。本案例不宣称流量、性能评分、搜索排名或客户转化数据。经业主确认后，将补充真实作品照片。",
+    "Alan": "领域",
+    "Rol / Odak": "角色 / 重点",
+    "Teknoloji": "技术",
+    "Dil desteği": "语言",
+    "Hizmet alanı": "服务区域",
+    "İstanbul · 39 ilçe": "伊斯坦布尔 · 39 个区",
+    "Dağıtım durumu": "部署状态",
+    "Vercel production · READY": "Vercel 生产环境 · READY",
+    "Canlı site": "线上网站",
+    "Kaynak kod": "源代码",
+    "Özel GitHub deposu": "私有 GitHub 仓库",
+    "BTMCode tarafından uçtan uca geliştirilen beş dilli, mobil öncelikli profesyonel makyaj sanatçısı web sitesi.": "由 BTMCode 端到端设计和开发的五语言、移动优先专业化妆师网站。"
+  }
+};
+for (const code of Object.keys(sevgiCaseTranslations)) Object.assign(dictionaries[code], sevgiCaseTranslations[code]);
+const sevgiCaseTitles = {
+  "en": {
+    "/projects/sevgi/": "SEVGİ MAKEUP ARTIST — Project Case Study | BTMCode"
+  },
+  "de": {
+    "/projects/sevgi/": "SEVGİ MAKEUP ARTIST — Projektfallstudie | BTMCode"
+  },
+  "fr": {
+    "/projects/sevgi/": "SEVGİ MAKEUP ARTIST — Étude de projet | BTMCode"
+  },
+  "ru": {
+    "/projects/sevgi/": "SEVGİ MAKEUP ARTIST — Обзор проекта | BTMCode"
+  },
+  "zh": {
+    "/projects/sevgi/": "SEVGİ MAKEUP ARTIST — 项目案例 | BTMCode"
+  }
+};
+const sevgiCaseDescriptions = {
+  "en": {
+    "/projects/sevgi/": "A five-language, mobile-first website for an Istanbul makeup artist, with local SEO and direct phone and WhatsApp contact."
+  },
+  "de": {
+    "/projects/sevgi/": "Eine fünfsprachige, mobilorientierte Website für eine Make-up-Künstlerin in Istanbul mit Local SEO und direktem Telefon- und WhatsApp-Kontakt."
+  },
+  "fr": {
+    "/projects/sevgi/": "Un site mobile-first en cinq langues pour une maquilleuse à Istanbul, avec SEO local et contact direct par téléphone et WhatsApp."
+  },
+  "ru": {
+    "/projects/sevgi/": "Пятиъязычный мобильный сайт визажиста в Стамбуле с локальным SEO и прямой связью по телефону и WhatsApp."
+  },
+  "zh": {
+    "/projects/sevgi/": "面向伊斯坦布尔化妆师的五语言移动优先网站，包含本地 SEO 与电话、WhatsApp 直连。"
+  }
+};
+
+const meta = {
     en: {
       "/":"Custom Software, Digital Platforms & Python Engineering | BTMCode",
       "/about/":"About | BTMCode",
@@ -1413,6 +1626,7 @@ for (const locale of ["en","de","fr","ru","zh"]) Object.assign(dictionaries[loca
       "/projects/imagehub/": "ImageHub / imghost — 项目案例 | BTMCode",
       "/projects/zirve/": "Zirve Elektrik — 项目案例 | BTMCode"
     }};
+  for (const code of Object.keys(sevgiCaseTitles)) Object.assign(caseTitles[code], sevgiCaseTitles[code]);
   if (meta[locale] && caseTitles[locale]) Object.assign(meta[locale], caseTitles[locale]);
   const caseDescriptions = {
     en:{
@@ -1451,6 +1665,7 @@ for (const locale of ["en","de","fr","ru","zh"]) Object.assign(dictionaries[loca
       "/projects/imagehub/": "API 优先的图片托管与 CDN 产品概念，支持图片转换、用户面板和 API 密钥管理。",
       "/projects/zirve/": "基于 Next.js 的服务平台，包含本地 SEO 页面、结构化数据、咨询表单和内容管理后台。"
     }};
+  for (const code of Object.keys(sevgiCaseDescriptions)) Object.assign(caseDescriptions[code], sevgiCaseDescriptions[code]);
   if (descriptions[locale] && caseDescriptions[locale]) Object.assign(descriptions[locale], caseDescriptions[locale]);
   const commonUiText = {
     "Ana menü":({en:"Main navigation",de:"Hauptnavigation",fr:"Navigation principale",ru:"Основная навигация",zh:"主导航"})[locale],
