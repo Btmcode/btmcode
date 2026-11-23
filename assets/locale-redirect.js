@@ -1,10 +1,10 @@
 (() => {
   "use strict";
 
-  const supported = new Set(["tr", "en", "de", "fr", "ru", "zh"]);
+  const supported = new Set(["tr", "en", "de", "fr", "ru", "zh", "sv"]);
 
   // An explicit language URL always wins over automatic detection.
-  if (/^\/(en|de|fr|ru|zh)(?:\/|$)/i.test(window.location.pathname)) return;
+  if (/^\/(en|de|fr|ru|zh|sv)(?:\/|$)/i.test(window.location.pathname)) return;
 
   // A language selected manually is remembered and takes priority on later visits.
   let preferred = null;
