@@ -552,7 +552,8 @@ async function main() {
 
   const sitemapPath = path.join(PUBLIC, "sitemap.xml");
   let sitemap = await fs.readFile(sitemapPath, "utf8");
-  sitemap = sitemap.replace(/<lastmod>[^<]+<\/lastmod>/g, "<lastmod>2026-11-24</lastmod>");
+  const buildDate = new Date().toISOString().slice(0, 10);
+  sitemap = sitemap.replace(/<lastmod>[^<]+<\/lastmod>/g, "<lastmod>" + buildDate + "</lastmod>");
   const baseUrl = "https://btmcode.vercel.app/";
   const toSwedishUrl = loc => {
     let route = loc.startsWith(baseUrl) ? loc.slice(baseUrl.length) : "";
