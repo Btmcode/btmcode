@@ -2,7 +2,7 @@
   "use strict";
   const VERSION = 1;
   const KEY = "btm-consent-v1";
-  const locale = ((location.pathname.match(/^\/(en|de|fr|ru|zh)(?:\/|$)/) || [])[1]) || "tr";
+  const locale = ((location.pathname.match(/^\/(en|de|fr|ru|zh|sv)(?:\/|$)/) || [])[1]) || "tr";
   const copy = {
     tr:{eyebrow:"BTMCODE · GİZLİLİK",title:"Gizlilik tercihlerin",body:"Zorunlu teknolojiler siteyi çalıştırmak için kullanılır. Analitik yalnızca izin verirsen etkinleşir.",necessary:"Zorunlu",necessaryDesc:"Güvenlik ve temel site işlevleri.",analytics:"Analitik",analyticsDesc:"Google Analytics ile site kullanımını ölçme.",marketing:"Pazarlama",marketingDesc:"Reklam ve pazarlama ölçümü. Şu anda etkin değil.",accept:"Tümünü kabul et",reject:"Tümünü reddet",save:"Seçimlerimi kaydet",manage:"Tercihleri yönet",settings:"Çerez tercihleri",close:"Kapat",always:"Her zaman aktif",note:"Tercihini daha sonra sayfanın altından değiştirebilirsin."},
     en:{eyebrow:"BTMCODE · PRIVACY",title:"Your privacy choices",body:"Necessary technologies keep the site working. Analytics is enabled only if you choose it.",necessary:"Necessary",necessaryDesc:"Security and essential site functions.",analytics:"Analytics",analyticsDesc:"Measure site usage with Google Analytics.",marketing:"Marketing",marketingDesc:"Advertising and marketing measurement. Currently inactive.",accept:"Accept all",reject:"Reject optional",save:"Save my choices",manage:"Manage preferences",settings:"Cookie preferences",close:"Close",always:"Always active",note:"You can change your choice later from the footer."},
@@ -10,7 +10,27 @@
     fr:{eyebrow:"BTMCODE · CONFIDENTIALITÉ",title:"Vos choix de confidentialité",body:"Les technologies nécessaires assurent le fonctionnement du site. Les statistiques ne sont activées qu'avec votre accord.",necessary:"Nécessaires",necessaryDesc:"Sécurité et fonctions essentielles du site.",analytics:"Statistiques",analyticsDesc:"Mesure de l'utilisation du site avec Google Analytics.",marketing:"Marketing",marketingDesc:"Mesure publicitaire et marketing. Actuellement inactive.",accept:"Tout accepter",reject:"Tout refuser",save:"Enregistrer mes choix",manage:"Gérer les préférences",settings:"Préférences cookies",close:"Fermer",always:"Toujours actif",note:"Vous pouvez modifier votre choix depuis le pied de page."},
     ru:{eyebrow:"BTMCODE · КОНФИДЕНЦИАЛЬНОСТЬ",title:"Настройки конфиденциальности",body:"Необходимые технологии обеспечивают работу сайта. Аналитика включается только с вашего согласия.",necessary:"Необходимые",necessaryDesc:"Безопасность и основные функции сайта.",analytics:"Аналитика",analyticsDesc:"Измерение использования сайта с Google Analytics.",marketing:"Маркетинг",marketingDesc:"Рекламные и маркетинговые измерения. Сейчас неактивно.",accept:"Принять всё",reject:"Отклонить необязательные",save:"Сохранить выбор",manage:"Настроить",settings:"Настройки cookies",close:"Закрыть",always:"Всегда активно",note:"Вы можете изменить выбор в нижней части сайта."},
     zh:{eyebrow:"BTMCODE · 隐私",title:"隐私偏好设置",body:"必要技术用于保障网站正常运行。只有在您明确同意后，才会启用分析功能。",necessary:"必要项目",necessaryDesc:"保障安全和网站基本功能。",analytics:"分析",analyticsDesc:"使用 Google Analytics 衡量网站使用情况。",marketing:"营销",marketingDesc:"广告与营销效果衡量。目前未启用。",accept:"全部接受",reject:"拒绝非必要项目",save:"保存我的选择",manage:"管理偏好设置",settings:"Cookie 偏好设置",close:"关闭",always:"始终启用",note:"您可以稍后通过网站页脚更改此选择。"}
-  };
+  ,
+sv:{
+  eyebrow:"BTMCODE · INTEGRITET",
+  title:"Dina integritetsinställningar",
+  body:"Nödvändig teknik håller webbplatsen igång. Analys aktiveras endast om du väljer det.",
+  necessary:"Nödvändiga",
+  necessaryDesc:"Säkerhet och webbplatsens grundläggande funktioner.",
+  analytics:"Analys",
+  analyticsDesc:"Mät användningen av webbplatsen med Google Analytics.",
+  marketing:"Marknadsföring",
+  marketingDesc:"Mätning av annonser och marknadsföring. För närvarande inaktiv.",
+  accept:"Acceptera alla",
+  reject:"Avvisa valfria",
+  save:"Spara mina val",
+  manage:"Hantera inställningar",
+  settings:"Cookieinställningar",
+  close:"Stäng",
+  always:"Alltid aktiv",
+  note:"Du kan ändra ditt val senare via sidfoten."
+}
+};
   const t = copy[locale] || copy.en;
   const config = window.BTM_CONFIG || {};
   const measurementId = typeof config.gaMeasurementId === "string" && /^G-[A-Z0-9]+$/.test(config.gaMeasurementId) ? config.gaMeasurementId : "";
