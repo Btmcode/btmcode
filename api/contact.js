@@ -93,7 +93,9 @@ module.exports = async function handler(req, res) {
   const apiKey = process.env.RESEND_API_KEY;
   const recipient = clean(process.env.CONTACT_TO_EMAIL, 254);
   const sender = clean(process.env.CONTACT_FROM_EMAIL, 254);
-  if (!apiKey || !recipient || !sender || !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(sender.replace(/^.*<([^>]+)>.*$/, "$1"))) {
+  const senderAddress = sender.replace(/^.*<([^<>]+)>.*$/, "$1");
+  const isEmail = value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  if (!apiKey || !isEmail(recipient) || !isEmail(senderAddress)) {
     return respond(res, 503, {ok:false, error:"email_not_configured"});
   }
 
