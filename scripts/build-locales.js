@@ -553,26 +553,35 @@ async function main() {
   const sitemapPath = path.join(PUBLIC, "sitemap.xml");
   let sitemap = await fs.readFile(sitemapPath, "utf8");
   sitemap = sitemap.replace(/<lastmod>[^<]+<\/lastmod>/g, "<lastmod>2026-11-24</lastmod>");
+  const baseUrl = "https://btmcode.vercel.app/";
+  const toSwedishUrl = loc => {
+    let route = loc.startsWith(baseUrl) ? loc.slice(baseUrl.length) : "";
+    route = route.replace(/^(en|de|fr|ru|zh|sv)(?=\/|$)/, "");
+    return baseUrl + "sv/" + route;
+  };
   const urlBlocks = [...sitemap.matchAll(/<url>[\s\S]*?<\/url>/g)].map(match => match[0]);
   const svBlocks = [];
-  for (const block of urlBlocks) {
-    const loc = (block.match(/<loc>([^<]+)<\/loc>/) || [])[1] || "";
-    const svLoc = loc.replace("https://btmcode.vercel.app/", "https://btmcode.vercel.app/sv/");
-    if (svLoc !== loc && !/\/(en|de|fr|ru|zh)\//.test(loc)) {
-      const cloned = block.replace(loc, svLoc);
-      svBlocks.push(cloned);
+  for (const originalBlock of urlBlocks) {
+    const loc = (originalBlock.match(/<loc>([^<]+)<\/loc>/) || [])[1] || "";
+    const route = loc.startsWith(baseUrl) ? loc.slice(baseUrl.length) : "";
+    if (!/^(en|de|fr|ru|zh|sv)(?=\/|$)/.test(route)) {
+      const svLoc = toSwedishUrl(loc);
+      let clone = originalBlock.replace(loc, svLoc);
+      clone = clone.replace(/hreflang="sv" href="[^"]+"/, 'hreflang="sv" href="' + svLoc + '"');
+      svBlocks.push(clone);
     }
   }
-  sitemap = sitemap.replace(/<url>[\s\S]*?<\/url>/g, block => {
-    const loc = (block.match(/<loc>([^<]+)<\/loc>/) || [])[1] || "";
-    const svLoc = loc.replace("https://btmcode.vercel.app/", "https://btmcode.vercel.app/sv/");
-    if (block.includes('hreflang="sv"')) return block;
+  sitemap = sitemap.replace(/<url>[\s\S]*?<\/url>/g, originalBlock => {
+    const loc = (originalBlock.match(/<loc>([^<]+)<\/loc>/) || [])[1] || "";
+    const svLoc = toSwedishUrl(loc);
     const alternate = '<xhtml:link rel="alternate" hreflang="sv" href="' + svLoc + '" />';
-    return block.replace(/<xhtml:link rel="alternate" hreflang="x-default"/, alternate + '\n    <xhtml:link rel="alternate" hreflang="x-default"');
+    if (/hreflang="sv"/.test(originalBlock)) {
+      return originalBlock.replace(/<xhtml:link rel="alternate" hreflang="sv" href="[^"]+" \/>/, alternate);
+    }
+    return originalBlock.replace(/<xhtml:link rel="alternate" hreflang="x-default"/, alternate + '\n    <xhtml:link rel="alternate" hreflang="x-default"');
   });
   if (svBlocks.length) sitemap = sitemap.replace("</urlset>", svBlocks.join("\n") + "\n</urlset>");
   await fs.writeFile(sitemapPath, sitemap, "utf8");
-
   console.log("Generated " + count + " localized HTML pages for " + LOCALES.length + " locales.");
 }
 main().catch(error => { console.error(error); process.exitCode = 1; });
