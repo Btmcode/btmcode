@@ -98,7 +98,7 @@
   const projectCards = Array.from(document.querySelectorAll("[data-category]"));
   filterButtons.forEach(button => {
     button.addEventListener("click", () => {
-      filterButtons.forEach(item => item.classList.remove("active"));
+      filterButtons.forEach(item => { item.classList.remove("active"); item.setAttribute("aria-pressed", String(item === button)); });
       button.classList.add("active");
       const filter = button.dataset.filter;
       projectCards.forEach(card => {
