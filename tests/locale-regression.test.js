@@ -59,6 +59,15 @@ test("project filter controls have a 44px target and visible keyboard focus", ()
   assert.match(css, /\.filter-btn:focus-visible/);
 });
 
+test("contact service categories use stable locale-independent values", () => {
+  const page = source("contact/index.html");
+  const api = source("api/contact.js");
+  for (const value of ["web-application", "saas-platform", "ai-automation", "technical-improvement", "other"]) {
+    assert.match(page, new RegExp('value="' + value + '"'));
+    assert.ok(api.includes('"' + value + '"'), "API must accept " + value);
+  }
+});
+
 test("Swedish portfolio ItemList schema label is localized", () => {
   const i18n = source("assets/i18n.js");
   assert.match(i18n, /"BTMCode — Seçilmiş Yazılım Projeleri": "BTMCode — Utvalda mjukvaruprojekt"/);
