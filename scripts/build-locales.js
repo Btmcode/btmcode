@@ -497,7 +497,7 @@ function addAlternates(html, route) {
   return html.replace("</head>",links.join("")+"</head>");
 }
 function localizeHtml(source,locale,route) {
-  const dict = dictionaries[locale] || {};
+  const dict = locale === "sv" ? Object.assign({}, dictionaries.en || {}, dictionaries.sv || {}) : (dictionaries[locale] || {});
   let html = translateText(source,dict);
   html = translateAttributes(html,dict);
   html = translateJsonLd(html,dict);
