@@ -3,8 +3,8 @@ const path = require("node:path");
 const vm = require("node:vm");
 const PUBLIC = path.join(process.cwd(), "public");
 const SOURCE = require("node:fs").readFileSync(path.join(PUBLIC, "assets/i18n.js"), "utf8");
-const LOCALES = ["en","de","fr","ru","zh"];
-const LOCALE_TAGS = {en:"en_US",de:"de_DE",fr:"fr_FR",ru:"ru_RU",zh:"zh_CN"};
+const LOCALES = ["en","de","fr","ru","zh","sv"];
+const LOCALE_TAGS = {en:"en_US",de:"de_DE",fr:"fr_FR",ru:"ru_RU",zh:"zh_CN",sv:"sv_SE"};
 
 function extractObject(name) {
   const start = SOURCE.indexOf("const " + name + " =");
@@ -62,7 +62,9 @@ const ui = {
     "open": "打开菜单",
     "light": "切换浅色主题",
     "nav": "主导航"
-  }};
+  },
+sv:{open:"Öppna menyn",light:"Byt till ljust tema",nav:"Huvudmeny"}
+};
 const extra = {
   en:{"Mesajınız Resend üzerinden güvenli e-posta kanalıyla iletilir.":"Your message is delivered securely by email through Resend.","Form verileri BTMCode tarafından bir veritabanında saklanmaz.":"BTMCode does not store form submissions in a database.",
     "Bu sayfa, BTMCode'un veri işleme yaklaşımına ilişkin geçici bilgilendirmedir; nihai KVKK aydınlatma metni değildir. İletişim formu aracılığıyla gönderilen bilgiler, talebinizi yanıtlamak amacıyla Resend e-posta altyapısı üzerinden iletilir. Google Analytics bu sürümde bir Measurement ID tanımlanmadıkça yüklenmez; yapılandırıldığında yalnızca analitik tercihi açıkça kabul edilirse etkinleşir. Form verileri BTMCode web sitesinde bir veritabanında saklanmaz; e-posta sağlayıcısındaki saklama ve yurt dışı aktarım koşulları ayrıca doğrulanmalıdır.":"This page is an interim notice about BTMCode's data practices and is not the final KVKK information notice. Contact form details are sent through Resend email infrastructure so the enquiry can be answered. Google Analytics is not loaded unless a Measurement ID is configured; once configured, it activates only if analytics is explicitly accepted. BTMCode does not store form submissions in a website database; the email provider's retention and international transfer conditions must be verified separately."},
@@ -479,12 +481,12 @@ function localizedPath(locale, route) {
 function localizeLinks(html, locale) {
   return html.replace(/\bhref=(["'])(\/[^"']*)\1/gi, (all,q,href) => {
     if (href.startsWith("//") || /^\/(assets|api|admin)(\/|$)/.test(href) || ["/favicon.svg","/manifest.webmanifest","/robots.txt","/sitemap.xml"].includes(href)) return all;
-    if (/^\/(en|de|fr|ru|zh)(\/|$)/.test(href)) return all;
+    if (/^\/(en|de|fr|ru|zh|sv)(\/|$)/.test(href)) return all;
     return "href=" + q + localizedPath(locale,href) + q;
   });
 }
 function addAlternates(html, route) {
-  const codes = ["tr","en","de","fr","ru","zh"];
+  const codes = ["tr","en","de","fr","ru","zh","sv"];
   const links = codes.map(code => {
     const url = "https://btmcode.vercel.app" + (code === "tr" ? route : localizedPath(code,route));
     const hreflang = code === "zh" ? "zh-CN" : code;
@@ -522,7 +524,7 @@ async function htmlFiles(dir,relative="") {
   for (const entry of await fs.readdir(dir,{withFileTypes:true})) {
     const rel = path.posix.join(relative,entry.name);
     if (entry.isDirectory()) {
-      if (["admin","api","en","de","fr","ru","zh"].includes(entry.name)) continue;
+      if (["admin","api","en","de","fr","ru","zh","sv"].includes(entry.name)) continue;
       result.push(...await htmlFiles(path.join(dir,entry.name),rel));
     } else if (entry.isFile() && entry.name === "index.html") result.push(rel);
   }
@@ -547,6 +549,30 @@ async function main() {
     await fs.access(path.join(PUBLIC,locale,"contact","index.html"));
     await fs.access(path.join(PUBLIC,locale,"projects","index.html"));
   }
+
+  const sitemapPath = path.join(PUBLIC, "sitemap.xml");
+  let sitemap = await fs.readFile(sitemapPath, "utf8");
+  sitemap = sitemap.replace(/<lastmod>[^<]+<\/lastmod>/g, "<lastmod>2026-11-24</lastmod>");
+  const urlBlocks = [...sitemap.matchAll(/<url>[\s\S]*?<\/url>/g)].map(match => match[0]);
+  const svBlocks = [];
+  for (const block of urlBlocks) {
+    const loc = (block.match(/<loc>([^<]+)<\/loc>/) || [])[1] || "";
+    const svLoc = loc.replace("https://btmcode.vercel.app/", "https://btmcode.vercel.app/sv/");
+    if (svLoc !== loc && !/\/(en|de|fr|ru|zh)\//.test(loc)) {
+      const cloned = block.replace(loc, svLoc);
+      svBlocks.push(cloned);
+    }
+  }
+  sitemap = sitemap.replace(/<url>[\s\S]*?<\/url>/g, block => {
+    const loc = (block.match(/<loc>([^<]+)<\/loc>/) || [])[1] || "";
+    const svLoc = loc.replace("https://btmcode.vercel.app/", "https://btmcode.vercel.app/sv/");
+    if (block.includes('hreflang="sv"')) return block;
+    const alternate = '<xhtml:link rel="alternate" hreflang="sv" href="' + svLoc + '" />';
+    return block.replace(/<xhtml:link rel="alternate" hreflang="x-default"/, alternate + '\n    <xhtml:link rel="alternate" hreflang="x-default"');
+  });
+  if (svBlocks.length) sitemap = sitemap.replace("</urlset>", svBlocks.join("\n") + "\n</urlset>");
+  await fs.writeFile(sitemapPath, sitemap, "utf8");
+
   console.log("Generated " + count + " localized HTML pages for " + LOCALES.length + " locales.");
 }
 main().catch(error => { console.error(error); process.exitCode = 1; });
