@@ -70,7 +70,8 @@ module.exports = async function handler(req, res) {
   }
 
   const allowedServices = new Set([
-    "", "Web uygulaması", "SaaS / platform", "AI / otomasyon", "Teknik iyileştirme", "Diğer",
+    "", "web-application", "saas-platform", "ai-automation", "technical-improvement", "other",
+    "Web uygulaması", "SaaS / platform", "AI / otomasyon", "Teknik iyileştirme", "Diğer",
     "Web application", "SaaS / platform", "AI / automation", "Technical improvement", "Other",
     "Webanwendung", "SaaS / Plattform", "KI / Automatisierung", "Technische Verbesserung", "Sonstiges",
     "Application web", "SaaS / plateforme", "IA / automatisation", "Amélioration technique", "Autre",
@@ -90,8 +91,11 @@ module.exports = async function handler(req, res) {
   else rateLimits.set(ip, {count:current.count + 1, resetAt:current.resetAt});
 
   const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return respond(res, 503, {ok:false, error:"email_not_configured"});
-  const recipient = process.env.CONTACT_TO_EMAIL || "devcloudpy@gmail.com";
+  const recipient = clean(process.env.CONTACT_TO_EMAIL, 254);
+  const sender = clean(process.env.CONTACT_FROM_EMAIL, 254);
+  if (!apiKey || !recipient || !sender || !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(sender.replace(/^.*<([^>]+)>.*$/, "$1"))) {
+    return respond(res, 503, {ok:false, error:"email_not_configured"});
+  }
 
   const safeName = escapeHtml(name);
   const safeEmail = escapeHtml(email);
@@ -120,7 +124,7 @@ module.exports = async function handler(req, res) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        from: "BTMCode <onboarding@resend.dev>",
+        from: sender,
         to: [recipient],
         reply_to: email,
         subject: "New BTMCode project enquiry — " + subjectName,
