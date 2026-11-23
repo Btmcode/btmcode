@@ -1,7 +1,7 @@
 (() => {
   "use strict";
-  const locale=((location.pathname.match(/^\/(en|de|fr|ru|zh)(?:\/|$)/)||[])[1])||"tr";
-  const path=location.pathname.replace(/^\/(en|de|fr|ru|zh)(?=\/|$)/,"")||"/";
+  const locale=((location.pathname.match(/^\/(en|de|fr|ru|zh|sv)(?:\/|$)/)||[])[1])||"tr";
+  const path=location.pathname.replace(/^\/(en|de|fr|ru|zh|sv)(?=\/|$)/,"")||"/";
   const prefix=locale==="tr"?"":"/"+locale;
   const labels={
     tr:{whatsapp:"WhatsApp üzerinden yaz",direct:"Doğrudan geliştirici",scope:"Önce kapsam, sonra teklif",https:"HTTPS bağlantısı",privacy:"Gizlilik tercihleri",whatsappIntro:"WhatsApp ile doğrudan iletişim",europe:"Türkiye merkezli bağımsız yazılım geliştiricisi olarak Avrupa'daki ekiplerle uzaktan çalışıyorum.",retainerTitle:"Yayından sonra da yanınızdayım.",retainerIntro:"Yazılımın yayına alınması işin sonu değil. İhtiyaca göre aylık bakım, iyileştirme ve otomasyon desteği sunuyorum.",careTitle:"Product Care",careText:"Planlı bakım, bağımlılık kontrolleri, teknik iyileştirmeler ve kararlaştırılmış destek kapsamı.",growthTitle:"Growth & Analytics",growthText:"İzinli analitik veriler, teknik SEO kontrolleri ve dönüşüm odaklı iyileştirme backlog'u.",automationTitle:"Automation Care",automationText:"AI ve iş akışı otomasyonlarının gözden geçirilmesi, hata iyileştirmeleri ve yeni entegrasyonlar.",retainerCta:"Aylık çalışma modelini konuşalım ↗",retainerKicker:"AYLIK İŞ ORTAKLIĞI",monthly:"AYLIK"},
@@ -10,7 +10,28 @@
     fr:{whatsapp:"Écrire sur WhatsApp",direct:"Contact direct avec le développeur",scope:"Périmètre avant devis",https:"Connexion HTTPS",privacy:"Choix de confidentialité",whatsappIntro:"Contact direct sur WhatsApp",europe:"Développeur logiciel indépendant basé en Türkiye, travaillant à distance avec des équipes européennes.",retainerTitle:"À vos côtés après le lancement.",retainerIntro:"Le lancement ne marque pas la fin du travail. Je propose maintenance mensuelle, améliorations produit et accompagnement en automatisation.",careTitle:"Product Care",careText:"Maintenance planifiée, vérification des dépendances, améliorations techniques et périmètre de support convenu.",growthTitle:"Growth & Analytics",growthText:"Analyses avec consentement, contrôles SEO techniques et backlog d'améliorations axé sur la conversion.",automationTitle:"Automation Care",automationText:"Revue des automatisations IA et métier, corrections et nouvelles intégrations.",retainerCta:"Parler d'un accompagnement mensuel ↗",retainerKicker:"PARTENARIAT MENSUEL",monthly:"MENSUEL"},
     ru:{whatsapp:"Написать в WhatsApp",direct:"Прямой контакт с разработчиком",scope:"Сначала объём, затем оценка",https:"HTTPS-соединение",privacy:"Настройки конфиденциальности",whatsappIntro:"Прямая связь через WhatsApp",europe:"Независимый разработчик ПО из Türkiye, работающий удалённо с командами по всей Европе.",retainerTitle:"Поддержка и после запуска.",retainerIntro:"Запуск — не конец работы. Предлагаю ежемесячное обслуживание, улучшение продукта и поддержку автоматизации.",careTitle:"Product Care",careText:"Плановое обслуживание, проверка зависимостей, технические улучшения и согласованный объём поддержки.",growthTitle:"Growth & Analytics",growthText:"Аналитика с согласия пользователя, технический SEO-аудит и список улучшений для конверсии.",automationTitle:"Automation Care",automationText:"Проверка ИИ- и бизнес-автоматизаций, исправление ошибок и новые интеграции.",retainerCta:"Обсудить ежемесячное сотрудничество ↗",retainerKicker:"ЕЖЕМЕСЯЧНОЕ СОТРУДНИЧЕСТВО",monthly:"ЕЖЕМЕСЯЧНО"},
     zh:{whatsapp:"通过 WhatsApp 联系",direct:"直接联系开发者",scope:"先明确范围，再提供方案",https:"HTTPS 安全连接",privacy:"隐私偏好设置",whatsappIntro:"通过 WhatsApp 直接联系",europe:"我是一名常驻土耳其的独立软件开发者，远程与欧洲各地的团队合作。",retainerTitle:"产品上线后，持续为您提供支持。",retainerIntro:"产品上线并不意味着工作结束。我可根据您的需求提供月度维护、产品优化和自动化支持。",careTitle:"产品维护",careText:"定期维护、依赖项检查、技术优化，以及双方约定的支持范围。",growthTitle:"增长与分析",growthText:"在获得同意后进行数据分析、技术 SEO 检查，并制定以转化效果为导向的优化计划。",automationTitle:"自动化维护",automationText:"检查 AI 与业务流程自动化、修复问题并添加新的系统集成。",retainerCta:"洽谈月度合作 ↗",retainerKicker:"月度合作",monthly:"每月"}
-  };
+  ,
+sv:{
+  whatsapp:"Skriv på WhatsApp",
+  direct:"Direktkontakt med utvecklaren",
+  scope:"Omfattning före offert",
+  https:"HTTPS-anslutning",
+  privacy:"Integritetsval",
+  whatsappIntro:"Direktkontakt via WhatsApp",
+  europe:"Fristående mjukvaruutvecklare baserad i Turkiet, med distanssamarbeten med team i Europa.",
+  retainerTitle:"Stöd även efter lanseringen.",
+  retainerIntro:"Lanseringen är inte slutet på arbetet. Jag erbjuder månadsvis underhåll, produktförbättringar och stöd för automatisering utifrån era behov.",
+  careTitle:"Produktunderhåll",
+  careText:"Planerat underhåll, granskning av beroenden, tekniska förbättringar och en överenskommen supportnivå.",
+  growthTitle:"Tillväxt och analys",
+  growthText:"Analys baserad på samtycke, tekniska SEO-kontroller och en prioriterad lista med konverteringsförbättringar.",
+  automationTitle:"Automationsunderhåll",
+  automationText:"Granskning av AI- och arbetsflödesautomationer, felkorrigeringar och nya integrationer.",
+  retainerCta:"Diskutera ett månatligt samarbete ↗",
+  retainerKicker:"MÅNATLIGT PARTNERSKAP",
+  monthly:"MÅNATLIGEN"
+}
+};
   const t=labels[locale]||labels.en;
   const phone="905386949469";
   const whatsappMessages={
@@ -20,7 +41,9 @@
     fr:"Bonjour, je souhaite discuter d’un projet logiciel avec BTMCode.",
     ru:"Здравствуйте, я хотел(а) бы обсудить программный проект с BTMCode.",
     zh:"您好，我想与 BTMCode 讨论一个软件项目。"
-  };
+  ,
+sv:"Hej, jag skulle vilja diskutera ett mjukvaruprojekt med BTMCode."
+};
   const message=encodeURIComponent(whatsappMessages[locale]||whatsappMessages.en);
   const whatsapp="https://wa.me/"+phone+"?text="+message;
   document.addEventListener("DOMContentLoaded",()=>{
@@ -28,7 +51,7 @@
     if(footer&&!footer.querySelector(".btm-trust")){
       const trust=document.createElement("div");
       trust.className="btm-trust";
-      trust.innerHTML='<div class="btm-trust__badges"><span><i aria-hidden="true">✓</i>'+t.https+'</span><span><i aria-hidden="true">◆</i>'+t.direct+'</span><span><i aria-hidden="true">↗</i>'+t.scope+'</span></div><div class="btm-trust__links"><a href="'+whatsapp+'" target="_blank" rel="noopener noreferrer">'+t.whatsapp+'</a><button type="button" data-consent-open>'+t.privacy+'</button><a href="'+prefix+'/privacy/">'+(locale==="tr"?"Gizlilik":locale==="de"?"Datenschutz":locale==="fr"?"Confidentialité":locale==="ru"?"Конфиденциальность":locale==="zh"?"隐私":"Privacy")+'</a></div>';
+      trust.innerHTML='<div class="btm-trust__badges"><span><i aria-hidden="true">✓</i>'+t.https+'</span><span><i aria-hidden="true">◆</i>'+t.direct+'</span><span><i aria-hidden="true">↗</i>'+t.scope+'</span></div><div class="btm-trust__links"><a href="'+whatsapp+'" target="_blank" rel="noopener noreferrer">'+t.whatsapp+'</a><button type="button" data-consent-open>'+t.privacy+'</button><a href="'+prefix+'/privacy/">'+(locale==="tr"?"Gizlilik":locale==="de"?"Datenschutz":locale==="fr"?"Confidentialité":locale==="ru"?"Конфиденциальность":locale==="zh"?"隐私":locale==="sv"?"Integritet":"Privacy")+'</a></div>';
       const bottom=footer.querySelector(".footer-bottom");
       if(bottom) bottom.before(trust);
       const settings=trust.querySelector("[data-consent-open]");
