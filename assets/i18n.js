@@ -793,11 +793,9 @@ sv: {
     "End-to-End Delivery": "End-to-end delivery",
     "Proje sitesini ziyaret et ↗": "Visit project website ↗"
   ,
-{
   "Seçilmiş": "Selected",
   "projeler.": "projects.",
   "Web platformları, özel yazılımlar ve dijital ürünlerden seçilmiş çalışmalar. Her proje; teslim edilen kapsamı, doğrulanabilen işlevleri ve erişilebilir demo veya kaynak kodu bağlantılarıyla sunulur.": "A curated selection of web platforms, custom software and digital products. Each project documents its delivered scope, verifiable functionality and available demo or source-code links."
-}
 },
   "de": {
     "Language": "Sprache",
@@ -944,11 +942,9 @@ sv: {
     "End-to-End Delivery": "Ganzheitliche Umsetzung",
     "Proje sitesini ziyaret et ↗": "Projektwebsite besuchen ↗"
   ,
-{
   "Seçilmiş": "Ausgewählte",
   "projeler.": "Projekte.",
   "Web platformları, özel yazılımlar ve dijital ürünlerden seçilmiş çalışmalar. Her proje; teslim edilen kapsamı, doğrulanabilen işlevleri ve erişilebilir demo veya kaynak kodu bağlantılarıyla sunulur.": "Eine Auswahl an Webplattformen, individueller Software und digitalen Produkten. Jedes Projekt dokumentiert den gelieferten Umfang, überprüfbare Funktionen sowie verfügbare Demo- oder Quellcode-Links."
-}
 },
   "fr": {
     "Language": "Langue",
@@ -1095,11 +1091,9 @@ sv: {
     "End-to-End Delivery": "Livraison de bout en bout",
     "Proje sitesini ziyaret et ↗": "Visiter le site du projet ↗"
   ,
-{
   "Seçilmiş": "Projets",
   "projeler.": "sélectionnés.",
   "Web platformları, özel yazılımlar ve dijital ürünlerden seçilmiş çalışmalar. Her proje; teslim edilen kapsamı, doğrulanabilen işlevleri ve erişilebilir demo veya kaynak kodu bağlantılarıyla sunulur.": "Une sélection de plateformes web, de logiciels sur mesure et de produits numériques. Chaque projet présente le périmètre livré, les fonctionnalités vérifiables et les liens de démonstration ou de code source disponibles."
-}
 },
   "ru": {
     "Language": "Язык",
@@ -1246,11 +1240,9 @@ sv: {
     "End-to-End Delivery": "Реализация полного цикла",
     "Proje sitesini ziyaret et ↗": "Перейти на сайт проекта ↗"
   ,
-{
   "Seçilmiş": "Избранные",
   "projeler.": "проекты.",
   "Web platformları, özel yazılımlar ve dijital ürünlerden seçilmiş çalışmalar. Her proje; teslim edilen kapsamı, doğrulanabilen işlevleri ve erişilebilir demo veya kaynak kodu bağlantılarıyla sunulur.": "Подборка веб-платформ, индивидуального программного обеспечения и цифровых продуктов. Для каждого проекта указаны выполненный объём, проверяемые функции и доступные ссылки на демо или исходный код."
-}
 },
   "zh": {
     "Language": "语言",
@@ -1397,11 +1389,9 @@ sv: {
     "End-to-End Delivery": "端到端交付",
     "Proje sitesini ziyaret et ↗": "访问项目网站 ↗"
   ,
-{
   "Seçilmiş": "精选",
   "projeler.": "项目。",
   "Web platformları, özel yazılımlar ve dijital ürünlerden seçilmiş çalışmalar. Her proje; teslim edilen kapsamı, doğrulanabilen işlevleri ve erişilebilir demo veya kaynak kodu bağlantılarıyla sunulur.": "精选的网络平台、定制软件和数字产品。每个项目均说明交付范围、可验证的功能，以及可访问的演示或源代码链接。"
-}
 }
 ,
 "sv": {
