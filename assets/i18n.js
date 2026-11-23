@@ -1434,13 +1434,10 @@ sv: {
   "01 / WEB APPLICATIONS": "01 / WEBBAPPLIKATIONER",
   "02 / SAAS SYSTEMS": "02 / SAAS-SYSTEM",
   "03 / AI AUTOMATION": "03 / AI-AUTOMATISERING",
-  "04 / PERFORMANCE & SECURITY": "04 / PRESTANDA & SÄKERHET"
-,
-{
+  "04 / PERFORMANCE & SECURITY": "04 / PRESTANDA & SÄKERHET",
   "Seçilmiş": "Utvalda",
   "projeler.": "projekt.",
   "Web platformları, özel yazılımlar ve dijital ürünlerden seçilmiş çalışmalar. Her proje; teslim edilen kapsamı, doğrulanabilen işlevleri ve erişilebilir demo veya kaynak kodu bağlantılarıyla sunulur.": "Ett urval av webbplattformar, specialutvecklad programvara och digitala produkter. Varje projekt beskriver levererad omfattning, verifierbara funktioner och tillgängliga demo- eller källkodslänkar."
-}
 }
 };
 for (const locale of ["en","de","fr","ru","zh","sv"]) Object.assign(dictionaries[locale], sharedUiTranslations[locale]);
