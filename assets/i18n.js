@@ -1443,7 +1443,7 @@ sv: {
 }
 }
 };
-for (const locale of ["en","de","fr","ru","zh"]) Object.assign(dictionaries[locale], sharedUiTranslations[locale]);
+for (const locale of ["en","de","fr","ru","zh","sv"]) Object.assign(dictionaries[locale], sharedUiTranslations[locale]);
 
   const sevgiCaseTranslations = {
   "en": {
