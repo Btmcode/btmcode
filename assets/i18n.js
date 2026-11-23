@@ -644,6 +644,10 @@ sv: {
   "02 / SAAS SYSTEMS": "02 / SAAS-SYSTEM",
   "03 / AI AUTOMATION": "03 / AI-AUTOMATISERING",
   "04 / PERFORMANCE & SECURITY": "04 / PRESTANDA & SÄKERHET"
+,
+
+,
+  "BTMCode — Seçilmiş Yazılım Projeleri": "BTMCode — Utvalda mjukvaruprojekt"
 }
 };
 
