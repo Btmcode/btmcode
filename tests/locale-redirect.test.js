@@ -29,6 +29,7 @@ function redirects({ pathname = "/", languages = ["en-US"], saved = null } = {})
 test("browser language detection selects the first supported preference", () => {
   assert.deepEqual(redirects({ languages: ["fr-FR", "en-US"] }), ["/fr/?campaign=test#contact"]);
   assert.deepEqual(redirects({ languages: ["zh-Hant-TW", "en-US"] }), ["/zh/?campaign=test#contact"]);
+  assert.deepEqual(redirects({ languages: ["sv-SE", "en-US"] }), ["/sv/?campaign=test#contact"]);
   assert.deepEqual(redirects({ languages: ["tr-TR", "en-US"] }), []);
 });
 
@@ -55,6 +56,11 @@ test("all source pages expose the Simplified Chinese language option", () => {
     const html = fs.readFileSync(path.join(root, page), "utf8");
     assert.equal((html.match(/<option value="zh">ZH<\/option>/g) || []).length, 1, page + " must offer exactly one Chinese option");
   }
+});
+
+test("generated public pages expose the Swedish language option", () => {
+  const build = fs.readFileSync(path.join(root, "scripts/build.js"), "utf8");
+  assert.match(build, /option value="sv">SV/);
 });
 
 test("localized builds translate accessible attributes and JSON-LD string values", () => {
