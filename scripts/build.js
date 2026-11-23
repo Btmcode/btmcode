@@ -35,8 +35,11 @@ const publicEntries = [
         if (!html.includes("/assets/commerce.js")) html = html.replace("</head>", '<script defer src="/assets/commerce.js"></script></head>');
         if (!html.includes("/assets/locale-redirect.js")) html = html.replace("</head>", '<script src="/assets/locale-redirect.js"></script></head>');
         const languageSelect = html.match(/(<select\b[^>]*data-language-select[^>]*>)([\s\S]*?)(<\/select>)/i);
-        if (languageSelect && !/value=["']zh["']/.test(languageSelect[2])) {
-          html = html.replace(languageSelect[0], languageSelect[1] + languageSelect[2] + '<option value="zh">中文</option>' + languageSelect[3]);
+        if (languageSelect) {
+          let options = languageSelect[2];
+          if (!/value=["']zh["']/.test(options)) options += '<option value="zh">中文</option>';
+          if (!/value=["']sv["']/.test(options)) options += '<option value="sv">SV</option>';
+          html = html.replace(languageSelect[0], languageSelect[1] + options + languageSelect[3]);
         }
         if (html.includes('<div class="footer-bottom">') && !html.includes('data-footer-trust')) {
           html = html.replace('<div class="footer-bottom">', '<div class="footer-trust" data-footer-trust></div><div class="footer-bottom">');
