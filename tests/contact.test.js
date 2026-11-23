@@ -115,6 +115,38 @@ test("returns a clear unavailable response when email delivery is not configured
   }
 });
 
+test("requires an explicitly configured recipient and sender", async () => {
+  const oldKey = process.env.RESEND_API_KEY;
+  const oldInbox = process.env.CONTACT_TO_EMAIL;
+  const oldSender = process.env.CONTACT_FROM_EMAIL;
+  const oldFetch = global.fetch;
+  process.env.RESEND_API_KEY = "test_key_never_real";
+  delete process.env.CONTACT_TO_EMAIL;
+  process.env.CONTACT_FROM_EMAIL = "BTMCode <website@example.com>";
+  global.fetch = async () => { throw new Error("must not call provider"); };
+  try {
+    const res = await invoke(makeRequest({headers:{...makeRequest().headers,"x-forwarded-for":"198.51.100.25"}}));
+    assert.equal(res.statusCode, 503);
+    assert.equal(res.json().error, "email_not_configured");
+  } finally {
+    if (oldKey === undefined) delete process.env.RESEND_API_KEY;
+    else process.env.RESEND_API_KEY = oldKey;
+    if (oldInbox === undefined) delete process.env.CONTACT_TO_EMAIL;
+    else process.env.CONTACT_TO_EMAIL = oldInbox;
+    if (oldSender === undefined) delete process.env.CONTACT_FROM_EMAIL;
+    else process.env.CONTACT_FROM_EMAIL = oldSender;
+    global.fetch = oldFetch;
+  }
+});
+
+test("does not contain a hard-coded contact recipient", () => {
+  const fs = require("node:fs");
+  const source = fs.readFileSync(require.resolve("../api/contact"), "utf8");
+  assert.doesNotMatch(source, /devcloudpy@gmail\.com/);
+  assert.match(source, /process\.env\.CONTACT_TO_EMAIL/);
+  assert.match(source, /process\.env\.CONTACT_FROM_EMAIL/);
+});
+
 test("sends only to the configured inbox and sets visitor as reply-to", async () => {
   const oldKey = process.env.RESEND_API_KEY;
   const oldInbox = process.env.CONTACT_TO_EMAIL;
