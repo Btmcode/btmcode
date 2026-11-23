@@ -26,7 +26,7 @@ function makeRequest(overrides = {}) {
       name: "Test Visitor",
       email: "visitor@example.com",
       company: "Example Ltd",
-      service: "Web application",
+      service: "web-application",
       message: "I need a new product website with a project enquiry workflow.",
       website: ""
     },
@@ -91,10 +91,14 @@ test("drops honeypot submissions without calling Resend", async () => {
   }
 });
 
-test("returns a clear unavailable response when the API key is missing", async () => {
+test("returns a clear unavailable response when email delivery is not configured", async () => {
   const oldKey = process.env.RESEND_API_KEY;
+  const oldInbox = process.env.CONTACT_TO_EMAIL;
+  const oldSender = process.env.CONTACT_FROM_EMAIL;
   const oldFetch = global.fetch;
   delete process.env.RESEND_API_KEY;
+  delete process.env.CONTACT_TO_EMAIL;
+  delete process.env.CONTACT_FROM_EMAIL;
   global.fetch = async () => { throw new Error("must not call provider"); };
   try {
     const res = await invoke(makeRequest({headers:{...makeRequest().headers,"x-forwarded-for":"198.51.100.20"}}));
@@ -103,6 +107,10 @@ test("returns a clear unavailable response when the API key is missing", async (
   } finally {
     if (oldKey === undefined) delete process.env.RESEND_API_KEY;
     else process.env.RESEND_API_KEY = oldKey;
+    if (oldInbox === undefined) delete process.env.CONTACT_TO_EMAIL;
+    else process.env.CONTACT_TO_EMAIL = oldInbox;
+    if (oldSender === undefined) delete process.env.CONTACT_FROM_EMAIL;
+    else process.env.CONTACT_FROM_EMAIL = oldSender;
     global.fetch = oldFetch;
   }
 });
@@ -110,9 +118,11 @@ test("returns a clear unavailable response when the API key is missing", async (
 test("sends only to the configured inbox and sets visitor as reply-to", async () => {
   const oldKey = process.env.RESEND_API_KEY;
   const oldInbox = process.env.CONTACT_TO_EMAIL;
+  const oldSender = process.env.CONTACT_FROM_EMAIL;
   const oldFetch = global.fetch;
   process.env.RESEND_API_KEY = "test_key_never_real";
-  process.env.CONTACT_TO_EMAIL = "devcloudpy@gmail.com";
+  process.env.CONTACT_TO_EMAIL = "inbox@example.com";
+  process.env.CONTACT_FROM_EMAIL = "BTMCode <website@example.com>";
   let request;
   global.fetch = async (url, options) => {
     request = {url,options,body:JSON.parse(options.body)};
@@ -124,8 +134,8 @@ test("sends only to the configured inbox and sets visitor as reply-to", async ()
     assert.equal(res.json().ok, true);
     assert.equal(res.json().id, "email_test_123");
     assert.equal(request.url, "https://api.resend.com/emails");
-    assert.deepEqual(request.body.to, ["devcloudpy@gmail.com"]);
-    assert.equal(request.body.from, "BTMCode <onboarding@resend.dev>");
+    assert.deepEqual(request.body.to, ["inbox@example.com"]);
+    assert.equal(request.body.from, "BTMCode <website@example.com>");
     assert.equal(request.body.reply_to, "visitor@example.com");
     assert.match(request.body.html, /Example Ltd/);
     assert.equal(request.options.headers.Authorization, "Bearer test_key_never_real");
@@ -134,6 +144,8 @@ test("sends only to the configured inbox and sets visitor as reply-to", async ()
     else process.env.RESEND_API_KEY = oldKey;
     if (oldInbox === undefined) delete process.env.CONTACT_TO_EMAIL;
     else process.env.CONTACT_TO_EMAIL = oldInbox;
+    if (oldSender === undefined) delete process.env.CONTACT_FROM_EMAIL;
+    else process.env.CONTACT_FROM_EMAIL = oldSender;
     global.fetch = oldFetch;
   }
 });
