@@ -47,7 +47,9 @@ test("project filters expose and update pressed state accessibly", () => {
   const page = source("projects/index.html");
   const script = source("assets/site.js");
   assert.equal((page.match(/data-filter=/g) || []).length, 5);
-  assert.equal((page.match(/aria-pressed=/g) || []).length, 5);
+  const filters = [...page.matchAll(/<button[^>]*class="filter-btn[^"]*"[^>]*>/g)].map(match => match[0]);
+  assert.equal(filters.length, 5);
+  assert.ok(filters.every(button => /aria-pressed=/.test(button)));
   assert.match(script, /setAttribute\("aria-pressed", String\(item === button\)\)/);
 });
 
