@@ -1,8 +1,8 @@
 (() => {
   "use strict";
-  const localeCodes = ["tr", "en", "de", "fr", "ru", "zh"];
-  const locale = ((location.pathname.match(/^\/(en|de|fr|ru|zh)(?:\/|$)/) || [])[1]) || "tr";
-  const rawPath = location.pathname.replace(/^\/(en|de|fr|ru|zh)(?=\/|$)/, "") || "/";
+  const localeCodes = ["tr", "en", "de", "fr", "ru", "zh", "sv"];
+  const locale = ((location.pathname.match(/^\/(en|de|fr|ru|zh|sv)(?:\/|$)/) || [])[1]) || "tr";
+  const rawPath = location.pathname.replace(/^\/(en|de|fr|ru|zh|sv)(?=\/|$)/, "") || "/";
   const path = rawPath.endsWith("/") ? rawPath : rawPath + "/";
   const dictionaries = {
     en: {
@@ -511,7 +511,141 @@
       "Prisma tabanlı veri modeli ve admin içerik yönetimi": "基于 Prisma 的数据模型与后台内容管理",
       "JWT ve HttpOnly cookie tabanlı yönetici oturumu": "基于 JWT 和 HttpOnly Cookie 的管理员会话",
       "6 Kasım 2026 tarihinde canlı ana sayfa HTTP 200 döndürdü; sunucu HTML'inde ana içerik, canonical ve yapılandırılmış veri doğrulandı.": "2026 年 11 月 6 日，线上首页返回 HTTP 200；并在服务端 HTML 中验证了主要内容、Canonical URL 和结构化数据。"
-    }};
+    },
+sv: {
+  "Language": "Språk",
+  "Dil seçimi": "Språk",
+  "Ana içeriğe geç": "Hoppa till huvudinnehåll",
+  "Hakkımda": "Om mig",
+  "Yetkinlikler": "Kompetens",
+  "Projeler": "Projekt",
+  "Notlar": "Anteckningar",
+  "İletişim": "Kontakt",
+  "Ana menü": "Huvudmeny",
+  "Menüyü aç": "Öppna menyn",
+  "Menüyü kapat": "Stäng menyn",
+  "Açık temaya geç": "Byt till ljust tema",
+  "Koyu temaya geç": "Byt till mörkt tema",
+  "Proje konuşalım ↗": "Diskutera ett projekt ↗",
+  "Seçilmiş projeler": "Utvalda projekt",
+  "Farklı sektörlerde geliştirdiğim seçilmiş web platformları, SaaS ürünleri ve etkileşimli dijital deneyimler.": "Ett urval av webbplattformar, SaaS-produkter och interaktiva digitala upplevelser från olika branscher.",
+  "Tüm projeler": "Alla projekt",
+  "SaaS & API": "SaaS och API",
+  "Web platformları": "Webbplattformar",
+  "Etkileşimli deneyim": "Interaktiva upplevelser",
+  "Commerce": "Handel",
+  "Vaka analizini gör ↗": "Läs fallstudien ↗",
+  "Canlı site ↗": "Öppna webbplatsen ↗",
+  "Proje sitesini ziyaret et ↗": "Besök projektet ↗",
+  "Demo bağlantısı": "Demolänk",
+  "Canlı demo": "Live-demo",
+  "Canlı site doğrulandı": "Livewebbplats verifierad",
+  "Canlı site erişilebilir": "Livewebbplats tillgänglig",
+  "Vercel dağıtımı READY": "Vercel-distribution klar",
+  "Canlı referans": "Live-referens",
+  "Projenin amacı": "Projektets mål",
+  "Öne çıkan işlevler": "Viktiga funktioner",
+  "Kullanılan teknoloji": "Teknikstack",
+  "Şeffaflık notu": "Transparensnotering",
+  "Benzer bir proje konuşalım ↗": "Diskutera ett liknande projekt ↗",
+  "Canlı demoyu aç ↗": "Öppna live-demon ↗",
+  "GitHub kaynağı ↗": "Visa källkoden på GitHub ↗",
+  "Tüm projelere dön": "Till alla projekt",
+  "İşletmeler için web siteleri, özel yazılımlar ve yapay zekâ otomasyonları.": "Webbplatser, specialutvecklad programvara och AI-automatisering för företag.",
+  "Fikirleri çalışan dijital ürünlere dönüştürmek. Yazılım, yapay zekâ ve ürün mühendisliği.": "Vi förvandlar idéer till fungerande digitala produkter med programvara, AI och produktutveckling.",
+  "Fikirleri": "Förvandla idéer",
+  "çalışan": "till fungerande",
+  "dijital": "digitala",
+  "ürünlere dönüştür.": "produkter.",
+  "Ben Ahmet. Yazılım geliştirme, yapay zekâ ve ürün düşüncesini bir araya getirerek gerçek problemlere yönelik web uygulamaları, SaaS sistemleri ve otomasyonlar geliştiriyorum.": "Jag heter Ahmet. Jag kombinerar mjukvaruutveckling, AI och produktstrategi för att bygga webbappar, SaaS-plattformar och automatiseringar som löser verkliga problem.",
+  "İşinizi kolaylaştıran": "Lösningar som förenklar",
+  "doğru çözümler.": "ditt arbete.",
+  "Kurumsal web siteleri": "Företagswebbplatser",
+  "İşletmenizi doğru anlatan, mobil uyumlu, hızlı ve arama motorları için düzenlenmiş web siteleri.": "Snabba, mobilanpassade webbplatser som presenterar ditt företag tydligt och är tekniskt förberedda för sökmotorer.",
+  "İşinize özel yazılımlar": "Programvara för ditt företag",
+  "Yapay zekâ ve otomasyon": "AI och automatisering",
+  "Mevcut sistemleri iyileştirme": "Förbättra befintliga system",
+  "Yetkinlik alanlarını keşfet ↗": "Utforska kompetensen ↗",
+  "Teknolojiyle düşünen,": "Teknik med eftertanke,",
+  "ürünle sonuçlanan": "resultat genom produkter",
+  "bir yaklaşım.": "– ett genomtänkt arbetssätt.",
+  "Nasıl çalışırım?": "Så arbetar jag",
+  "İletişime geç ↗": "Kontakta mig ↗",
+  "Bir fikrin mi var?": "Har du en idé?",
+  "Konuşalım.": "Låt oss prata.",
+  "Ad Soyad *": "Namn *",
+  "E-posta *": "E-post *",
+  "Şirket / Marka": "Företag / Varumärke",
+  "İlgilendiğin konu": "Vad gäller förfrågan?",
+  "Seçiniz": "Välj ett alternativ",
+  "Web uygulaması": "Webbapplikation",
+  "SaaS / platform": "SaaS / plattform",
+  "AI / otomasyon": "AI / automatisering",
+  "Teknik iyileştirme": "Teknisk förbättring",
+  "Diğer": "Annat",
+  "Proje özeti *": "Projektbeskrivning *",
+  "Hangi problemi çözmek istiyorsun?": "Vilket problem vill du lösa?",
+  "Proje talebini gönder ↗": "Skicka projektförfrågan ↗",
+  "Notlar, kararlar ve öğrendiklerim.": "Anteckningar, beslut och lärdomar.",
+  "İlk teknik yazılar hazırlanıyor.": "De första tekniska artiklarna förbereds.",
+  "Gizlilik yaklaşımı.": "Integritet och dataskydd.",
+  "Veri işleme": "Databehandling",
+  "Çerezler": "Cookies",
+  "Çalışmalar. Kanıtlanabilir şekilde.": "Utvalda projekt",
+  "Farklı problemler.": "Olika problem.",
+  "Somut yazılım çözümleri.": "Konkreta mjukvarulösningar.",
+  "SaaS ve API ürünlerinden kurumsal web platformlarına ve interaktif deneyimlere uzanan seçilmiş çalışmalar.": "Utvalda projekt som sträcker sig från SaaS- och API-produkter till företagsplattformar och interaktiva upplevelser.",
+  "Her proje; gerçek kapsamı, teknoloji seçimi ve doğrulanabilen işlevleriyle sunulur.": "Varje projekt presenteras med omfattning, teknikval och funktioner som går att verifiera.",
+  "Uçtan uca geliştirilen kurumsal web projeleri, özel yazılımlar, SaaS ürünleri ve dijital platformlar.": "Företagswebbplatser, specialutvecklad programvara, SaaS-produkter och digitala plattformar utvecklade av BTMCode.",
+  "Not: Projelerde doğrulanmamış gelir, trafik, kullanıcı veya dönüşüm metrikleri kullanılmamıştır. Demo ve kaynak kodu bağlantıları, erişim durumlarına göre ayrı gösterilir.": "Obs! Vi använder inga obekräftade siffror för intäkter, trafik, användare eller konverteringar. Demo- och källkodslänkar visas separat utifrån tillgänglighet.",
+  "Keşif → kapsam → teklif": "Förstudie → omfattning → förslag",
+  "İstanbul genelinde hizmet aramalarını karşılayan; içerik, bölge sayfaları ve talepleri tek yönetim yapısında birleştiren Next.js web platformu.": "En Next.js-plattform som samlar tjänsteinnehåll, områdessidor och kundförfrågningar för en elserviceverksamhet i Istanbul.",
+  "E-ticaret ve geliştiriciler için görsel yükleme, dönüştürme ve CDN dağıtım akışını tek bir API-first üründe birleştiren platform.": "En API-first-plattform som samlar bilduppladdning, bildbearbetning och CDN-leverans för e-handel och utvecklare.",
+  "Özel akvaryum, aquascaping ve peyzaj tasarımını sinematik anlatı, etkileşimli hesaplama ve keşif akışlarıyla sunan premium dijital deneyim.": "En digital upplevelse för specialbyggda akvarier, aquascaping och landskapsdesign med filmisk berättelse och interaktiva verktyg.",
+  "Menü keşfinden sepete, sipariş takibinden yönetim ekranlarına uzanan restoran odaklı sipariş ve operasyon platformu demosu.": "En demo för restauranghandel med meny, varukorg, orderhantering, leverans och orderstatus.",
+  "Yerel servis işletmeleri için ilçe ve hizmet odaklı içerik yapısı, talep yönetimi ve yapay zekâ destekli içerik üretim araçları.": "En plattform för lokala tjänsteföretag med områdes- och tjänstebaserat innehåll, förfrågningshantering och AI-stödda innehållsverktyg.",
+  "Uçtan uca web geliştirme projesi. Web sitesinin tamamı BTMCode tarafından geliştirilmiştir; teknik ayrıntılar doğrulanmadığı için teknoloji etiketi eklenmemiştir.": "Ett webbprojekt med helhetsleverans. Webbplatsen har utvecklats av BTMCode; inga tekniketiketter anges eftersom detaljerna inte har verifierats.",
+  "17 yıllık deneyime sahip profesyonel makyaj sanatçısı için beş dilli, mobil öncelikli ve İstanbul geneline yerinde hizmet odaklı web platformu.": "En mobilanpassad webbplattform på fem språk för en professionell makeupartist med 17 års erfarenhet och tjänster på plats i hela Istanbul.",
+  "LumiKids web deneyiminin canlı proje bağlantısı.": "Live-länk till LumiKids webbprojekt.",
+  "Proje kapsamı, teknik katkı ve sonuçlar yalnızca doğrulanabilir kaynaklarla sunulur.": "Projektomfattning, tekniska bidrag och resultat presenteras endast när de kan verifieras.",
+  "İletişim formu aracılığıyla gönderilen bilgiler, talebinizi yanıtlamak amacıyla Resend e-posta altyapısı üzerinden BTMCode e-posta adresine iletilir. Form verileri BTMCode web sitesinde bir veritabanında saklanmaz.": "Information som skickas via kontaktformuläret vidarebefordras via Resend till BTMCode för att kunna besvara din förfrågan. BTMCode lagrar inte formulärdata i en webbplatsdatabas.",
+  "Form; ad, e-posta adresi, isteğe bağlı şirket bilgisi, konu ve mesaj alanlarını işler. E-posta sağlayıcısı Resend, mesajın iletilmesi için verileri işler. Hassas bilgi veya parola göndermeyin. Veriler, talebi yanıtlamak ve gerekli yazışmayı sürdürmek için e-posta hesabında tutulabilir; silinmesini istemek için BTMCode ile iletişime geçebilirsiniz.": "Formuläret behandlar namn, e-postadress, valfri företagsinformation, ämne och meddelande. E-postleverantören Resend behandlar uppgifterna för att leverera meddelandet. Skicka inte känslig information eller lösenord. Uppgifterna kan finnas kvar i e-postkontot för att besvara förfrågan och hantera fortsatt korrespondens. Kontakta BTMCode om du vill begära radering.",
+  "Reklam veya davranışsal izleme çerezleri kullanılmaz. Görünüm tercihi (açık/koyu tema) ve seçilen dil, tarayıcının yerel depolama alanında saklanır.": "Vi använder inte reklamcookies eller beteendebaserad spårning. Val av tema (ljust/mörkt) och språk sparas lokalt i webbläsaren.",
+  "Mesajınız Resend üzerinden güvenli e-posta kanalıyla iletilir.": "Ditt meddelande skickas säkert via e-post genom Resend.",
+  "Form verileri BTMCode tarafından bir veritabanında saklanmaz.": "BTMCode lagrar inte formulärdata i en databas.",
+  "ABOUT / BTMCode": "OM / BTMCode",
+  "CAPABILITIES / ENGINEERING": "KOMPETENS / UTVECKLING",
+  "CONTACT / PROJECT INQUIRY": "KONTAKT / PROJEKTFÖRFRÅGAN",
+  "DIRECT CHANNELS": "DIREKTA KONTAKTVÄGAR",
+  "ENGINEERING NOTES / JOURNAL": "TEKNISKA ANTECKNINGAR / JOURNAL",
+  "ENGINEERING NOTE": "TEKNISK ANTECKNING",
+  "ENGINEERING STACK": "TEKNIKSTACK",
+  "CORE FEATURES": "HUVUDFUNKTIONER",
+  "PROJECT OVERVIEW": "PROJEKTÖVERSIKT",
+  "PROJECT INQUIRY": "PROJEKTFÖRFRÅGAN",
+  "SELECTED WORK / CASE STUDIES": "UTVALDA PROJEKT / FALLSTUDIER",
+  "PRIVACY / TRANSPARENCY": "INTEGRITET / TRANSPARENS",
+  "02 / SELECTED WORK": "02 / UTVALDA PROJEKT",
+  "03 / WHAT I BUILD": "03 / VAD JAG BYGGER",
+  "04 / PROCESS": "04 / PROCESS",
+  "01 / PROFILE": "01 / PROFIL",
+  "02 / WORKING PRINCIPLES": "02 / ARBETSPRINCIPER",
+  "03 / FOCUS AREAS": "03 / FOKUSOMRÅDEN",
+  "01 / FRONTEND & WEB": "01 / FRONTEND & WEBB",
+  "02 / BACKEND & SAAS": "02 / BACKEND & SAAS",
+  "03 / AI & WORKFLOWS": "03 / AI & ARBETSFLÖDEN",
+  "04 / QUALITY & SECURITY": "04 / KVALITET & SÄKERHET",
+  "PROJECT OBJECTIVE": "PROJEKTMÅL",
+  "KEY FEATURES": "VIKTIGA FUNKTIONER",
+  "TECHNICAL STACK": "TEKNIKSTACK",
+  "TRANSPARENCY NOTE": "TRANSPARENSNOTERING",
+  "SELECTED WORK": "UTVALDA PROJEKT",
+  "01 / WEB APPLICATIONS": "01 / WEBBAPPLIKATIONER",
+  "02 / SAAS SYSTEMS": "02 / SAAS-SYSTEM",
+  "03 / AI AUTOMATION": "03 / AI-AUTOMATISERING",
+  "04 / PERFORMANCE & SECURITY": "04 / PRESTANDA & SÄKERHET"
+}
+};
 
   const sharedUiTranslations = {
   "en": {
@@ -1239,6 +1373,39 @@
     "End-to-End Delivery": "端到端交付",
     "Proje sitesini ziyaret et ↗": "访问项目网站 ↗"
   }
+,
+"sv": {
+  "CAPABILITIES / ENGINEERING": "KOMPETENS / UTVECKLING",
+  "CONTACT / PROJECT INQUIRY": "KONTAKT / PROJEKTFÖRFRÅGAN",
+  "DIRECT CHANNELS": "DIREKTA KONTAKTVÄGAR",
+  "ENGINEERING NOTES / JOURNAL": "TEKNISKA ANTECKNINGAR / JOURNAL",
+  "ENGINEERING NOTE": "TEKNISK ANTECKNING",
+  "ENGINEERING STACK": "TEKNIKSTACK",
+  "CORE FEATURES": "HUVUDFUNKTIONER",
+  "PROJECT OVERVIEW": "PROJEKTÖVERSIKT",
+  "PROJECT INQUIRY": "PROJEKTFÖRFRÅGAN",
+  "SELECTED WORK / CASE STUDIES": "UTVALDA PROJEKT / FALLSTUDIER",
+  "PRIVACY / TRANSPARENCY": "INTEGRITET / TRANSPARENS",
+  "02 / SELECTED WORK": "02 / UTVALDA PROJEKT",
+  "03 / WHAT I BUILD": "03 / VAD JAG BYGGER",
+  "04 / PROCESS": "04 / PROCESS",
+  "01 / PROFILE": "01 / PROFIL",
+  "02 / WORKING PRINCIPLES": "02 / ARBETSPRINCIPER",
+  "03 / FOCUS AREAS": "03 / FOKUSOMRÅDEN",
+  "01 / FRONTEND & WEB": "01 / FRONTEND & WEBB",
+  "02 / BACKEND & SAAS": "02 / BACKEND & SAAS",
+  "03 / AI & WORKFLOWS": "03 / AI & ARBETSFLÖDEN",
+  "04 / QUALITY & SECURITY": "04 / KVALITET & SÄKERHET",
+  "PROJECT OBJECTIVE": "PROJEKTMÅL",
+  "KEY FEATURES": "VIKTIGA FUNKTIONER",
+  "TECHNICAL STACK": "TEKNIKSTACK",
+  "TRANSPARENCY NOTE": "TRANSPARENSNOTERING",
+  "SELECTED WORK": "UTVALDA PROJEKT",
+  "01 / WEB APPLICATIONS": "01 / WEBBAPPLIKATIONER",
+  "02 / SAAS SYSTEMS": "02 / SAAS-SYSTEM",
+  "03 / AI AUTOMATION": "03 / AI-AUTOMATISERING",
+  "04 / PERFORMANCE & SECURITY": "04 / PRESTANDA & SÄKERHET"
+}
 };
 for (const locale of ["en","de","fr","ru","zh"]) Object.assign(dictionaries[locale], sharedUiTranslations[locale]);
 
@@ -1501,7 +1668,11 @@ const meta = {
       "/contact/": "联系 BTMCode · 项目咨询 | BTMCode",
       "/journal/": "软件工程技术文章 | BTMCode",
       "/privacy/": "隐私说明 | BTMCode"
-    }};
+    },
+sv:{
+"/":"Skräddarsydd programvara, digitala plattformar och Python | BTMCode","/about/":"Om BTMCode | BTMCode","/services/":"Webb, specialutvecklad programvara och Python | BTMCode","/projects/":"Portfolio med programvara och digitala plattformar | BTMCode","/contact/":"Kontakt och projektförfrågan | BTMCode","/journal/":"Teknisk journal | BTMCode","/privacy/":"Integritet | BTMCode","/projects/aquaterra/":"AQUATERRA Atelier — Projektfallstudie | BTMCode","/projects/aya/":"Aya Elektrik — Projektfallstudie | BTMCode","/projects/demos-pizza/":"Demos Pizza — Projektfallstudie | BTMCode","/projects/imagehub/":"ImageHub / imghost — Projektfallstudie | BTMCode","/projects/zirve/":"Zirve Elektrik — Projektfallstudie | BTMCode","/projects/sevgi/":"SEVGİ MAKEUP ARTIST — Projektfallstudie | BTMCode"
+}
+};
   const descriptions = {
     en: {
       "/":"BTMCode builds web experiences, custom software, B2B/B2C/C2C platforms and Python-based solutions for businesses in Europe and international markets.",
@@ -1548,7 +1719,11 @@ const meta = {
       "/contact/": "向 BTMCode 介绍您的网站、软件或 AI 自动化项目。",
       "/journal/": "关于软件架构、人工智能、Web 性能、产品开发和安全工程的技术文章。",
       "/privacy/": "了解 BTMCode 如何处理联系咨询和网站隐私。"
-    }};
+    },
+sv:{
+"/":"BTMCode utvecklar webbupplevelser, specialutvecklad programvara, B2B-, B2C- och C2C-plattformar samt Python-lösningar för företag.","/about/":"Läs om BTMCodes arbetssätt inom mjukvaruutveckling, AI och produktutveckling.","/services/":"Webbupplevelser, specialutvecklad programvara, SaaS, digitala plattformar, Python och AI-utveckling.","/projects/":"Utvalda webbplattformar, programvaror, SaaS-produkter och digitala lösningar utvecklade av BTMCode.","/contact/":"Berätta om ditt webbprojekt, din SaaS-produkt eller din AI-automatisering för BTMCode.","/journal/":"Tekniska anteckningar om programvaruarkitektur, AI, webbprestanda och säker utveckling.","/privacy/":"Information om hur BTMCode hanterar kontaktförfrågningar och integritet.","/projects/aquaterra/":"En interaktiv digital upplevelse för akvarier, aquascaping och landskapsdesign med biotopkalkylator.","/projects/aya/":"En plattform för lokal SEO och kundhantering för eltjänster med AI-stödda innehållsverktyg.","/projects/demos-pizza/":"En fullstack-demo för restaurangbeställningar med meny, varukorg, orderstatus och administration.","/projects/imagehub/":"En API-first-produkt för bildhosting och CDN med bildtransformation och API-nyckelhantering.","/projects/zirve/":"En serverrenderad Next.js-plattform med lokala SEO-sidor, strukturerad data och förfrågningsformulär.","/projects/sevgi/":"En mobilanpassad webbplattform på fem språk för en makeupartist i Istanbul, med lokal SEO och direktkontakt."
+}
+};
 
   const localizedUi = {
     tr:{openMenu:"Menüyü aç",closeMenu:"Menüyü kapat",lightTheme:"Açık temaya geç",darkTheme:"Koyu temaya geç"},
@@ -1557,7 +1732,9 @@ const meta = {
     fr:{openMenu:"Ouvrir le menu",closeMenu:"Fermer le menu",lightTheme:"Activer le thème clair",darkTheme:"Activer le thème sombre"},
     ru:{openMenu:"Открыть меню",closeMenu:"Закрыть меню",lightTheme:"Включить светлую тему",darkTheme:"Включить тёмную тему"},
     zh:{openMenu:"打开菜单",closeMenu:"关闭菜单",lightTheme:"切换浅色主题",darkTheme:"切换深色主题"}
-  };
+  ,
+sv:{openMenu:"Öppna menyn",closeMenu:"Stäng menyn",lightTheme:"Byt till ljust tema",darkTheme:"Byt till mörkt tema"}
+};
   window.BTM_UI_TEXT = localizedUi[locale] || localizedUi.tr;
   const uiMenu = document.querySelector("[data-menu-toggle]");
   if (uiMenu) {
@@ -1597,7 +1774,13 @@ const meta = {
       "İletişim formu aracılığıyla gönderilen bilgiler, talebinizi yanıtlamak amacıyla Resend e-posta altyapısı üzerinden BTMCode e-posta adresine iletilir. Form verileri BTMCode web sitesinde bir veritabanında saklanmaz.": "通过联系表单提交的信息将经由 Resend 邮件服务发送至 BTMCode 邮箱，以便回复您的咨询。BTMCode 不会在网站数据库中保存表单内容。",
       "Form; ad, e-posta adresi, isteğe bağlı şirket bilgisi, konu ve mesaj alanlarını işler. E-posta sağlayıcısı Resend, mesajın iletilmesi için verileri işler. Hassas bilgi veya parola göndermeyin. Veriler, talebi yanıtlamak ve gerekli yazışmayı sürdürmek için e-posta hesabında tutulabilir; silinmesini istemek için BTMCode ile iletişime geçebilirsiniz.": "表单会处理姓名、电子邮箱、可选公司信息、主题和留言。邮件服务商 Resend 会处理这些数据以发送邮件。请勿提交敏感信息或密码。相关信息可能保留在邮箱中以处理咨询和后续沟通；如需删除，请联系 BTMCode。",
       "Reklam veya davranışsal izleme çerezleri kullanılmaz. Görünüm tercihi (açık/koyu tema) ve seçilen dil, tarayıcının yerel depolama alanında saklanır.": "本网站不使用广告或行为追踪 Cookie。显示主题（浅色/深色）和所选语言保存在浏览器本地存储中。"
-    }};
+    },
+sv:{
+"İletişim formu aracılığıyla gönderilen bilgiler, talebinizi yanıtlamak amacıyla Resend e-posta altyapısı üzerinden BTMCode e-posta adresine iletilir. Form verileri BTMCode web sitesinde bir veritabanında saklanmaz.":"Information som skickas via kontaktformuläret vidarebefordras via Resend till BTMCode för att kunna besvara din förfrågan. BTMCode lagrar inte formulärdata i en webbplatsdatabas.",
+"Form; ad, e-posta adresi, isteğe bağlı şirket bilgisi, konu ve mesaj alanlarını işler. E-posta sağlayıcısı Resend, mesajın iletilmesi için verileri işler. Hassas bilgi veya parola göndermeyin. Veriler, talebi yanıtlamak ve gerekli yazışmayı sürdürmek için e-posta hesabında tutulabilir; silinmesini istemek için BTMCode ile iletişime geçebilirsiniz.":"Formuläret behandlar namn, e-postadress, valfri företagsinformation, ämne och meddelande. E-postleverantören Resend behandlar uppgifterna för att leverera meddelandet. Skicka inte känslig information eller lösenord. Uppgifterna kan finnas kvar i e-postkontot för att besvara förfrågan och hantera fortsatt korrespondens. Kontakta BTMCode om du vill begära radering.",
+"Reklam veya davranışsal izleme çerezleri kullanılmaz. Görünüm tercihi (açık/koyu tema) ve seçilen dil, tarayıcının yerel depolama alanında saklanır.":"Vi använder inte reklamcookies eller beteendebaserad spårning. Val av tema (ljust/mörkt) och språk sparas lokalt i webbläsaren."
+}
+};
   if (locale !== "tr" && dictionaries[locale]) {
     Object.assign(dictionaries[locale], privacyTranslations[locale] || {});
     dictionaries[locale]["Mesajınız Resend üzerinden güvenli e-posta kanalıyla iletilir."] = ({
@@ -1668,9 +1851,9 @@ const meta = {
   for (const code of Object.keys(sevgiCaseDescriptions)) Object.assign(caseDescriptions[code], sevgiCaseDescriptions[code]);
   if (descriptions[locale] && caseDescriptions[locale]) Object.assign(descriptions[locale], caseDescriptions[locale]);
   const commonUiText = {
-    "Ana menü":({en:"Main navigation",de:"Hauptnavigation",fr:"Navigation principale",ru:"Основная навигация",zh:"主导航"})[locale],
-    "Tüm hakları saklıdır":({en:"All rights reserved",de:"Alle Rechte vorbehalten",fr:"Tous droits réservés",ru:"Все права защищены",zh:"版权所有"})[locale],
-    "İletişim":({en:"Contact",de:"Kontakt",fr:"Contact",ru:"Контакты",zh:"联系"})[locale]
+    "Ana menü":({en:"Main navigation",de:"Hauptnavigation",fr:"Navigation principale",ru:"Основная навигация",zh:"主导航",sv:"Huvudmeny"})[locale],
+    "Tüm hakları saklıdır":({en:"All rights reserved",de:"Alle Rechte vorbehalten",fr:"Tous droits réservés",ru:"Все права защищены",zh:"版权所有",sv:"Alla rättigheter förbehållna"})[locale],
+    "İletişim":({en:"Contact",de:"Kontakt",fr:"Contact",ru:"Контакты",zh:"联系",sv:"Kontakt"})[locale]
   };
   if (locale !== "tr") Object.assign(dictionaries[locale], commonUiText);
 
@@ -1723,13 +1906,13 @@ const meta = {
     const ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc && description) ogDesc.content = description;
     const ogLocale = document.querySelector('meta[property="og:locale"]');
-    if (ogLocale) ogLocale.content = ({en:"en_US", de:"de_DE", fr:"fr_FR", ru:"ru_RU", zh:"zh_CN"})[locale];
+    if (ogLocale) ogLocale.content = ({en:"en_US", de:"de_DE", fr:"fr_FR", ru:"ru_RU", zh:"zh_CN",sv:"sv_SE"})[locale];
   }
 
   const languageSelect = document.querySelector("[data-language-select]");
   if (languageSelect) {
     languageSelect.value = locale;
-    const langLabel = ({tr:"Dil seçimi",en:"Language",de:"Sprache",fr:"Langue",ru:"Язык",zh:"语言"})[locale];
+    const langLabel = ({tr:"Dil seçimi",en:"Language",de:"Sprache",fr:"Langue",ru:"Язык",zh:"语言",sv:"Språk"})[locale];
     languageSelect.setAttribute("aria-label", langLabel);
     languageSelect.addEventListener("change", () => {
       const next = languageSelect.value;
@@ -1743,7 +1926,7 @@ const meta = {
   document.querySelectorAll('a[href^="/"]').forEach(link => {
     const href = link.getAttribute("href");
     if (!href || href.startsWith("//") || href.startsWith("/api/") || href.startsWith("/favicon") || href.startsWith("/manifest")) return;
-    if (/^\/(en|de|fr|ru|zh)(\/|$)/.test(href)) return;
+    if (/^\/(en|de|fr|ru|zh|sv)(\/|$)/.test(href)) return;
     if (locale !== "tr") link.setAttribute("href", "/" + locale + (href === "/" ? "" : href.replace(/\/$/, "")));
   });
 
