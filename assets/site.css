@@ -124,8 +124,21 @@ a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}b
   .menu-toggle,.theme-toggle,.language-select{transition:none!important}
 }
 
-/* Live reference covers: real website captures served via the screenshot cache. */
-.project-art--cover{display:block;background:#101816}
-.project-art--cover:before{z-index:0;background:linear-gradient(180deg,rgba(0,0,0,.26),transparent 24%,transparent 72%,rgba(0,0,0,.42))}
-.project-art--cover .project-cover{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center top}
-.project-art--cover .art-index,.project-art--cover .art-word{z-index:1;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.85)}
+/* Reference screenshots: preserve their full 16:9 frame at every breakpoint. */
+.project-art.project-art--cover{
+  display:block;
+  height:auto;
+  aspect-ratio:16 / 9;
+  min-height:0;
+  background:#101816;
+}
+.project-art.project-art--cover:before{display:none}
+.project-art--cover .project-cover{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center center;
+}

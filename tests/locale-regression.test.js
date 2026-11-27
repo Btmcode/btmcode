@@ -95,3 +95,19 @@ test("Paşa Motor copy and website-cover alt labels have six locale mappings", (
     assert.match(build, new RegExp(locale + ":"));
   }
 });
+
+test("live website screenshots preserve the full frame inside responsive 16:9 covers", () => {
+  const css = source("assets/site.css");
+  const page = source("projects/index.html");
+  const home = source("index.html");
+  assert.match(css, /\.project-art\.project-art--cover\{[\s\S]*?height:auto;[\s\S]*?aspect-ratio:16 \/ 9/);
+  assert.match(css, /object-fit:contain/);
+  assert.match(css, /object-position:center center/);
+  assert.match(css, /\.project-art\.project-art--cover:before\{display:none\}/);
+  for (const html of [page, home]) {
+    const covers = [...html.matchAll(/<div class="project-art project-art--cover">([\s\S]*?)<\/div>/g)].map(match => match[1]);
+    assert.ok(covers.length > 0);
+    assert.ok(covers.every(cover => /<img\b/.test(cover)));
+    assert.ok(covers.every(cover => !/class="art-index"|class="art-word"/.test(cover)));
+  }
+});
