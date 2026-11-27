@@ -72,3 +72,26 @@ test("Swedish portfolio ItemList schema label is localized", () => {
   const i18n = source("assets/i18n.js");
   assert.match(i18n, /"BTMCode — Seçilmiş Yazılım Projeleri": "BTMCode — Utvalda mjukvaruprojekt"/);
 });
+
+test("all portfolio references use real screenshot captures and include Paşa Motor", () => {
+  const page = source("projects/index.html");
+  const home = source("index.html");
+  assert.equal((page.match(/<article class="project-card/g) || []).length, 9);
+  assert.equal((page.match(/class="project-cover"/g) || []).length, 9);
+  assert.equal((page.match(/src="https:\/\/image\.thum\.io\/get\//g) || []).length, 9);
+  assert.match(page, /href="https:\/\/pasamotor\.com\.tr\//);
+  assert.match(page, /<h3>Paşa Motor<\/h3>/);
+  assert.equal((home.match(/<article class="project-card/g) || []).length, 6);
+  assert.equal((home.match(/class="project-cover"/g) || []).length, 6);
+  assert.match(page, /alt="[^"]+"/);
+});
+
+test("Paşa Motor copy and website-cover alt labels have six locale mappings", () => {
+  const build = source("scripts/build-locales.js");
+  assert.match(build, /const projectCoverAltSuffix/);
+  assert.match(build, /const paSaMotorTranslations/);
+  assert.match(build, /Auktoriserad motorcykelförsäljning/);
+  for (const locale of ["en","de","fr","ru","zh","sv"]) {
+    assert.match(build, new RegExp(locale + ":"));
+  }
+});

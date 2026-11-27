@@ -80,7 +80,42 @@ const extra = {
     "Form verileri BTMCode tarafından bir veritabanında saklanmaz.": "BTMCode 不会将表单数据存储在数据库中。",
     "Bu sayfa, BTMCode'un veri işleme yaklaşımına ilişkin geçici bilgilendirmedir; nihai KVKK aydınlatma metni değildir. İletişim formu aracılığıyla gönderilen bilgiler, talebinizi yanıtlamak amacıyla Resend e-posta altyapısı üzerinden iletilir. Google Analytics bu sürümde bir Measurement ID tanımlanmadıkça yüklenmez; yapılandırıldığında yalnızca analitik tercihi açıkça kabul edilirse etkinleşir. Form verileri BTMCode web sitesinde bir veritabanında saklanmaz; e-posta sağlayıcısındaki saklama ve yurt dışı aktarım koşulları ayrıca doğrulanmalıdır.": "本页面是 BTMCode 数据处理方式的临时说明，并非最终 KVKK 隐私告知文本。联系表单信息通过 Resend 邮件服务传递，以便回复您的咨询。除非配置 Measurement ID，网站不会加载 Google Analytics；配置后也仅在用户明确同意统计分析时启用。BTMCode 不会在网站数据库中保存表单数据；邮件服务商的数据保留和跨境传输条件仍需另行核实。"
   }};
+
 for (const locale of LOCALES) Object.assign(dictionaries[locale], extra[locale], {"Ana menü":ui[locale].nav});
+const projectCoverNames = ["ImageHub / imghost","Zirve Elektrik","AQUATERRA Atelier","Demos Pizza","Aya Elektrik","Bayraktar","SEVGİ MAKEUP ARTIST","LumiKids","Paşa Motor"];
+const projectCoverAltSuffix = {en:"desktop website screenshot",de:"Desktop-Screenshot der Website",fr:"capture d’écran du site web",ru:"скриншот веб-сайта",zh:"网站桌面截图",sv:"skärmbild av webbplatsen"};
+for (const locale of LOCALES) {
+  const suffix = projectCoverAltSuffix[locale] || projectCoverAltSuffix.en;
+  for (const name of projectCoverNames) dictionaries[locale][name + " web sitesinin masaüstü ekran görüntüsü"] = name + " — " + suffix;
+}
+const paSaMotorTranslations = {
+  en:{
+    "İstanbul Fatih'te TVS, Falcon, Işıldar ve Moto Lux markalarında yetkili satış ve servis; orijinal yedek parça ve bakım hizmetleri sunan motosiklet bayisi.":"An authorized motorcycle sales and service dealer in Fatih, Istanbul, offering TVS, Falcon, Işıldar and Moto Lux motorcycles, original spare parts and maintenance.",
+    "Yetkili satış":"Authorized sales","Motor servisi":"Motorcycle service","Orijinal yedek parça":"Original spare parts","Canlı siteyi ziyaret et ↗":"Visit live website ↗","Canlı referans":"Live website"
+  },
+  de:{
+    "İstanbul Fatih'te TVS, Falcon, Işıldar ve Moto Lux markalarında yetkili satış ve servis; orijinal yedek parça ve bakım hizmetleri sunan motosiklet bayisi.":"Autorisierter Motorrad-Verkaufs- und Servicehändler in Fatih, Istanbul, für TVS, Falcon, Işıldar und Moto Lux mit Originalersatzteilen und Wartung.",
+    "Yetkili satış":"Autorisierter Verkauf","Motor servisi":"Motorradservice","Orijinal yedek parça":"Originalersatzteile","Canlı siteyi ziyaret et ↗":"Live-Website besuchen ↗","Canlı referans":"Live-Website"
+  },
+  fr:{
+    "İstanbul Fatih'te TVS, Falcon, Işıldar ve Moto Lux markalarında yetkili satış ve servis; orijinal yedek parça ve bakım hizmetleri sunan motosiklet bayisi.":"Concessionnaire agréé de vente et d’entretien de motos à Fatih, Istanbul, pour TVS, Falcon, Işıldar et Moto Lux, avec pièces d’origine et maintenance.",
+    "Yetkili satış":"Vente agréée","Motor servisi":"Service moto","Orijinal yedek parça":"Pièces d’origine","Canlı siteyi ziyaret et ↗":"Visiter le site ↗","Canlı referans":"Site en ligne"
+  },
+  ru:{
+    "İstanbul Fatih'te TVS, Falcon, Işıldar ve Moto Lux markalarında yetkili satış ve servis; orijinal yedek parça ve bakım hizmetleri sunan motosiklet bayisi.":"Официальный дилер по продаже и обслуживанию мотоциклов в районе Фатих, Стамбул: TVS, Falcon, Işıldar и Moto Lux, оригинальные запчасти и техобслуживание.",
+    "Yetkili satış":"Официальные продажи","Motor servisi":"Мотосервис","Orijinal yedek parça":"Оригинальные запчасти","Canlı siteyi ziyaret et ↗":"Открыть сайт ↗","Canlı referans":"Рабочий сайт"
+  },
+  zh:{
+    "İstanbul Fatih'te TVS, Falcon, Işıldar ve Moto Lux markalarında yetkili satış ve servis; orijinal yedek parça ve bakım hizmetleri sunan motosiklet bayisi.":"位于伊斯坦布尔法提赫的授权摩托车销售与维修经销商，提供 TVS、Falcon、Işıldar 和 Moto Lux 品牌、原厂配件及保养服务。",
+    "Yetkili satış":"授权销售","Motor servisi":"摩托车维修","Orijinal yedek parça":"原厂配件","Canlı siteyi ziyaret et ↗":"访问网站 ↗","Canlı referans":"线上网站"
+  },
+  sv:{
+    "İstanbul Fatih'te TVS, Falcon, Işıldar ve Moto Lux markalarında yetkili satış ve servis; orijinal yedek parça ve bakım hizmetleri sunan motosiklet bayisi.":"Auktoriserad motorcykelförsäljning och service i Fatih, Istanbul, med TVS, Falcon, Işıldar och Moto Lux samt originalreservdelar och underhåll.",
+    "Yetkili satış":"Auktoriserad försäljning","Motor servisi":"Motorcykelservice","Orijinal yedek parça":"Originalreservdelar","Canlı siteyi ziyaret et ↗":"Besök webbplatsen ↗","Canlı referans":"Aktiv webbplats"
+  }
+};
+for (const locale of LOCALES) Object.assign(dictionaries[locale], paSaMotorTranslations[locale] || {});
+
 
 const moreTranslations = {
   en: {
