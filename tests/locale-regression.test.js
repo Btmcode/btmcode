@@ -133,3 +133,10 @@ test("contact delivery uses Gmail API and removes Resend references",()=>{
   assert.match(helper,/oauth2\.googleapis\.com\/token/);
   for(const value of [api,helper,page,runtime,localeBuild])assert.doesNotMatch(value,/Resend/i);
 });
+
+test("contact form has mandatory Turnstile and server-side spam layers",()=>{
+ const api=source("api/contact.js"),client=source("assets/site.js"),config=source("assets/config.js"),page=source("contact/index.html");
+ assert.match(api,/verifyTurnstileToken/);assert.match(api,/duplicateLimits/);assert.match(api,/emailLimits/);
+ assert.match(client,/turnstile\.render/);assert.match(client,/turnstile_token/);
+ assert.match(config,/turnstileSiteKey/);assert.match(page,/data-turnstile-widget/);
+});
