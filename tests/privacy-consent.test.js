@@ -58,7 +58,7 @@ test("Simplified Chinese locale is used by shared footer and consent UI", () => 
 
 test("Chinese runtime contact messages never resolve to undefined", () => {
   const i18n = read("assets/i18n.js");
-  assert.match(i18n, /zh:"您的消息将通过 Google Gmail API 邮件服务安全发送。"/);
+  assert.match(i18n, /zh:"您的消息将通过 Google Gmail 邮件服务安全发送。"/);
   assert.match(i18n, /zh:"BTMCode 不会将表单数据存储在数据库中。"/);
 });
 
