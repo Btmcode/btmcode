@@ -124,3 +124,12 @@ test("international agency-partner offer is present on home, services and contac
   assert.match(contact, /value="agency-development-partner"/);
   assert.match(api, /"agency-development-partner"/);
 });
+
+test("contact delivery uses Gmail API and removes Resend references",()=>{
+  const api=source("api/contact.js"),helper=source("lib/gmail.js"),page=source("contact/index.html");
+  const runtime=source("assets/i18n.js"),localeBuild=source("scripts/build-locales.js");
+  assert.match(api,/sendGmailMessage/);
+  assert.match(helper,/gmail\.googleapis\.com\/gmail\/v1\/users\/me\/messages\/send/);
+  assert.match(helper,/oauth2\.googleapis\.com\/token/);
+  for(const value of [api,helper,page,runtime,localeBuild])assert.doesNotMatch(value,/Resend/i);
+});
