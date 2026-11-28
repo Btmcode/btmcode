@@ -52,6 +52,8 @@ for (const locale of LOCALES) {
   Object.assign(descriptions[locale] || {}, caseDescriptions[locale] || {});
   Object.assign(dictionaries[locale] || {}, privacyTranslations[locale] || {});
 }
+const spamAndPrivacyTranslations = extractObject("spamAndPrivacyTranslations");
+for (const locale of LOCALES) Object.assign(dictionaries[locale] || {}, spamAndPrivacyTranslations[locale] || {});
 const ui = {
   en:{open:"Open menu",light:"Switch to light theme",nav:"Main navigation"},
   de:{open:"Menü öffnen",light:"Helles Design aktivieren",nav:"Hauptnavigation"},
