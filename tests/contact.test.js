@@ -187,3 +187,25 @@ test("does not forward unapproved service values", async () => {
   assert.equal(res.statusCode, 422);
   assert.equal(res.json().error, "validation_failed");
 });
+
+test("accepts the agency development partner service identifier", async () => {
+  const oldKey = process.env.RESEND_API_KEY;
+  const oldInbox = process.env.CONTACT_TO_EMAIL;
+  const oldSender = process.env.CONTACT_FROM_EMAIL;
+  const oldFetch = global.fetch;
+  process.env.RESEND_API_KEY = "test_key_never_real";
+  process.env.CONTACT_TO_EMAIL = "inbox@example.com";
+  process.env.CONTACT_FROM_EMAIL = "BTMCode <website@example.com>";
+  global.fetch = async () => ({ok:true,status:200,json:async()=>({id:"email_test_456"})});
+  try {
+    const body = {...makeRequest().body,service:"agency-development-partner"};
+    const res = await invoke(makeRequest({body,headers:{...makeRequest().headers,"x-forwarded-for":"198.51.100.48"}}));
+    assert.equal(res.statusCode, 200);
+    assert.equal(res.json().ok, true);
+  } finally {
+    if (oldKey === undefined) delete process.env.RESEND_API_KEY; else process.env.RESEND_API_KEY = oldKey;
+    if (oldInbox === undefined) delete process.env.CONTACT_TO_EMAIL; else process.env.CONTACT_TO_EMAIL = oldInbox;
+    if (oldSender === undefined) delete process.env.CONTACT_FROM_EMAIL; else process.env.CONTACT_FROM_EMAIL = oldSender;
+    global.fetch = oldFetch;
+  }
+});

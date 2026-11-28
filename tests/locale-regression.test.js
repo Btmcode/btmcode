@@ -111,3 +111,16 @@ test("live website screenshots preserve the full frame inside responsive 16:9 co
     assert.ok(covers.every(cover => !/class="art-index"|class="art-word"/.test(cover)));
   }
 });
+
+test("international agency-partner offer is present on home, services and contact pages", () => {
+  const home = source("index.html");
+  const services = source("services/index.html");
+  const contact = source("contact/index.html");
+  const api = source("api/contact.js");
+  assert.match(home, /uzaktan yazılım partneri/);
+  assert.match(home, /href="\/services\/#agency-partner"/);
+  assert.match(services, /id="agency-partner"/);
+  assert.match(services, /white-label çalışma modeli/i);
+  assert.match(contact, /value="agency-development-partner"/);
+  assert.match(api, /"agency-development-partner"/);
+});

@@ -142,3 +142,15 @@ a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}b
   object-fit:contain;
   object-position:center center;
 }
+
+/* International agency-partner positioning */
+.agency-partner{padding-top:34px}
+.agency-partner-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.agency-partner-grid .service-card{min-height:245px}
+.agency-process{margin-top:28px;padding:22px 24px;border:1px solid var(--line);background:rgba(255,255,255,.018)}
+.agency-process p{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.8}
+.agency-process p strong{color:var(--text)}
+.agency-partner-teaser h2{margin:10px 0;font-size:clamp(25px,3vw,36px);line-height:1.1;letter-spacing:-.055em}
+.agency-partner-teaser p{max-width:650px;color:var(--muted);font-size:13px;line-height:1.85}
+.agency-partner-teaser .button{flex:0 0 auto}
+@media(max-width:740px){.agency-partner-grid{grid-template-columns:1fr}.agency-partner-grid .service-card{min-height:0}.agency-partner-teaser{display:block}.agency-partner-teaser .button{margin-top:16px}.agency-process{padding:18px}}

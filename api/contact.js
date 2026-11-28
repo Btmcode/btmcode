@@ -70,7 +70,7 @@ module.exports = async function handler(req, res) {
   }
 
   const allowedServices = new Set([
-    "", "web-application", "saas-platform", "ai-automation", "technical-improvement", "other",
+    "", "web-application", "saas-platform", "ai-automation", "technical-improvement", "agency-development-partner", "other",
     "Web uygulaması", "SaaS / platform", "AI / otomasyon", "Teknik iyileştirme", "Diğer",
     "Web application", "SaaS / platform", "AI / automation", "Technical improvement", "Other",
     "Webanwendung", "SaaS / Plattform", "KI / Automatisierung", "Technische Verbesserung", "Sonstiges",
