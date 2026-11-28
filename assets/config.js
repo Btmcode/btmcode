@@ -1,1 +1,1 @@
-window.BTM_CONFIG = { supabaseUrl: "", supabaseAnonKey: "", gaMeasurementId: "" };
+window.BTM_CONFIG = { supabaseUrl: "", supabaseAnonKey: "", gaMeasurementId: "", turnstileSiteKey: "" };
