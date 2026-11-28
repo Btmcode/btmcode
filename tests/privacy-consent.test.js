@@ -70,3 +70,8 @@ test("cookie privacy eyebrow and dynamic service labels are localized", () => {
   assert.match(commerce, /retainerKicker:"月度合作",monthly:"每月"/);
   assert.match(commerce, /zh:"您好，我想与 BTMCode 讨论一个软件项目。"/);
 });
+
+test("privacy notice discloses Gmail and Cloudflare Turnstile",()=>{
+ const privacy=read("privacy/index.html");
+ assert.match(privacy,/Google Gmail API/);assert.match(privacy,/Cloudflare Turnstile/);assert.match(privacy,/Turnstile Privacy Addendum/);
+});
