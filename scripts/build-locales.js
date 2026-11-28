@@ -458,7 +458,94 @@ const caseTranslations = {
     "Hizmet, bölge, blog ve SSS için ayrı indekslenebilir sayfalar": "服务、地区、博客和 FAQ 的独立可索引页面",
     "Electrician, WebSite ve FAQPage JSON-LD yapılandırılmış verileri": "Electrician、WebSite 和 FAQPage JSON-LD 结构化数据"
   }};
+
 for (const locale of ["de","fr","ru","zh"]) Object.assign(dictionaries[locale], caseTranslations[locale]);
+const agencyPartnerTranslations = {
+en:{
+"Uluslararası ekipler için":"For international teams","uzaktan yazılım partneri.":"your remote engineering partner.",
+"BTMCode, dijital ajanslar ve büyüyen işletmeler için web uygulamaları, API/CRM entegrasyonları ve AI destekli iş akışları geliştirir. Kapsamı baştan netleştirir, geliştirmeyi doğrudan yürütür ve teslimatı dokümante eder.":"BTMCode builds web applications, API/CRM integrations and AI-enabled workflows for digital agencies and growing businesses. Scope is agreed upfront, engineering is handled directly and handover is documented.",
+"Proje talebini başlat ↗":"Start a project enquiry ↗","Ajans ortaklığını keşfet ↗":"Explore agency partnerships ↗",
+"Ajansınızın teknik teslim kapasitesini büyütün.":"Extend your agency’s engineering delivery capacity.",
+"Tasarım, strateji ve müşteri ilişkisi sizde kalsın. BTMCode, yoğun dönemlerde veya uzmanlık gerektiğinde web ve yazılım teslimatına proje bazlı destek verir. White-label çalışma modeli, NDA, iletişim ve kod sahipliği her proje başlamadan önce yazılı olarak netleştirilir.":"Keep design, strategy and client relationships in your hands. BTMCode provides project-based engineering support when your team is at capacity or a brief needs specialist skills. White-label delivery, NDA, communication and code ownership are agreed in writing before each engagement.",
+"Ek geliştirme kapasitesi":"Overflow development capacity","Ekibiniz yoğunken React/Next.js arayüzleri, web uygulamaları ve mevcut projelerin geliştirme işlerini belirli bir kapsamla üstlenirim.":"When your team is busy, I can take on scoped React/Next.js interfaces, web applications and feature work on existing projects.",
+"Entegrasyon ve otomasyon":"Integrations and automation","Mevcut araçları API üzerinden bağlar; CRM, veri akışı ve tekrarlayan iş süreçleri için ihtiyaca göre AI destekli entegrasyonlar geliştiririm.":"I connect existing tools through APIs and build fit-for-purpose AI-enabled integrations for CRM, data flows and repetitive workflows.",
+"Mevcut projeyi devralma":"Existing codebase handover","Yayına çıkmayan, bakım bekleyen veya başka geliştiriciden devralınması gereken kod tabanını inceler; riskleri ve uygulanabilir sonraki adımları raporlarım.":"I review projects that are stalled, need maintenance or must be taken over from another developer, then report risks and practical next steps.",
+"İlk görüşmede hedef, mevcut teknoloji ve teslim sorumlulukları netleştirilir. Ücret, takvim ve iş bölümü yazılı kapsam üzerinden kararlaştırılır.":"The first discussion clarifies the goal, current stack and delivery responsibilities. Fees, timeline and ownership are agreed against a written scope.",
+"Ajans ortaklığını konuşalım ↗":"Discuss an agency partnership ↗","İlgili proje örneklerini inceleyin ↗":"View relevant project examples ↗",
+"Ajans / white-label iş ortaklığı":"Agency / white-label partnership","İş ortaklığı modelini inceleyin ↗":"Explore the partner model ↗"
+},
+de:{
+"Uluslararası ekipler için":"Für internationale Teams","uzaktan yazılım partneri.":"Ihr Remote-Entwicklungspartner.",
+"BTMCode, dijital ajanslar ve büyüyen işletmeler için web uygulamaları, API/CRM entegrasyonları ve AI destekli iş akışları geliştirir. Kapsamı baştan netleştirir, geliştirmeyi doğrudan yürütür ve teslimatı dokümante eder.":"BTMCode entwickelt Webanwendungen, API-/CRM-Integrationen und KI-gestützte Workflows für Digitalagenturen und wachsende Unternehmen. Der Umfang wird vorab festgelegt, die Entwicklung direkt umgesetzt und die Übergabe dokumentiert.",
+"Proje talebini başlat ↗":"Projektanfrage starten ↗","Ajans ortaklığını keşfet ↗":"Agenturpartnerschaft entdecken ↗",
+"Ajansınızın teknik teslim kapasitesini büyütün.":"Erweitern Sie die technische Lieferkapazität Ihrer Agentur.",
+"Tasarım, strateji ve müşteri ilişkisi sizde kalsın. BTMCode, yoğun dönemlerde veya uzmanlık gerektiğinde web ve yazılım teslimatına proje bazlı destek verir. White-label çalışma modeli, NDA, iletişim ve kod sahipliği her proje başlamadan önce yazılı olarak netleştirilir.":"Design, Strategie und Kundenbeziehung bleiben bei Ihnen. BTMCode unterstützt Ihre Web- und Softwareprojekte bei Kapazitätsengpässen oder speziellem Fachbedarf. White-Label-Modell, NDA, Kommunikation und Code-Eigentum werden vor jedem Projekt schriftlich vereinbart.",
+"Ek geliştirme kapasitesi":"Zusätzliche Entwicklungskapazität","Ekibiniz yoğunken React/Next.js arayüzleri, web uygulamaları ve mevcut projelerin geliştirme işlerini belirli bir kapsamla üstlenirim.":"Bei hoher Auslastung übernehme ich klar abgegrenzte React-/Next.js-Oberflächen, Webanwendungen und Feature-Arbeiten an bestehenden Projekten.",
+"Entegrasyon ve otomasyon":"Integrationen und Automatisierung","Mevcut araçları API üzerinden bağlar; CRM, veri akışı ve tekrarlayan iş süreçleri için ihtiyaca göre AI destekli entegrasyonlar geliştiririm.":"Ich verbinde bestehende Tools über APIs und entwickle passende KI-Integrationen für CRM, Datenflüsse und wiederkehrende Abläufe.",
+"Mevcut projeyi devralma":"Übernahme bestehender Codebases","Yayına çıkmayan, bakım bekleyen veya başka geliştiriciden devralınması gereken kod tabanını inceler; riskleri ve uygulanabilir sonraki adımları raporlarım.":"Ich prüfe blockierte, wartungsbedürftige oder von anderen Entwicklern zu übernehmende Codebases und dokumentiere Risiken sowie nächste Schritte.",
+"İlk görüşmede hedef, mevcut teknoloji ve teslim sorumlulukları netleştirilir. Ücret, takvim ve iş bölümü yazılı kapsam üzerinden kararlaştırılır.":"Im Erstgespräch werden Ziel, Technologie-Stack und Lieferverantwortung geklärt. Honorar, Zeitplan und Aufgabenteilung werden anhand eines schriftlichen Umfangs vereinbart.",
+"Ajans ortaklığını konuşalım ↗":"Agenturpartnerschaft besprechen ↗","İlgili proje örneklerini inceleyin ↗":"Passende Projektbeispiele ansehen ↗","Ajans / white-label iş ortaklığı":"Agentur- / White-Label-Partnerschaft","İş ortaklığı modelini inceleyin ↗":"Partnerschaftsmodell ansehen ↗"
+},
+fr:{
+"Uluslararası ekipler için":"Pour les équipes internationales","uzaktan yazılım partneri.":"votre partenaire technique à distance.",
+"BTMCode, dijital ajanslar ve büyüyen işletmeler için web uygulamaları, API/CRM entegrasyonları ve AI destekli iş akışları geliştirir. Kapsamı baştan netleştirir, geliştirmeyi doğrudan yürütür ve teslimatı dokümante eder.":"BTMCode développe des applications web, des intégrations API/CRM et des flux de travail assistés par l’IA pour les agences digitales et les entreprises en croissance. Le périmètre est défini en amont, le développement est réalisé directement et la livraison est documentée.",
+"Proje talebini başlat ↗":"Démarrer une demande de projet ↗","Ajans ortaklığını keşfet ↗":"Découvrir le partenariat agence ↗",
+"Ajansınızın teknik teslim kapasitesini büyütün.":"Renforcez la capacité de livraison technique de votre agence.",
+"Tasarım, strateji ve müşteri ilişkisi sizde kalsın. BTMCode, yoğun dönemlerde veya uzmanlık gerektiğinde web ve yazılım teslimatına proje bazlı destek verir. White-label çalışma modeli, NDA, iletişim ve kod sahipliği her proje başlamadan önce yazılı olarak netleştirilir.":"Gardez la conception, la stratégie et la relation client. BTMCode apporte un soutien au développement web et logiciel lorsque votre équipe est saturée ou qu’une expertise spécifique est nécessaire. Le modèle en marque blanche, la NDA, la communication et la propriété du code sont définis par écrit avant chaque mission.",
+"Ek geliştirme kapasitesi":"Capacité de développement supplémentaire","Ekibiniz yoğunken React/Next.js arayüzleri, web uygulamaları ve mevcut projelerin geliştirme işlerini belirli bir kapsamla üstlenirim.":"Lorsque votre équipe est très sollicitée, je prends en charge des interfaces React/Next.js, des applications web et des évolutions de projets existants dans un périmètre défini.",
+"Entegrasyon ve otomasyon":"Intégrations et automatisation","Mevcut araçları API üzerinden bağlar; CRM, veri akışı ve tekrarlayan iş süreçleri için ihtiyaca göre AI destekli entegrasyonlar geliştiririm.":"Je relie les outils existants via API et développe des intégrations adaptées à vos CRM, flux de données et tâches répétitives avec l’aide de l’IA.",
+"Mevcut projeyi devralma":"Reprise de code existant","Yayına çıkmayan, bakım bekleyen veya başka geliştiriciden devralınması gereken kod tabanını inceler; riskleri ve uygulanabilir sonraki adımları raporlarım.":"J’examine les projets bloqués, à maintenir ou à reprendre d’un autre développeur, puis documente les risques et les prochaines étapes réalistes.",
+"İlk görüşmede hedef, mevcut teknoloji ve teslim sorumlulukları netleştirilir. Ücret, takvim ve iş bölümü yazılı kapsam üzerinden kararlaştırılır.":"Le premier échange clarifie l’objectif, la stack et les responsabilités. Le tarif, le calendrier et la répartition du travail sont convenus sur la base d’un périmètre écrit.",
+"Ajans ortaklığını konuşalım ↗":"Discuter d’un partenariat agence ↗","İlgili proje örneklerini inceleyin ↗":"Voir des exemples de projets ↗","Ajans / white-label iş ortaklığı":"Partenariat agence / marque blanche","İş ortaklığı modelini inceleyin ↗":"Découvrir le modèle de partenariat ↗"
+},
+ru:{
+"Uluslararası ekipler için":"Для международных команд","uzaktan yazılım partneri.":"ваш удалённый технический партнёр.",
+"BTMCode, dijital ajanslar ve büyüyen işletmeler için web uygulamaları, API/CRM entegrasyonları ve AI destekli iş akışları geliştirir. Kapsamı baştan netleştirir, geliştirmeyi doğrudan yürütür ve teslimatı dokümante eder.":"BTMCode разрабатывает веб-приложения, интеграции API/CRM и рабочие процессы с поддержкой ИИ для digital-агентств и растущих компаний. Объём работ согласуется заранее, разработка ведётся напрямую, передача документируется.",
+"Proje talebini başlat ↗":"Отправить запрос на проект ↗","Ajans ortaklığını keşfet ↗":"Узнать о партнёрстве с агентствами ↗",
+"Ajansınızın teknik teslim kapasitesini büyütün.":"Увеличьте технические возможности вашего агентства.",
+"Tasarım, strateji ve müşteri ilişkisi sizde kalsın. BTMCode, yoğun dönemlerde veya uzmanlık gerektiğinde web ve yazılım teslimatına proje bazlı destek verir. White-label çalışma modeli, NDA, iletişim ve kod sahipliği her proje başlamadan önce yazılı olarak netleştirilir.":"Дизайн, стратегия и отношения с клиентом остаются у вас. BTMCode помогает с веб- и программной разработкой при высокой загрузке или необходимости специальной экспертизы. White-label-модель, NDA, коммуникация и права на код письменно согласуются до начала каждого проекта.",
+"Ek geliştirme kapasitesi":"Дополнительные ресурсы разработки","Ekibiniz yoğunken React/Next.js arayüzleri, web uygulamaları ve mevcut projelerin geliştirme işlerini belirli bir kapsamla üstlenirim.":"При высокой загрузке команды я беру на себя согласованные задачи по React/Next.js, веб-приложениям и развитию существующих проектов.",
+"Entegrasyon ve otomasyon":"Интеграции и автоматизация","Mevcut araçları API üzerinden bağlar; CRM, veri akışı ve tekrarlayan iş süreçleri için ihtiyaca göre AI destekli entegrasyonlar geliştiririm.":"Я связываю существующие инструменты через API и создаю интеграции с ИИ для CRM, потоков данных и повторяющихся процессов.",
+"Mevcut projeyi devralma":"Передача существующей кодовой базы","Yayına çıkmayan, bakım bekleyen veya başka geliştiriciden devralınması gereken kod tabanını inceler; riskleri ve uygulanabilir sonraki adımları raporlarım.":"Я проверяю проекты, которые не вышли в релиз, требуют поддержки или передаются от другого разработчика, и описываю риски и дальнейшие шаги.",
+"İlk görüşmede hedef, mevcut teknoloji ve teslim sorumlulukları netleştirilir. Ücret, takvim ve iş bölümü yazılı kapsam üzerinden kararlaştırılır.":"На первой встрече уточняются цель, стек и ответственность за поставку. Стоимость, сроки и распределение задач согласуются письменно.",
+"Ajans ortaklığını konuşalım ↗":"Обсудить партнёрство ↗","İlgili proje örneklerini inceleyin ↗":"Посмотреть примеры проектов ↗","Ajans / white-label iş ortaklığı":"Партнёрство с агентством / white-label","İş ortaklığı modelini inceleyin ↗":"Изучить модель партнёрства ↗"
+},
+zh:{
+"Uluslararası ekipler için":"面向国际团队","uzaktan yazılım partneri.":"您的远程软件工程合作伙伴。",
+"BTMCode, dijital ajanslar ve büyüyen işletmeler için web uygulamaları, API/CRM entegrasyonları ve AI destekli iş akışları geliştirir. Kapsamı baştan netleştirir, geliştirmeyi doğrudan yürütür ve teslimatı dokümante eder.":"BTMCode 为数字代理机构和成长型企业开发 Web 应用、API/CRM 集成以及 AI 工作流。项目范围提前明确，由工程师直接开发，并提供文档化交付。",
+"Proje talebini başlat ↗":"提交项目需求 ↗","Ajans ortaklığını keşfet ↗":"了解代理机构合作 ↗",
+"Ajansınızın teknik teslim kapasitesini büyütün.":"扩展您的代理机构技术交付能力。",
+"Tasarım, strateji ve müşteri ilişkisi sizde kalsın. BTMCode, yoğun dönemlerde veya uzmanlık gerektiğinde web ve yazılım teslimatına proje bazlı destek verir. White-label çalışma modeli, NDA, iletişim ve kod sahipliği her proje başlamadan önce yazılı olarak netleştirilir.":"设计、策略和客户关系由您掌控。团队工作繁忙或需要专业技术时，BTMCode 可按项目提供网站和软件开发支持。白标合作、保密协议、沟通方式及代码所有权均在项目开始前以书面形式约定。",
+"Ek geliştirme kapasitesi":"额外开发产能","Ekibiniz yoğunken React/Next.js arayüzleri, web uygulamaları ve mevcut projelerin geliştirme işlerini belirli bir kapsamla üstlenirim.":"当您的团队任务繁重时，我可以按明确范围承接 React/Next.js 界面、Web 应用和现有项目功能开发。",
+"Entegrasyon ve otomasyon":"集成与自动化","Mevcut araçları API üzerinden bağlar; CRM, veri akışı ve tekrarlayan iş süreçleri için ihtiyaca göre AI destekli entegrasyonlar geliştiririm.":"通过 API 连接现有工具，并为 CRM、数据流和重复流程开发合适的 AI 集成。",
+"Mevcut projeyi devralma":"接手现有代码库","Yayına çıkmayan, bakım bekleyen veya başka geliştiriciden devralınması gereken kod tabanını inceler; riskleri ve uygulanabilir sonraki adımları raporlarım.":"检查未发布、需要维护或需要从其他开发者手中接管的代码库，并记录风险与可行的后续步骤。",
+"İlk görüşmede hedef, mevcut teknoloji ve teslim sorumlulukları netleştirilir. Ücret, takvim ve iş bölümü yazılı kapsam üzerinden kararlaştırılır.":"首次沟通将明确目标、技术栈和交付职责。费用、时间表与分工根据书面范围确认。",
+"Ajans ortaklığını konuşalım ↗":"洽谈代理合作 ↗","İlgili proje örneklerini inceleyin ↗":"查看相关项目案例 ↗","Ajans / white-label iş ortaklığı":"代理机构 / 白标合作","İş ortaklığı modelini inceleyin ↗":"查看合作模式 ↗"
+},
+sv:{
+"Uluslararası ekipler için":"För internationella team","uzaktan yazılım partneri.":"er externa utvecklingspartner.",
+"BTMCode, dijital ajanslar ve büyüyen işletmeler için web uygulamaları, API/CRM entegrasyonları ve AI destekli iş akışları geliştirir. Kapsamı baştan netleştirir, geliştirmeyi doğrudan yürütür ve teslimatı dokümante eder.":"BTMCode bygger webbapplikationer, API- och CRM-integrationer samt AI-stödda arbetsflöden för digitalbyråer och växande företag. Omfattningen klargörs i förväg, utvecklingen hanteras direkt och överlämningen dokumenteras.",
+"Proje talebini başlat ↗":"Starta en projektförfrågan ↗","Ajans ortaklığını keşfet ↗":"Utforska byråsamarbete ↗",
+"Ajansınızın teknik teslim kapasitesini büyütün.":"Utöka byråns tekniska leveranskapacitet.",
+"Tasarım, strateji ve müşteri ilişkisi sizde kalsın. BTMCode, yoğun dönemlerde veya uzmanlık gerektiğinde web ve yazılım teslimatına proje bazlı destek verir. White-label çalışma modeli, NDA, iletişim ve kod sahipliği her proje başlamadan önce yazılı olarak netleştirilir.":"Behåll design, strategi och kundrelationen. BTMCode stöttar med webb- och mjukvaruutveckling vid hög belastning eller när specialistkompetens behövs. White-label-upplägg, NDA, kommunikation och kodägande fastställs skriftligt före varje uppdrag.",
+"Ek geliştirme kapasitesi":"Extra utvecklingskapacitet","Ekibiniz yoğunken React/Next.js arayüzleri, web uygulamaları ve mevcut projelerin geliştirme işlerini belirli bir kapsamla üstlenirim.":"När teamet har mycket att göra kan jag ta avgränsade uppdrag inom React/Next.js, webbappar och vidareutveckling av befintliga projekt.",
+"Entegrasyon ve otomasyon":"Integrationer och automatisering","Mevcut araçları API üzerinden bağlar; CRM, veri akışı ve tekrarlayan iş süreçleri için ihtiyaca göre AI destekli entegrasyonlar geliştiririm.":"Jag kopplar ihop befintliga verktyg via API och bygger lämpliga AI-integrationer för CRM, dataflöden och återkommande processer.",
+"Mevcut projeyi devralma":"Övertagande av befintlig kodbas","Yayına çıkmayan, bakım bekleyen veya başka geliştiriciden devralınması gereken kod tabanını inceler; riskleri ve uygulanabilir sonraki adımları raporlarım.":"Jag granskar projekt som fastnat, behöver underhåll eller ska tas över från en annan utvecklare och dokumenterar risker och nästa steg.",
+"İlk görüşmede hedef, mevcut teknoloji ve teslim sorumlulukları netleştirilir. Ücret, takvim ve iş bölümü yazılı kapsam üzerinden kararlaştırılır.":"Det första samtalet klargör mål, teknikstack och leveransansvar. Pris, tidsplan och ansvarsfördelning avtalas utifrån en skriftlig omfattning.",
+"Ajans ortaklığını konuşalım ↗":"Diskutera ett byråsamarbete ↗","İlgili proje örneklerini inceleyin ↗":"Se relevanta projekt ↗","Ajans / white-label iş ortaklığı":"Byrå- / white-label-samarbete","İş ortaklığı modelini inceleyin ↗":"Utforska partnerskapsmodellen ↗"
+}
+};
+for (const locale of LOCALES) Object.assign(dictionaries[locale] || {}, agencyPartnerTranslations[locale] || {});
+const agencyMeta={
+en:["Agency Software Development Partner | BTMCode","Remote web development, API/CRM integrations and AI workflow support for digital agencies and growing businesses."],
+de:["Technischer Entwicklungspartner für Agenturen | BTMCode","Remote-Webentwicklung, API-/CRM-Integrationen und KI-Workflows für Digitalagenturen und wachsende Unternehmen."],
+fr:["Partenaire technique pour agences digitales | BTMCode","Développement web à distance, intégrations API/CRM et automatisations IA pour agences et entreprises en croissance."],
+ru:["Технический партнёр для digital-агентств | BTMCode","Удалённая веб-разработка, интеграции API/CRM и автоматизация с ИИ для агентств и растущих компаний."],
+zh:["数字代理机构技术开发伙伴 | BTMCode","为数字代理机构和成长型企业提供远程 Web 开发、API/CRM 集成及 AI 工作流支持。"],
+sv:["Teknisk utvecklingspartner för byråer | BTMCode","Fjärrutveckling av webb, API- och CRM-integrationer samt AI-arbetsflöden för digitalbyråer och växande företag."]
+};
+for (const locale of LOCALES) { if (agencyMeta[locale]) { meta[locale]["/services/"] = agencyMeta[locale][0]; descriptions[locale]["/services/"] = agencyMeta[locale][1]; } }
+
 
 
 
