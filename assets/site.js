@@ -122,32 +122,33 @@
       turnstileToken="";
       if(widgetId!==null&&window.turnstile&&typeof window.turnstile.reset==="function")window.turnstile.reset(widgetId);
     }
+    function uiText(key,fallback){const labels=window.BTM_MESSAGES||{};return labels[key]||fallback;}
     function stopForm(message){setAvailable(false);if(status&&message)status.textContent=message;}
     if(!siteKey||!widgetContainer){
-      stopForm("Spam koruması yapılandırılmadı. Form güvenlik nedeniyle geçici olarak kapalı.");
+      stopForm(uiText("verificationUnavailable","Spam koruması yapılandırılmadı. Form güvenlik nedeniyle geçici olarak kapalı."));
     }else{
       setAvailable(false);
       const script=document.createElement("script");
       script.src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
       script.async=true;script.defer=true;
       script.onload=()=>{
-        if(!window.turnstile){stopForm("Spam doğrulaması yüklenemedi. Lütfen sayfayı yenileyin.");return;}
+        if(!window.turnstile){stopForm(uiText("verificationLoadFailed","Spam doğrulaması yüklenemedi. Lütfen sayfayı yenileyin."));return;}
         try{
           widgetId=window.turnstile.render(widgetContainer,{
             sitekey:siteKey,action:"contact",theme:"auto",
-            callback:token=>{turnstileToken=token;setAvailable(true);if(status)status.textContent="Güvenlik doğrulaması tamamlandı. Formu gönderebilirsiniz.";},
-            "expired-callback":()=>{turnstileToken="";setAvailable(false);if(status)status.textContent="Güvenlik doğrulamasının süresi doldu. Lütfen tekrar doğrulayın.";},
-            "error-callback":()=>{turnstileToken="";setAvailable(false);if(status)status.textContent="Güvenlik doğrulaması tamamlanamadı. Lütfen tekrar deneyin.";}
+            callback:token=>{turnstileToken=token;setAvailable(true);if(status)status.textContent=uiText("verificationReady","Güvenlik doğrulaması tamamlandı. Formu gönderebilirsiniz.");},
+            "expired-callback":()=>{turnstileToken="";setAvailable(false);if(status)status.textContent=uiText("verificationExpired","Güvenlik doğrulamasının süresi doldu. Lütfen tekrar doğrulayın.");},
+            "error-callback":()=>{turnstileToken="";setAvailable(false);if(status)status.textContent=uiText("verificationFailed","Güvenlik doğrulaması tamamlanamadı. Lütfen tekrar deneyin.");}
           });
-        }catch{stopForm("Spam doğrulaması başlatılamadı. Lütfen sayfayı yenileyin.");}
+        }catch{stopForm(uiText("verificationStartFailed","Spam doğrulaması başlatılamadı. Lütfen sayfayı yenileyin."));}
       };
-      script.onerror=()=>stopForm("Spam doğrulama servisine ulaşılamıyor. Lütfen daha sonra tekrar deneyin.");
+      script.onerror=()=>stopForm(uiText("verificationServiceUnavailable","Spam doğrulama servisine ulaşılamıyor. Lütfen daha sonra tekrar deneyin."));
       document.head.appendChild(script);
     }
     form.addEventListener("submit",async event=>{
       event.preventDefault();
       if(!form.reportValidity())return;
-      if(!siteKey||widgetId===null||!turnstileToken){if(status)status.textContent="Lütfen önce spam güvenlik doğrulamasını tamamlayın.";return;}
+      if(!siteKey||widgetId===null||!turnstileToken){if(status)status.textContent=uiText("verificationRequired","Lütfen önce spam güvenlik doğrulamasını tamamlayın.");return;}
       const formData=new FormData(form);
       if(String(formData.get("website")||"").trim()){
         if(status)status.textContent=(window.BTM_MESSAGES||{}).success||"Thank you.";
