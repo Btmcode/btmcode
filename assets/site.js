@@ -109,60 +109,80 @@
 
   const form = document.querySelector("[data-contact-form]");
   if (form) {
-    const status = form.querySelector(".form-status");
-    const submitButton = form.querySelector('button[type="submit"]');
-    form.addEventListener("submit", async event => {
-      event.preventDefault();
-      if (!form.reportValidity()) return;
-
-      const formData = new FormData(form);
-      if (String(formData.get("website") || "").trim()) {
-        if (status) status.textContent = (window.BTM_MESSAGES || {}).success || "Thank you.";
-        form.reset();
-        return;
-      }
-
-      const messages = window.BTM_MESSAGES || {};
-      const originalButtonText = submitButton ? submitButton.textContent : "";
-      const payload = {
-        name: String(formData.get("name") || "").trim(),
-        email: String(formData.get("email") || "").trim(),
-        company: String(formData.get("company") || "").trim(),
-        service: String(formData.get("service") || "").trim(),
-        message: String(formData.get("message") || "").trim(),
-        website: String(formData.get("website") || "").trim()
+    const status=form.querySelector(".form-status");
+    const submitButton=form.querySelector('button[type="submit"]');
+    const widgetContainer=form.querySelector("[data-turnstile-widget]");
+    const config=window.BTM_CONFIG||{};
+    const siteKey=String(config.turnstileSiteKey||"").trim();
+    const startedAtField=form.querySelector('[name="form_started_at"]');
+    let widgetId=null,turnstileToken="";
+    if(startedAtField)startedAtField.value=String(Date.now());
+    function setAvailable(value){if(submitButton)submitButton.disabled=!value;}
+    function resetSecurity(){
+      turnstileToken="";
+      if(widgetId!==null&&window.turnstile&&typeof window.turnstile.reset==="function")window.turnstile.reset(widgetId);
+    }
+    function stopForm(message){setAvailable(false);if(status&&message)status.textContent=message;}
+    if(!siteKey||!widgetContainer){
+      stopForm("Spam koruması yapılandırılmadı. Form güvenlik nedeniyle geçici olarak kapalı.");
+    }else{
+      setAvailable(false);
+      const script=document.createElement("script");
+      script.src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      script.async=true;script.defer=true;
+      script.onload=()=>{
+        if(!window.turnstile){stopForm("Spam doğrulaması yüklenemedi. Lütfen sayfayı yenileyin.");return;}
+        try{
+          widgetId=window.turnstile.render(widgetContainer,{
+            sitekey:siteKey,action:"contact",theme:"auto",
+            callback:token=>{turnstileToken=token;setAvailable(true);if(status)status.textContent="Güvenlik doğrulaması tamamlandı. Formu gönderebilirsiniz.";},
+            "expired-callback":()=>{turnstileToken="";setAvailable(false);if(status)status.textContent="Güvenlik doğrulamasının süresi doldu. Lütfen tekrar doğrulayın.";},
+            "error-callback":()=>{turnstileToken="";setAvailable(false);if(status)status.textContent="Güvenlik doğrulaması tamamlanamadı. Lütfen tekrar deneyin.";}
+          });
+        }catch{stopForm("Spam doğrulaması başlatılamadı. Lütfen sayfayı yenileyin.");}
       };
-
-      if (submitButton) {
-        submitButton.disabled = true;
-        submitButton.setAttribute("aria-busy", "true");
-        submitButton.textContent = messages.sending || "Sending…";
+      script.onerror=()=>stopForm("Spam doğrulama servisine ulaşılamıyor. Lütfen daha sonra tekrar deneyin.");
+      document.head.appendChild(script);
+    }
+    form.addEventListener("submit",async event=>{
+      event.preventDefault();
+      if(!form.reportValidity())return;
+      if(!siteKey||widgetId===null||!turnstileToken){if(status)status.textContent="Lütfen önce spam güvenlik doğrulamasını tamamlayın.";return;}
+      const formData=new FormData(form);
+      if(String(formData.get("website")||"").trim()){
+        if(status)status.textContent=(window.BTM_MESSAGES||{}).success||"Thank you.";
+        form.reset();if(startedAtField)startedAtField.value=String(Date.now());resetSecurity();return;
       }
-      if (status) status.textContent = "";
-
-      try {
-        const response = await fetch("/api/contact", {
-          method: "POST",
-          headers: {"Content-Type":"application/json", "Accept":"application/json"},
-          body: JSON.stringify(payload),
-          credentials: "same-origin"
-        });
-        const result = await response.json().catch(() => ({}));
-        if (!response.ok || !result.ok) {
-          if (status) status.textContent = response.status === 503 ? (messages.unavailable || messages.error) : (messages.error || "Could not send the message.");
-          return;
+      const messages=window.BTM_MESSAGES||{},originalButtonText=submitButton?submitButton.textContent:"";
+      const payload={
+        name:String(formData.get("name")||"").trim(),
+        email:String(formData.get("email")||"").trim(),
+        company:String(formData.get("company")||"").trim(),
+        service:String(formData.get("service")||"").trim(),
+        message:String(formData.get("message")||"").trim(),
+        website:String(formData.get("website")||"").trim(),
+        form_started_at:String(formData.get("form_started_at")||""),
+        turnstile_token:turnstileToken
+      };
+      if(submitButton){submitButton.disabled=true;submitButton.setAttribute("aria-busy","true");submitButton.textContent=messages.sending||"Sending…";}
+      if(status)status.textContent="";
+      try{
+        const response=await fetch("/api/contact",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(payload),credentials:"same-origin"});
+        const result=await response.json().catch(()=>({}));
+        if(!response.ok||!result.ok){
+          if(status){
+            if(response.status===503)status.textContent=messages.unavailable||messages.error;
+            else if(response.status===429)status.textContent=messages.rateLimited||messages.error;
+            else if(response.status===403||result.error==="duplicate_submission")status.textContent=messages.verificationFailed||messages.error;
+            else status.textContent=messages.error||"Could not send the message.";
+          }
+          resetSecurity();return;
         }
-        form.reset();
-        if (status) status.textContent = messages.success || "Your message has been sent.";
-      } catch (error) {
-        if (status) status.textContent = messages.error || "Could not send the message. Please try again.";
-      } finally {
-        if (submitButton) {
-          submitButton.disabled = false;
-          submitButton.removeAttribute("aria-busy");
-          submitButton.textContent = originalButtonText;
-        }
-      }
+        form.reset();if(startedAtField)startedAtField.value=String(Date.now());
+        if(status)status.textContent=messages.success||"Your message has been sent.";
+        resetSecurity();
+      }catch(error){if(status)status.textContent=messages.error||"Could not send the message. Please try again.";resetSecurity();}
+      finally{if(submitButton){submitButton.removeAttribute("aria-busy");submitButton.textContent=originalButtonText;submitButton.disabled=!siteKey||!turnstileToken;}}
     });
   }
 })();
